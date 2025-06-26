@@ -3,13 +3,34 @@ import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe } from 'lucide-r
 
 const Hero: React.FC = () => {
   const handleDownloadResume = () => {
-    // Download the actual resume file
+    // Create a direct download link
     const link = document.createElement('a');
     link.href = '/Yalla_Naga_Praveen_Resume.pdf';
     link.download = 'Yalla_Naga_Praveen_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    
+    // Fallback: try to fetch and download
+    fetch('/Yalla_Naga_Praveen_Resume.pdf')
+      .then(response => {
+        if (response.ok) {
+          return response.blob();
+        }
+        throw new Error('File not found');
+      })
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      })
+      .catch(error => {
+        console.error('Download failed:', error);
+        // Fallback: try direct link
+        window.open('/Yalla_Naga_Praveen_Resume.pdf', '_blank');
+      });
   };
 
   const handleContactClick = () => {
