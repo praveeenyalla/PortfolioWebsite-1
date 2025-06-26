@@ -108,14 +108,32 @@ const Skills: React.FC = () => {
     }
   ];
 
-  const handleDownloadCertification = (url: string) => {
-    if (url) {
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = url.split('/').pop() || 'certification.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+  const handleDownloadCertification = async (url: string) => {
+    if (!url) return;
+
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        const blob = await response.blob();
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = url.split('/').pop() || 'certification.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(downloadUrl);
+      } else {
+        throw new Error('File not found');
+      }
+    } catch (error) {
+      console.error('Download failed:', error);
+      alert('Certificate download is temporarily unavailable. Please contact me directly at nagapraveenyalla@gmail.com for the certificate.');
+      
+      // Fallback: open email
+      const subject = encodeURIComponent('Request for Certificate - YALLA.NAGAPRAVEEN');
+      const body = encodeURIComponent(`Hi Praveen,\n\nI would like to request your ${url.split('/').pop()} certificate. Please send it to me.\n\nThank you!`);
+      window.location.href = `mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`;
     }
   };
 

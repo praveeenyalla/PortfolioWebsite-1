@@ -2,35 +2,48 @@ import React from 'react';
 import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const handleDownloadResume = () => {
-    // Create a direct download link
-    const link = document.createElement('a');
-    link.href = '/Yalla_Naga_Praveen_Resume.pdf';
-    link.download = 'Yalla_Naga_Praveen_Resume.pdf';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    
-    // Fallback: try to fetch and download
-    fetch('/Yalla_Naga_Praveen_Resume.pdf')
-      .then(response => {
+  const handleDownloadResume = async () => {
+    // List of possible resume file paths to try
+    const resumePaths = [
+      '/Yalla_Naga_Praveen_Resume.pdf',
+      '/Praveen _Resume.docx',
+      '/public/Yalla_Naga_Praveen_Resume.pdf',
+      '/public/Praveen _Resume.docx'
+    ];
+
+    let downloadSuccessful = false;
+
+    for (const path of resumePaths) {
+      try {
+        const response = await fetch(path);
         if (response.ok) {
-          return response.blob();
+          const blob = await response.blob();
+          const url = window.URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = 'Yalla_Naga_Praveen_Resume' + (path.endsWith('.docx') ? '.docx' : '.pdf');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(url);
+          downloadSuccessful = true;
+          break;
         }
-        throw new Error('File not found');
-      })
-      .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        link.href = url;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-      })
-      .catch(error => {
-        console.error('Download failed:', error);
-        // Fallback: try direct link
-        window.open('/Yalla_Naga_Praveen_Resume.pdf', '_blank');
-      });
+      } catch (error) {
+        console.log(`Failed to download from ${path}:`, error);
+        continue;
+      }
+    }
+
+    if (!downloadSuccessful) {
+      // If all downloads fail, show an alert and provide alternative
+      alert('Resume download is temporarily unavailable. Please contact me directly at nagapraveenyalla@gmail.com for my resume.');
+      
+      // As a fallback, open email client
+      const subject = encodeURIComponent('Request for Resume - YALLA.NAGAPRAVEEN');
+      const body = encodeURIComponent('Hi Praveen,\n\nI would like to request your resume. Please send it to me.\n\nThank you!');
+      window.location.href = `mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`;
+    }
   };
 
   const handleContactClick = () => {
