@@ -62,11 +62,11 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Professional Experience</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
             A comprehensive overview of my professional journey, highlighting key roles, 
             achievements, and the technologies I've worked with.
           </p>
@@ -74,8 +74,8 @@ const Experience: React.FC = () => {
 
         {/* Experience Timeline */}
         <div className="mb-20">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 flex items-center">
-            <Briefcase className="w-6 h-6 mr-3 text-blue-600" />
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 flex items-center transition-colors duration-300">
+            <Briefcase className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
             Work Experience
           </h3>
           
@@ -84,25 +84,25 @@ const Experience: React.FC = () => {
               <div key={index} className="relative">
                 {/* Timeline Line */}
                 {index !== experiences.length - 1 && (
-                  <div className="absolute left-6 top-16 w-0.5 h-full bg-blue-200 z-0"></div>
+                  <div className="absolute left-6 top-16 w-0.5 h-full bg-blue-200 dark:bg-blue-800 z-0 transition-colors duration-300"></div>
                 )}
                 
                 <div className="flex gap-6">
                   {/* Timeline Dot */}
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 relative">
+                    <div className="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-10 relative transition-colors duration-300">
                       <Briefcase className="w-6 h-6 text-white" />
                     </div>
                   </div>
                   
                   {/* Content */}
-                  <div className="flex-1 bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                       <div>
-                        <h4 className="text-xl font-semibold text-gray-900">{exp.title}</h4>
-                        <p className="text-lg text-blue-600 font-medium">{exp.company}</p>
+                        <h4 className="text-xl font-semibold text-gray-900 dark:text-white transition-colors duration-300">{exp.title}</h4>
+                        <p className="text-lg text-blue-600 dark:text-blue-400 font-medium transition-colors duration-300">{exp.company}</p>
                       </div>
-                      <div className="flex flex-col lg:items-end text-gray-600 mt-2 lg:mt-0">
+                      <div className="flex flex-col lg:items-end text-gray-600 dark:text-gray-400 mt-2 lg:mt-0 transition-colors duration-300">
                         <div className="flex items-center mb-1">
                           <Calendar className="w-4 h-4 mr-2" />
                           <span className="font-medium">{exp.period}</span>
@@ -114,14 +114,14 @@ const Experience: React.FC = () => {
                       </div>
                     </div>
                     
-                    <p className="text-gray-700 mb-4 leading-relaxed">{exp.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed transition-colors duration-300">{exp.description}</p>
                     
                     <div className="mb-4">
-                      <h5 className="font-semibold text-gray-900 mb-2">Key Achievements:</h5>
+                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Key Achievements:</h5>
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start text-gray-600">
-                            <ChevronRight className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                          <li key={i} className="flex items-start text-gray-600 dark:text-gray-400 transition-colors duration-300">
+                            <ChevronRight className="w-4 h-4 text-blue-600 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0" />
                             <span>{achievement}</span>
                           </li>
                         ))}
@@ -129,12 +129,12 @@ const Experience: React.FC = () => {
                     </div>
                     
                     <div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Technologies Used:</h5>
+                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Technologies Used:</h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium transition-colors duration-300"
                           >
                             {tech}
                           </span>
@@ -150,19 +150,19 @@ const Experience: React.FC = () => {
 
         {/* Education */}
         <div>
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 flex items-center">
-            <BookOpen className="w-6 h-6 mr-3 text-blue-600" />
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 flex items-center transition-colors duration-300">
+            <BookOpen className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
             Education
           </h3>
           
           {education.map((edu, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-100 dark:border-gray-700 transition-colors duration-300">
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                 <div>
-                  <h4 className="text-xl font-semibold text-gray-900">{edu.degree}</h4>
-                  <p className="text-lg text-blue-600 font-medium">{edu.institution}</p>
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white transition-colors duration-300">{edu.degree}</h4>
+                  <p className="text-lg text-blue-600 dark:text-blue-400 font-medium transition-colors duration-300">{edu.institution}</p>
                 </div>
-                <div className="flex flex-col lg:items-end text-gray-600 mt-2 lg:mt-0">
+                <div className="flex flex-col lg:items-end text-gray-600 dark:text-gray-400 mt-2 lg:mt-0 transition-colors duration-300">
                   <div className="flex items-center mb-1">
                     <Calendar className="w-4 h-4 mr-2" />
                     <span className="font-medium">{edu.period}</span>
@@ -172,7 +172,7 @@ const Experience: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed">{edu.description}</p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">{edu.description}</p>
             </div>
           ))}
         </div>

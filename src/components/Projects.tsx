@@ -114,11 +114,11 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Featured Projects</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
             A showcase of my recent work, demonstrating expertise in full-stack development, 
             modern frameworks, and solving real-world problems through technology.
           </p>
@@ -128,7 +128,7 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -139,9 +139,9 @@ const Projects: React.FC = () => {
                 <div className="absolute top-4 right-4">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     project.status === 'Completed' 
-                      ? 'bg-green-100 text-green-800' 
-                      : 'bg-blue-100 text-blue-800'
-                  }`}>
+                      ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' 
+                      : 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
+                  } transition-colors duration-300`}>
                     {project.status}
                   </span>
                 </div>
@@ -149,17 +149,17 @@ const Projects: React.FC = () => {
               
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
-                  <div className="flex items-center text-gray-500 text-sm">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white transition-colors duration-300">{project.title}</h3>
+                  <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm transition-colors duration-300">
                     <Calendar className="w-4 h-4 mr-1" />
                     {project.date}
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors duration-300">{project.description}</p>
                 
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center transition-colors duration-300">
                     <Tag className="w-4 h-4 mr-2" />
                     Technologies Used
                   </h4>
@@ -167,7 +167,7 @@ const Projects: React.FC = () => {
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium transition-colors duration-300"
                       >
                         {tech}
                       </span>
@@ -176,11 +176,11 @@ const Projects: React.FC = () => {
                 </div>
                 
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">Key Features</h4>
-                  <ul className="text-gray-600 text-sm space-y-1">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Key Features</h4>
+                  <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1 transition-colors duration-300">
                     {project.features.slice(0, 3).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
-                        <ArrowRight className="w-3 h-3 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                        <ArrowRight className="w-3 h-3 text-blue-600 dark:text-blue-400 mr-2 mt-1 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -190,14 +190,14 @@ const Projects: React.FC = () => {
                 <div className="flex gap-4">
                   <a
                     href={project.demoUrl}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors duration-200"
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors duration-200"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
                   </a>
                   <a
                     href={project.codeUrl}
-                    className="flex-1 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors duration-200"
+                    className="flex-1 border-2 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors duration-200"
                   >
                     <Github className="w-4 h-4" />
                     View Code
@@ -209,24 +209,24 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Project Stats */}
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Project Statistics</h3>
+        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center transition-colors duration-300">Project Statistics</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">25+</div>
-              <div className="text-gray-700">Projects Completed</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2 transition-colors duration-300">25+</div>
+              <div className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Projects Completed</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-green-600 mb-2">15+</div>
-              <div className="text-gray-700">Technologies Used</div>
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2 transition-colors duration-300">15+</div>
+              <div className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Technologies Used</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
-              <div className="text-gray-700">Success Rate</div>
+              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2 transition-colors duration-300">100%</div>
+              <div className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Success Rate</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-orange-600 mb-2">50k+</div>
-              <div className="text-gray-700">Lines of Code</div>
+              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2 transition-colors duration-300">50k+</div>
+              <div className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Lines of Code</div>
             </div>
           </div>
         </div>

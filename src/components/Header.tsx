@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, User, Code2 } from 'lucide-react';
+import { Menu, X, Code2 } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +33,9 @@ const Header: React.FC = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg border-b border-gray-200' : 'bg-white/95 backdrop-blur-sm'
+      isScrolled 
+        ? 'bg-white/95 dark:bg-gray-900/95 shadow-lg border-b border-gray-200 dark:border-gray-700 backdrop-blur-sm' 
+        : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -41,42 +44,49 @@ const Header: React.FC = () => {
               <Code2 className="w-7 h-7 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 tracking-tight">YALLA.NAGAPRAVEEN</h1>
-              <p className="text-sm text-blue-600 font-medium">yallanagapraveen.info</p>
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">YALLA.NAGAPRAVEEN</h1>
+              <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">yallanagapraveen.info</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium hover:scale-105 transform"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium hover:scale-105 transform"
               >
                 {item.label}
               </button>
             ))}
+            <ThemeToggle />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              {isMenuOpen ? 
+                <X className="w-6 h-6 text-gray-900 dark:text-white" /> : 
+                <Menu className="w-6 h-6 text-gray-900 dark:text-white" />
+              }
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4 border-t border-gray-200 mt-4 pt-4 bg-white">
+          <nav className="md:hidden pb-4 border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium py-2"
+                  className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium py-2"
                 >
                   {item.label}
                 </button>

@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white transition-colors duration-300">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-gray-800 dark:border-gray-700 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
             
             <button
               onClick={scrollToTop}
-              className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg"
+              className="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white p-2 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg"
               title="Back to top"
             >
               <ArrowUp className="w-5 h-5" />
