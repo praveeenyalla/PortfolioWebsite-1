@@ -4,9 +4,9 @@ import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe } from 'lucide-r
 const Hero: React.FC = () => {
   const handleDownloadResume = () => {
     try {
-      // Create a direct download link
+      // Create a direct download link with properly encoded filename
       const link = document.createElement('a');
-      link.href = '/Praveen _Resume.pdf';
+      link.href = '/Praveen%20_Resume.pdf'; // URL encoded space
       link.download = 'Praveen_Resume.pdf';
       link.style.display = 'none';
       
