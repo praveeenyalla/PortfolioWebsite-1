@@ -3,46 +3,49 @@ import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe } from 'lucide-r
 
 const Hero: React.FC = () => {
   const handleDownloadResume = async () => {
-    // List of possible resume file paths to try
-    const resumePaths = [
-      '/Yalla_Naga_Praveen_Resume.pdf',
-      '/Praveen _Resume.docx',
-      '/public/Yalla_Naga_Praveen_Resume.pdf',
-      '/public/Praveen _Resume.docx'
-    ];
-
-    let downloadSuccessful = false;
-
-    for (const path of resumePaths) {
-      try {
-        const response = await fetch(path);
-        if (response.ok) {
-          const blob = await response.blob();
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = 'Yalla_Naga_Praveen_Resume' + (path.endsWith('.docx') ? '.docx' : '.pdf');
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-          downloadSuccessful = true;
-          break;
-        }
-      } catch (error) {
-        console.log(`Failed to download from ${path}:`, error);
-        continue;
-      }
-    }
-
-    if (!downloadSuccessful) {
-      // If all downloads fail, show an alert and provide alternative
-      alert('Resume download is temporarily unavailable. Please contact me directly at nagapraveenyalla@gmail.com for my resume.');
+    try {
+      // Updated to use the correct file name
+      const resumePath = '/Praveen _Resume.pdf';
       
-      // As a fallback, open email client
-      const subject = encodeURIComponent('Request for Resume - YALLA.NAGAPRAVEEN');
-      const body = encodeURIComponent('Hi Praveen,\n\nI would like to request your resume. Please send it to me.\n\nThank you!');
-      window.location.href = `mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`;
+      // First, check if the file exists
+      const response = await fetch(resumePath, { method: 'HEAD' });
+      
+      if (!response.ok) {
+        throw new Error('Resume file not found');
+      }
+      
+      // If file exists, proceed with download
+      const link = document.createElement('a');
+      link.href = resumePath;
+      link.download = 'Praveen_Resume.pdf'; // Clean filename for download
+      link.target = '_blank';
+      
+      // Add to DOM, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+    } catch (error) {
+      console.error('Resume download failed:', error);
+      
+      // Show user-friendly error message
+      const userConfirmed = confirm(
+        'Resume download is currently unavailable. Would you like to request it via email instead?'
+      );
+      
+      if (userConfirmed) {
+        // Fallback: open email client with resume request
+        const subject = encodeURIComponent('Resume Request - YALLA.NAGAPRAVEEN');
+        const body = encodeURIComponent(
+          'Hi Praveen,\n\n' +
+          'I visited your portfolio website and would like to request your resume.\n\n' +
+          'Please send me your latest resume at your earliest convenience.\n\n' +
+          'Thank you!\n\n' +
+          'Best regards'
+        );
+        
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      }
     }
   };
 

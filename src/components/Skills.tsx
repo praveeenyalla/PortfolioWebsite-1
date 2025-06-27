@@ -108,32 +108,51 @@ const Skills: React.FC = () => {
     }
   ];
 
-  const handleDownloadCertification = async (url: string) => {
-    if (!url) return;
+  const handleDownloadCertification = async (url: string, certName: string) => {
+    if (!url) {
+      // Show message for certificates without download links
+      alert(`${certName} certificate is not available for download. Please contact me at nagapraveenyalla@gmail.com for verification.`);
+      return;
+    }
 
     try {
-      const response = await fetch(url);
-      if (response.ok) {
-        const blob = await response.blob();
-        const downloadUrl = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.download = url.split('/').pop() || 'certification.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(downloadUrl);
-      } else {
-        throw new Error('File not found');
-      }
-    } catch (error) {
-      console.error('Download failed:', error);
-      alert('Certificate download is temporarily unavailable. Please contact me directly at nagapraveenyalla@gmail.com for the certificate.');
+      // Check if file exists first
+      const response = await fetch(url, { method: 'HEAD' });
       
-      // Fallback: open email
-      const subject = encodeURIComponent('Request for Certificate - YALLA.NAGAPRAVEEN');
-      const body = encodeURIComponent(`Hi Praveen,\n\nI would like to request your ${url.split('/').pop()} certificate. Please send it to me.\n\nThank you!`);
-      window.location.href = `mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`;
+      if (!response.ok) {
+        throw new Error('Certificate file not found');
+      }
+      
+      // If file exists, proceed with download
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = url.split('/').pop() || 'certificate.pdf';
+      link.target = '_blank';
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+    } catch (error) {
+      console.error('Certificate download failed:', error);
+      
+      // Show user-friendly error message with email fallback
+      const userConfirmed = confirm(
+        `${certName} download is currently unavailable. Would you like to request it via email instead?`
+      );
+      
+      if (userConfirmed) {
+        const subject = encodeURIComponent(`Certificate Request - ${certName}`);
+        const body = encodeURIComponent(
+          `Hi Praveen,\n\n` +
+          `I visited your portfolio website and would like to request your ${certName}.\n\n` +
+          `Please send me the certificate at your earliest convenience.\n\n` +
+          `Thank you!\n\n` +
+          `Best regards`
+        );
+        
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      }
     }
   };
 
@@ -225,14 +244,12 @@ const Skills: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 transition-colors duration-300">{cert.description}</p>
-                {cert.downloadUrl && (
-                  <button
-                    onClick={() => handleDownloadCertification(cert.downloadUrl!)}
-                    className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
-                  >
-                    Download Certificate
-                  </button>
-                )}
+                <button
+                  onClick={() => handleDownloadCertification(cert.downloadUrl || '', cert.name)}
+                  className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+                >
+                  {cert.downloadUrl ? 'Download Certificate' : 'Request Certificate'}
+                </button>
               </div>
             ))}
           </div>
