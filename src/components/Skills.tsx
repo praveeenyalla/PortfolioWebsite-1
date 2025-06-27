@@ -108,26 +108,34 @@ const Skills: React.FC = () => {
     }
   ];
 
-  const handleDownloadCertification = async (url: string, certName: string) => {
+  const handleDownloadCertification = (url: string, certName: string) => {
     if (!url) {
       // Show message for certificates without download links
-      alert(`${certName} certificate is not available for download. Please contact me at nagapraveenyalla@gmail.com for verification.`);
+      const userConfirmed = confirm(
+        `${certName} is not available for direct download. Would you like to request it via email?`
+      );
+      
+      if (userConfirmed) {
+        const subject = encodeURIComponent(`Certificate Request - ${certName}`);
+        const body = encodeURIComponent(
+          `Hi Praveen,\n\n` +
+          `I visited your portfolio website and would like to request your ${certName}.\n\n` +
+          `Please send me the certificate at your earliest convenience.\n\n` +
+          `Thank you!\n\n` +
+          `Best regards`
+        );
+        
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      }
       return;
     }
 
     try {
-      // Check if file exists first
-      const response = await fetch(url, { method: 'HEAD' });
-      
-      if (!response.ok) {
-        throw new Error('Certificate file not found');
-      }
-      
-      // If file exists, proceed with download
+      // Create direct download link
       const link = document.createElement('a');
       link.href = url;
       link.download = url.split('/').pop() || 'certificate.pdf';
-      link.target = '_blank';
+      link.style.display = 'none';
       
       document.body.appendChild(link);
       link.click();
@@ -138,7 +146,7 @@ const Skills: React.FC = () => {
       
       // Show user-friendly error message with email fallback
       const userConfirmed = confirm(
-        `${certName} download is currently unavailable. Would you like to request it via email instead?`
+        `${certName} download encountered an issue. Would you like to request it via email instead?`
       );
       
       if (userConfirmed) {

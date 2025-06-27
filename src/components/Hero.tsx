@@ -2,39 +2,37 @@ import React from 'react';
 import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const handleDownloadResume = async () => {
+  const handleDownloadResume = () => {
     try {
-      // Updated to use the correct file name
-      const resumePath = '/Praveen _Resume.pdf';
-      
-      // First, check if the file exists
-      const response = await fetch(resumePath, { method: 'HEAD' });
-      
-      if (!response.ok) {
-        throw new Error('Resume file not found');
-      }
-      
-      // If file exists, proceed with download
+      // Create a direct download link
       const link = document.createElement('a');
-      link.href = resumePath;
-      link.download = 'Praveen_Resume.pdf'; // Clean filename for download
-      link.target = '_blank';
+      link.href = '/Praveen _Resume.pdf';
+      link.download = 'Praveen_Resume.pdf';
+      link.style.display = 'none';
       
-      // Add to DOM, click, and remove
+      // Add to DOM temporarily
       document.body.appendChild(link);
+      
+      // Trigger download
       link.click();
+      
+      // Clean up
       document.body.removeChild(link);
+      
+      // Show success message
+      setTimeout(() => {
+        console.log('Resume download initiated');
+      }, 100);
       
     } catch (error) {
       console.error('Resume download failed:', error);
       
-      // Show user-friendly error message
+      // Fallback: Show user-friendly message with email option
       const userConfirmed = confirm(
-        'Resume download is currently unavailable. Would you like to request it via email instead?'
+        'Resume download encountered an issue. Would you like to request it via email instead?'
       );
       
       if (userConfirmed) {
-        // Fallback: open email client with resume request
         const subject = encodeURIComponent('Resume Request - YALLA.NAGAPRAVEEN');
         const body = encodeURIComponent(
           'Hi Praveen,\n\n' +
