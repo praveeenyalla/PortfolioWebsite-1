@@ -154,7 +154,7 @@ const Projects: React.FC = () => {
           <h4 className="font-semibold text-blue-900 dark:text-blue-300 mb-2 transition-colors duration-300">📝 Project Management Instructions</h4>
           <p className="text-blue-800 dark:text-blue-400 text-sm leading-relaxed transition-colors duration-300">
             To update project links and add videos: Edit the <code className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded text-xs">src/data/projectsConfig.ts</code> file. 
-            Replace the "#" placeholders with your actual demo URLs, GitHub repository links, and video URLs. 
+            Replace the "#\" placeholders with your actual demo URLs, GitHub repository links, and video URLs. 
             The website will automatically use your updated links.
           </p>
         </div>
