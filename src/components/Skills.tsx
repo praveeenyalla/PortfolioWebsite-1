@@ -96,10 +96,11 @@ const Skills: React.FC = () => {
       downloadUrl: "/aws.pdf"
     },
     {
-      name: "React Developer Certification",
-      issuer: "Meta",
+      name: "Deloitte Advanced Participation Certificate",
+      issuer: "Deloitte",
       year: "2023",
-      description: "Advanced React development and best practices"
+      description: "Advanced participation in Deloitte's professional development program, demonstrating expertise in consulting methodologies, business analysis, and strategic thinking",
+      downloadUrl: "/DELOITTE.pdf"
     },
     {
       name: "JavaScript ES6+ Certification",
