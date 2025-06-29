@@ -1,117 +1,22 @@
 import React from 'react';
-import { ExternalLink, Github, Calendar, Tag, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Tag, ArrowRight, Play } from 'lucide-react';
+import { projectsConfig } from '../data/projectsConfig';
 
 const Projects: React.FC = () => {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with user authentication, payment integration, inventory management, and admin dashboard. Built with modern technologies for scalability and performance.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT", "Tailwind CSS"],
-      features: [
-        "User authentication and authorization",
-        "Shopping cart and checkout system",
-        "Payment gateway integration",
-        "Admin dashboard for inventory management",
-        "Responsive design for all devices",
-        "Real-time order tracking"
-      ],
-      demoUrl: "#",
-      codeUrl: "#",
-      status: "Completed",
-      date: "2023"
-    },
-    {
-      title: "Task Management Application",
-      description: "A collaborative task management tool with real-time updates, team collaboration features, and advanced project tracking capabilities. Designed for modern teams and remote work.",
-      image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "TypeScript", "Firebase", "Material-UI", "PWA"],
-      features: [
-        "Real-time collaboration",
-        "Drag-and-drop task management",
-        "Team member assignments",
-        "Progress tracking and analytics",
-        "Offline functionality",
-        "Push notifications"
-      ],
-      demoUrl: "#",
-      codeUrl: "#",
-      status: "Completed",
-      date: "2023"
-    },
-    {
-      title: "Social Media Dashboard",
-      description: "A comprehensive analytics dashboard for social media management with data visualization, automated reporting, and multi-platform integration for businesses and influencers.",
-      image: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Next.js", "Python", "PostgreSQL", "Chart.js", "API Integration"],
-      features: [
-        "Multi-platform analytics",
-        "Custom reporting tools",
-        "Automated data collection",
-        "Interactive visualizations",
-        "Scheduled reports",
-        "Export functionality"
-      ],
-      demoUrl: "#",
-      codeUrl: "#",
-      status: "In Progress",
-      date: "2023"
-    },
-    {
-      title: "Learning Management System",
-      description: "An educational platform with course management, student progress tracking, interactive quizzes, and video streaming capabilities for online education providers.",
-      image: "https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Express.js", "MongoDB", "Socket.io", "AWS S3"],
-      features: [
-        "Course creation and management",
-        "Video streaming platform",
-        "Interactive quizzes and assessments",
-        "Student progress tracking",
-        "Real-time chat system",
-        "Certificate generation"
-      ],
-      demoUrl: "#",
-      codeUrl: "#",
-      status: "Completed",
-      date: "2022"
-    },
-    {
-      title: "Weather Forecast App",
-      description: "A modern weather application with location-based forecasts, interactive maps, weather alerts, and detailed meteorological data visualization.",
-      image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React Native", "Weather API", "Maps Integration", "Redux"],
-      features: [
-        "Location-based weather data",
-        "7-day weather forecast",
-        "Interactive weather maps",
-        "Weather alerts and notifications",
-        "Historical weather data",
-        "Offline data caching"
-      ],
-      demoUrl: "#",
-      codeUrl: "#",
-      status: "Completed",
-      date: "2022"
-    },
-    {
-      title: "Cryptocurrency Tracker",
-      description: "A real-time cryptocurrency tracking application with portfolio management, price alerts, market analysis, and trading insights for crypto enthusiasts.",
-      image: "https://images.pexels.com/photos/8369648/pexels-photo-8369648.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Vue.js", "CoinGecko API", "Chart.js", "WebSocket", "PWA"],
-      features: [
-        "Real-time price tracking",
-        "Portfolio management",
-        "Price alerts and notifications",
-        "Market analysis charts",
-        "News integration",
-        "Watchlist functionality"
-      ],
-      demoUrl: "#",
-      codeUrl: "#",
-      status: "Completed",
-      date: "2022"
+  const handleLinkClick = (url: string, type: 'demo' | 'code' | 'video') => {
+    if (url === '#' || !url) {
+      const message = type === 'demo' 
+        ? 'Live demo will be available soon. Please check back later!'
+        : type === 'code'
+        ? 'Repository link will be available soon. Please check back later!'
+        : 'Video demo will be available soon. Please check back later!';
+      
+      alert(message);
+      return;
     }
-  ];
+    
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -125,9 +30,9 @@ const Projects: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {projectsConfig.map((project, index) => (
             <div
-              key={index}
+              key={project.id}
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
             >
               <div className="relative overflow-hidden">
@@ -140,11 +45,24 @@ const Projects: React.FC = () => {
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     project.status === 'Completed' 
                       ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300' 
-                      : 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
+                      : project.status === 'In Progress'
+                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
+                      : 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300'
                   } transition-colors duration-300`}>
                     {project.status}
                   </span>
                 </div>
+                {project.videoUrl && (
+                  <div className="absolute top-4 left-4">
+                    <button
+                      onClick={() => handleLinkClick(project.videoUrl!, 'video')}
+                      className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-full transition-colors duration-200"
+                      title="Watch Video Demo"
+                    >
+                      <Play className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
               </div>
               
               <div className="p-6">
@@ -188,20 +106,20 @@ const Projects: React.FC = () => {
                 </div>
                 
                 <div className="flex gap-4">
-                  <a
-                    href={project.demoUrl}
+                  <button
+                    onClick={() => handleLinkClick(project.demoUrl || '#', 'demo')}
                     className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors duration-200"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
-                  </a>
-                  <a
-                    href={project.codeUrl}
+                  </button>
+                  <button
+                    onClick={() => handleLinkClick(project.codeUrl || '#', 'code')}
                     className="flex-1 border-2 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors duration-200"
                   >
                     <Github className="w-4 h-4" />
                     View Code
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -229,6 +147,16 @@ const Projects: React.FC = () => {
               <div className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Lines of Code</div>
             </div>
           </div>
+        </div>
+
+        {/* Instructions for Future Updates */}
+        <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 border-l-4 border-blue-600 transition-colors duration-300">
+          <h4 className="font-semibold text-blue-900 dark:text-blue-300 mb-2 transition-colors duration-300">📝 Project Management Instructions</h4>
+          <p className="text-blue-800 dark:text-blue-400 text-sm leading-relaxed transition-colors duration-300">
+            To update project links and add videos: Edit the <code className="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded text-xs">src/data/projectsConfig.ts</code> file. 
+            Replace the "#" placeholders with your actual demo URLs, GitHub repository links, and video URLs. 
+            The website will automatically use your updated links.
+          </p>
         </div>
       </div>
     </section>

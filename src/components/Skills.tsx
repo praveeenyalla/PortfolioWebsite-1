@@ -103,10 +103,11 @@ const Skills: React.FC = () => {
       downloadUrl: "/DELOITTE.pdf"
     },
     {
-      name: "JavaScript ES6+ Certification",
-      issuer: "FreeCodeCamp",
-      year: "2022",
-      description: "Modern JavaScript development techniques"
+      name: "FORAGE Tata Data Visualization Certificate",
+      issuer: "FORAGE - Tata Group",
+      year: "2023",
+      description: "Completed Tata Group's virtual experience program focusing on data visualization, business intelligence, and strategic data analysis using advanced analytics tools",
+      downloadUrl: "/forage_certificate.pdf"
     }
   ];
 
