@@ -92,7 +92,8 @@ const Skills: React.FC = () => {
       name: "AWS Certified Developer",
       issuer: "Amazon Web Services",
       year: "2023",
-      description: "Cloud development and deployment expertise"
+      description: "Cloud development and deployment expertise with AWS services and best practices",
+      downloadUrl: "/aws.pdf"
     },
     {
       name: "React Developer Certification",
