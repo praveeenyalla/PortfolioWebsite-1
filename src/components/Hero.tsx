@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
               </div>
               <div className="flex items-center text-gray-600 dark:text-gray-400">
                 <MapPin className="w-4 h-4 mr-2" />
-                <span>Available for opportunities</span>
+                <span>Seeking opportunities</span>
               </div>
             </div>
           </div>
@@ -99,24 +99,24 @@ const Hero: React.FC = () => {
             </h1>
             
             <h2 className="text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-medium transition-colors duration-300">
-              Software Developer & Technology Enthusiast
+              Aspiring Data Analyst & Technology Enthusiast
             </h2>
             
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-2xl transition-colors duration-300">
-              Passionate about creating innovative solutions and building scalable applications. 
-              With expertise in modern technologies and a focus on clean, efficient code, 
-              I bring ideas to life through thoughtful development and user-centered design.
+              Fresh graduate with a passion for data analysis and insights. Equipped with strong analytical skills, 
+              technical knowledge in data science, and hands-on project experience. Ready to contribute to 
+              data-driven decision making and grow professionally in the field of analytics.
             </p>
 
             {/* Key Highlights */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border-l-4 border-blue-600 transition-colors duration-300">
-                <h3 className="font-semibold text-gray-900 dark:text-white">Experience</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">3+ Years Development</p>
-              </div>
               <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border-l-4 border-green-600 transition-colors duration-300">
+                <h3 className="font-semibold text-gray-900 dark:text-white">Fresh Graduate</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Ready to Start Career</p>
+              </div>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border-l-4 border-blue-600 transition-colors duration-300">
                 <h3 className="font-semibold text-gray-900 dark:text-white">Projects</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">15+ Completed</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">6+ Completed</p>
               </div>
               <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border-l-4 border-purple-600 transition-colors duration-300">
                 <h3 className="font-semibold text-gray-900 dark:text-white">Certified</h3>
@@ -138,7 +138,7 @@ const Hero: React.FC = () => {
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105"
               >
                 <Mail className="w-5 h-5" />
-                Get In Touch
+                Hire Me
               </button>
               <button
                 onClick={handleVisitWebsite}

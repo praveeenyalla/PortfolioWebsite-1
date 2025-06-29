@@ -1,52 +1,55 @@
 import React from 'react';
-import { Calendar, MapPin, Briefcase, ChevronRight, BookOpen } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, ChevronRight, BookOpen, Target, Award } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: "Senior Software Developer",
-      company: "Tech Solutions Inc.",
-      location: "Remote",
-      period: "2022 - Present",
-      type: "Full-time",
-      description: "Leading development of scalable web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
+      title: "Data Analyst",
+      company: "Seeking Opportunities",
+      location: "Remote/Hyderabad, India",
+      period: "2024 - Present",
+      type: "Job Seeking",
+      description: "Fresh graduate with strong foundation in data analysis, visualization, and statistical modeling. Completed comprehensive Data Science certification and built multiple projects demonstrating analytical skills.",
       achievements: [
-        "Improved application performance by 40% through optimization",
-        "Led a team of 5 developers on critical projects",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-        "Architected microservices handling 100k+ daily requests"
+        "Completed ExcelR Data Science certification with hands-on projects",
+        "Built 6+ data analysis and web development projects",
+        "Proficient in Python, SQL, data visualization tools",
+        "Strong foundation in statistical analysis and machine learning",
+        "Experienced in creating interactive dashboards and reports"
       ],
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "Docker", "MongoDB"]
+      technologies: ["Python", "SQL", "Excel", "Power BI", "Tableau", "Machine Learning", "Statistics"]
     },
     {
-      title: "Software Developer",
-      company: "Digital Innovations Ltd.",
+      title: "Project-Based Learning & Development",
+      company: "Self-Directed Learning",
       location: "Hyderabad, India",
-      period: "2021 - 2022",
-      type: "Full-time",
-      description: "Developed and maintained web applications, collaborated with cross-functional teams, and contributed to system architecture decisions.",
+      period: "2023 - 2024",
+      type: "Learning & Projects",
+      description: "Intensive self-directed learning focused on data science, web development, and practical project implementation. Built comprehensive portfolio demonstrating technical skills.",
       achievements: [
-        "Built responsive web applications serving 10k+ users",
-        "Integrated third-party APIs and payment gateways",
-        "Reduced bug reports by 35% through comprehensive testing",
-        "Collaborated with UI/UX team on user experience improvements"
+        "Developed full-stack web applications with modern frameworks",
+        "Created data visualization dashboards and analytics tools",
+        "Implemented machine learning models for real-world problems",
+        "Built responsive web applications serving thousands of users",
+        "Gained expertise in both frontend and backend technologies"
       ],
-      technologies: ["JavaScript", "React", "Python", "PostgreSQL", "Redis", "Git"]
+      technologies: ["React", "Node.js", "Python", "MongoDB", "Data Analysis", "Web Development"]
     },
     {
-      title: "Junior Developer",
-      company: "StartUp Solutions",
-      location: "Bangalore, India",
-      period: "2020 - 2021",
-      type: "Full-time",
-      description: "Started career focusing on front-end development, learned modern frameworks, and contributed to various client projects.",
+      title: "Academic Projects & Internships",
+      company: "University & Training Programs",
+      location: "India",
+      period: "2020 - 2023",
+      type: "Academic",
+      description: "Completed various academic projects and training programs focusing on software development, data analysis, and emerging technologies during university studies.",
       achievements: [
-        "Developed mobile-responsive websites for 15+ clients",
-        "Learned and implemented modern JavaScript frameworks",
-        "Participated in code reviews and agile development processes",
-        "Created reusable component libraries"
+        "Completed multiple academic projects in data structures and algorithms",
+        "Participated in coding competitions and hackathons",
+        "Gained foundational knowledge in database management systems",
+        "Developed problem-solving skills through practical assignments",
+        "Built strong foundation in programming and analytical thinking"
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery", "PHP"]
+      technologies: ["Java", "C++", "Python", "MySQL", "Data Structures", "Algorithms"]
     }
   ];
 
@@ -57,26 +60,61 @@ const Experience: React.FC = () => {
       location: "India",
       period: "2016 - 2020",
       grade: "8.5 CGPA",
-      description: "Specialized in software engineering, data structures, algorithms, and database management systems."
+      description: "Specialized in software engineering, data structures, algorithms, and database management systems. Strong foundation in computer science fundamentals."
     }
   ];
+
+  const careerObjective = {
+    title: "Career Objective",
+    description: "Seeking an entry-level Data Analyst position where I can apply my analytical skills, technical knowledge, and passion for data-driven insights to contribute to organizational success. Eager to work with experienced professionals and grow in the field of data analytics.",
+    skills: [
+      "Data Analysis & Visualization",
+      "Statistical Modeling",
+      "Python & SQL Programming",
+      "Dashboard Creation",
+      "Problem Solving",
+      "Quick Learning Ability"
+    ]
+  };
 
   return (
     <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Professional Experience</h2>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Professional Journey</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
-            A comprehensive overview of my professional journey, highlighting key roles, 
-            achievements, and the technologies I've worked with.
+            Fresh graduate with strong analytical skills and hands-on project experience, 
+            actively seeking opportunities to begin my career as a Data Analyst.
           </p>
+        </div>
+
+        {/* Career Objective */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-700 dark:to-blue-900 rounded-2xl p-8 text-white transition-colors duration-300">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                <Target className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-2xl font-semibold">{careerObjective.title}</h3>
+            </div>
+            <p className="text-blue-100 dark:text-blue-200 text-lg leading-relaxed mb-6 transition-colors duration-300">
+              {careerObjective.description}
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {careerObjective.skills.map((skill, index) => (
+                <div key={index} className="bg-white/10 px-4 py-2 rounded-lg text-center">
+                  <span className="text-white font-medium text-sm">{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Experience Timeline */}
         <div className="mb-20">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 flex items-center transition-colors duration-300">
             <Briefcase className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
-            Work Experience
+            Experience & Learning Journey
           </h3>
           
           <div className="space-y-8">
@@ -90,8 +128,20 @@ const Experience: React.FC = () => {
                 <div className="flex gap-6">
                   {/* Timeline Dot */}
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-10 relative transition-colors duration-300">
-                      <Briefcase className="w-6 h-6 text-white" />
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-10 relative transition-colors duration-300 ${
+                      exp.type === 'Job Seeking' 
+                        ? 'bg-green-600 dark:bg-green-500' 
+                        : exp.type === 'Learning & Projects'
+                        ? 'bg-blue-600 dark:bg-blue-500'
+                        : 'bg-purple-600 dark:bg-purple-500'
+                    }`}>
+                      {exp.type === 'Job Seeking' ? (
+                        <Target className="w-6 h-6 text-white" />
+                      ) : exp.type === 'Learning & Projects' ? (
+                        <Award className="w-6 h-6 text-white" />
+                      ) : (
+                        <BookOpen className="w-6 h-6 text-white" />
+                      )}
                     </div>
                   </div>
                   
@@ -100,7 +150,11 @@ const Experience: React.FC = () => {
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                       <div>
                         <h4 className="text-xl font-semibold text-gray-900 dark:text-white transition-colors duration-300">{exp.title}</h4>
-                        <p className="text-lg text-blue-600 dark:text-blue-400 font-medium transition-colors duration-300">{exp.company}</p>
+                        <p className={`text-lg font-medium transition-colors duration-300 ${
+                          exp.type === 'Job Seeking' 
+                            ? 'text-green-600 dark:text-green-400' 
+                            : 'text-blue-600 dark:text-blue-400'
+                        }`}>{exp.company}</p>
                       </div>
                       <div className="flex flex-col lg:items-end text-gray-600 dark:text-gray-400 mt-2 lg:mt-0 transition-colors duration-300">
                         <div className="flex items-center mb-1">
@@ -117,7 +171,9 @@ const Experience: React.FC = () => {
                     <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed transition-colors duration-300">{exp.description}</p>
                     
                     <div className="mb-4">
-                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Key Achievements:</h5>
+                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
+                        {exp.type === 'Job Seeking' ? 'Key Qualifications:' : 'Key Achievements:'}
+                      </h5>
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start text-gray-600 dark:text-gray-400 transition-colors duration-300">
@@ -129,12 +185,16 @@ const Experience: React.FC = () => {
                     </div>
                     
                     <div>
-                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Technologies Used:</h5>
+                      <h5 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Technologies & Skills:</h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium transition-colors duration-300"
+                            className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300 ${
+                              exp.type === 'Job Seeking'
+                                ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300'
+                                : 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300'
+                            }`}
                           >
                             {tech}
                           </span>
@@ -145,6 +205,33 @@ const Experience: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Current Status */}
+        <div className="mb-16 bg-green-50 dark:bg-green-900/20 rounded-2xl p-8 border-l-4 border-green-500 transition-colors duration-300">
+          <div className="flex items-center mb-4">
+            <div className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+            <h3 className="text-2xl font-semibold text-green-900 dark:text-green-300 transition-colors duration-300">Currently Available</h3>
+          </div>
+          <p className="text-green-800 dark:text-green-400 text-lg leading-relaxed mb-4 transition-colors duration-300">
+            I am actively seeking entry-level Data Analyst positions where I can apply my analytical skills, 
+            technical knowledge, and passion for data-driven insights. Ready to contribute to your team and 
+            grow professionally in a collaborative environment.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-white dark:bg-green-900/30 p-4 rounded-lg transition-colors duration-300">
+              <h4 className="font-semibold text-green-900 dark:text-green-300 mb-1">Availability</h4>
+              <p className="text-green-700 dark:text-green-400 text-sm">Immediate</p>
+            </div>
+            <div className="bg-white dark:bg-green-900/30 p-4 rounded-lg transition-colors duration-300">
+              <h4 className="font-semibold text-green-900 dark:text-green-300 mb-1">Work Preference</h4>
+              <p className="text-green-700 dark:text-green-400 text-sm">Remote/Hybrid/On-site</p>
+            </div>
+            <div className="bg-white dark:bg-green-900/30 p-4 rounded-lg transition-colors duration-300">
+              <h4 className="font-semibold text-green-900 dark:text-green-300 mb-1">Location</h4>
+              <p className="text-green-700 dark:text-green-400 text-sm">Hyderabad, India</p>
+            </div>
           </div>
         </div>
 

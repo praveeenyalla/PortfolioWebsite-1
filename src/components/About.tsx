@@ -4,9 +4,9 @@ import { Award, BookOpen, Target, Briefcase, Globe, Phone } from 'lucide-react';
 const About: React.FC = () => {
   const achievements = [
     {
-      icon: <Briefcase className="w-6 h-6" />,
-      title: "Professional Experience",
-      description: "3+ years of hands-on development experience across various technologies and industries."
+      icon: <Target className="w-6 h-6" />,
+      title: "Career Objective",
+      description: "Seeking entry-level Data Analyst position to apply analytical skills and grow professionally."
     },
     {
       icon: <Award className="w-6 h-6" />,
@@ -31,8 +31,8 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">About Me</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
-            Passionate software developer with a strong foundation in modern web technologies 
-            and a commitment to creating exceptional digital experiences.
+            Fresh graduate with a strong foundation in data analysis and modern technologies, 
+            ready to begin my career and contribute to data-driven decision making.
           </p>
         </div>
 
@@ -41,21 +41,20 @@ const About: React.FC = () => {
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 transition-colors duration-300">My Journey</h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300">
               <p>
-                I'm YALLA.NAGAPRAVEEN, a dedicated software developer with a passion for creating 
-                innovative digital solutions. My journey in technology began with curiosity and 
-                has evolved into a career focused on building scalable, user-friendly applications.
+                I'm YALLA.NAGAPRAVEEN, a fresh graduate with a passion for data analysis and 
+                technology. My journey began with curiosity about how data can drive business 
+                decisions and has evolved into a focused career path in data analytics.
               </p>
               <p>
-                With expertise spanning front-end and back-end development, I specialize in 
-                modern web technologies including React, Node.js, Python, and cloud platforms. 
-                I believe in writing clean, maintainable code and following best practices 
-                that ensure long-term success.
+                As a recent graduate with a strong foundation in computer science and data analysis, 
+                I specialize in Python, SQL, data visualization, and statistical modeling. 
+                I believe in turning raw data into actionable insights that drive business growth.
               </p>
               <p>
-                Recently, I completed my Data Science certification from ExcelR, expanding my 
-                expertise into machine learning, data analysis, and statistical modeling. This 
-                combination of web development and data science skills allows me to build 
-                intelligent, data-driven applications.
+                Recently, I completed my Data Science certification from ExcelR, where I gained 
+                hands-on experience with machine learning, statistical analysis, and data visualization 
+                tools. This comprehensive training has equipped me with both theoretical knowledge 
+                and practical skills needed in today's data-driven world.
               </p>
               <p>
                 You can explore my complete portfolio and latest projects at{' '}
@@ -67,18 +66,18 @@ const About: React.FC = () => {
                 >
                   yallanagapraveen.info
                 </a>
-                , where I regularly update my work and share insights about technology.
+                , where I regularly showcase my analytical projects and share insights about data science.
               </p>
             </div>
             
-            <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-600 transition-colors duration-300">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Current Focus</h4>
-              <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
-                Currently exploring advanced React patterns, data science applications, 
-                and cloud-native development while seeking opportunities to contribute to 
-                impactful projects. Available for new opportunities and collaborations.
+            <div className="mt-8 p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-600 transition-colors duration-300">
+              <h4 className="font-semibold text-green-900 dark:text-green-300 mb-2 transition-colors duration-300">Current Status</h4>
+              <p className="text-green-700 dark:text-green-400 transition-colors duration-300">
+                Actively seeking entry-level Data Analyst opportunities where I can apply my 
+                analytical skills, contribute to data-driven insights, and grow professionally 
+                in a collaborative environment. Available for immediate joining.
               </p>
-              <div className="mt-4 flex items-center text-gray-600 dark:text-gray-400 transition-colors duration-300">
+              <div className="mt-4 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300">
                 <Phone className="w-4 h-4 mr-2" />
                 <span>Contact: +91 8328377820</span>
               </div>
@@ -110,9 +109,9 @@ const About: React.FC = () => {
           <div className="text-center">
             <h3 className="text-2xl font-semibold mb-4">Professional Summary</h3>
             <p className="text-blue-100 dark:text-blue-200 text-lg leading-relaxed max-w-4xl mx-auto mb-4 transition-colors duration-300">
-              A results-driven software developer with proven experience in full-stack development, 
-              data science, system architecture, and team collaboration. Committed to delivering 
-              high-quality solutions that drive business growth and enhance user experiences.
+              A motivated fresh graduate with strong analytical skills and hands-on experience in data science, 
+              statistical analysis, and visualization. Eager to begin my career as a Data Analyst and contribute 
+              to data-driven decision making while continuously learning and growing in the field.
             </p>
             <p className="text-blue-200 dark:text-blue-300 text-sm mb-6 transition-colors duration-300">
               Learn more about my work and connect with me at{' '}
@@ -123,19 +122,19 @@ const About: React.FC = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <span className="bg-blue-500 dark:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
-                Full-Stack Development
+                Data Analysis
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
-                Data Science
+                Statistical Modeling
+              </span>
+              <span className="bg-blue-500 dark:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
+                Data Visualization
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
                 Problem Solving
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
-                Team Leadership
-              </span>
-              <span className="bg-blue-500 dark:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300">
-                Agile Methodology
+                Quick Learning
               </span>
             </div>
           </div>
