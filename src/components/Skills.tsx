@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Database, Cloud, Smartphone, Wrench, Lightbulb, Award } from 'lucide-react';
+import { Code, Database, Cloud, Smartphone, Wrench, Lightbulb, Award, Eye } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const skillCategories = [
@@ -86,36 +86,36 @@ const Skills: React.FC = () => {
       issuer: "ExcelR",
       year: "2024",
       description: "Comprehensive data science program covering machine learning, statistics, and data analysis",
-      downloadUrl: "/EXCELR-75413-Yalla Naga Praveen.pdf"
+      viewUrl: "/EXCELR-75413-Yalla Naga Praveen.pdf"
     },
     {
       name: "AWS Certified Developer",
       issuer: "Amazon Web Services",
       year: "2023",
       description: "Cloud development and deployment expertise with AWS services and best practices",
-      downloadUrl: "/aws.pdf"
+      viewUrl: "/aws.pdf"
     },
     {
       name: "Deloitte Advanced Participation Certificate",
       issuer: "Deloitte",
       year: "2023",
       description: "Advanced participation in Deloitte's professional development program, demonstrating expertise in consulting methodologies, business analysis, and strategic thinking",
-      downloadUrl: "/DELOITTE.pdf"
+      viewUrl: "/DELOITTE.pdf"
     },
     {
       name: "FORAGE Tata Data Visualization Certificate",
       issuer: "FORAGE - Tata Group",
       year: "2023",
       description: "Completed Tata Group's virtual experience program focusing on data visualization, business intelligence, and strategic data analysis using advanced analytics tools",
-      downloadUrl: "/forage_certificate.pdf"
+      viewUrl: "/forage_certificate.pdf"
     }
   ];
 
-  const handleDownloadCertification = (url: string, certName: string) => {
+  const handleViewCertification = (url: string, certName: string) => {
     if (!url) {
-      // Show message for certificates without download links
+      // Show message for certificates without view links
       const userConfirmed = confirm(
-        `${certName} is not available for direct download. Would you like to request it via email?`
+        `${certName} is not available for viewing. Would you like to request it via email?`
       );
       
       if (userConfirmed) {
@@ -134,22 +134,15 @@ const Skills: React.FC = () => {
     }
 
     try {
-      // Create direct download link
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = url.split('/').pop() || 'certificate.pdf';
-      link.style.display = 'none';
-      
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Open certificate in new tab for viewing
+      window.open(url, '_blank', 'noopener,noreferrer');
       
     } catch (error) {
-      console.error('Certificate download failed:', error);
+      console.error('Certificate viewing failed:', error);
       
       // Show user-friendly error message with email fallback
       const userConfirmed = confirm(
-        `${certName} download encountered an issue. Would you like to request it via email instead?`
+        `${certName} viewing encountered an issue. Would you like to request it via email instead?`
       );
       
       if (userConfirmed) {
@@ -256,10 +249,11 @@ const Skills: React.FC = () => {
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 transition-colors duration-300">{cert.description}</p>
                 <button
-                  onClick={() => handleDownloadCertification(cert.downloadUrl || '', cert.name)}
-                  className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+                  onClick={() => handleViewCertification(cert.viewUrl || '', cert.name)}
+                  className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center gap-2"
                 >
-                  {cert.downloadUrl ? 'Download Certificate' : 'Request Certificate'}
+                  <Eye className="w-4 h-4" />
+                  {cert.viewUrl ? 'View Certificate' : 'Request Certificate'}
                 </button>
               </div>
             ))}

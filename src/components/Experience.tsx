@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
     },
     {
       title: "Academic Projects & Internships",
-      company: "University & Training Programs",
+      company: "NRI Institute of Technology",
       location: "India",
       period: "2020 - 2023",
       type: "Academic",
@@ -56,11 +56,11 @@ const Experience: React.FC = () => {
   const education = [
     {
       degree: "Bachelor of Technology in Computer Science",
-      institution: "University of Technology",
+      institution: "NRI Institute of Technology",
       location: "India",
-      period: "2016 - 2020",
+      period: "2020 - 2024",
       grade: "8.5 CGPA",
-      description: "Specialized in software engineering, data structures, algorithms, and database management systems. Strong foundation in computer science fundamentals."
+      description: "Specialized in software engineering, data structures, algorithms, and database management systems. Strong foundation in computer science fundamentals with focus on practical application and problem-solving."
     }
   ];
 

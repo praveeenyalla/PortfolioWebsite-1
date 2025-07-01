@@ -31,7 +31,7 @@ export const projectsConfig: ProjectConfig[] = [
       "Real-time order tracking"
     ],
     demoUrl: "#", // Replace with actual demo URL
-    codeUrl: "#", // Replace with actual GitHub repository URL
+    codeUrl: "https://github.com/praveeenyalla/stellar-ecommerce-space.git",
     videoUrl: "", // Add video URL when available
     status: "Completed",
     date: "2023"
@@ -51,7 +51,7 @@ export const projectsConfig: ProjectConfig[] = [
       "Push notifications"
     ],
     demoUrl: "#", // Replace with actual demo URL
-    codeUrl: "#", // Replace with actual GitHub repository URL
+    codeUrl: "https://github.com/praveeenyalla/taskmasterupdate.git",
     videoUrl: "", // Add video URL when available
     status: "Completed",
     date: "2023"
@@ -71,9 +71,9 @@ export const projectsConfig: ProjectConfig[] = [
       "Export functionality"
     ],
     demoUrl: "#", // Replace with actual demo URL
-    codeUrl: "#", // Replace with actual GitHub repository URL
+    codeUrl: "https://github.com/praveeenyalla/influence-flow-analytics-suite.git",
     videoUrl: "", // Add video URL when available
-    status: "In Progress",
+    status: "Completed",
     date: "2023"
   },
   {
@@ -91,7 +91,7 @@ export const projectsConfig: ProjectConfig[] = [
       "Certificate generation"
     ],
     demoUrl: "#", // Replace with actual demo URL
-    codeUrl: "#", // Replace with actual GitHub repository URL
+    codeUrl: "https://github.com/praveeenyalla/Learning-Management-System.git",
     videoUrl: "", // Add video URL when available
     status: "Completed",
     date: "2022"
@@ -113,7 +113,7 @@ export const projectsConfig: ProjectConfig[] = [
     demoUrl: "#", // Replace with actual demo URL
     codeUrl: "#", // Replace with actual GitHub repository URL
     videoUrl: "", // Add video URL when available
-    status: "Completed",
+    status: "In Progress",
     date: "2022"
   },
   {
@@ -133,7 +133,7 @@ export const projectsConfig: ProjectConfig[] = [
     demoUrl: "#", // Replace with actual demo URL
     codeUrl: "#", // Replace with actual GitHub repository URL
     videoUrl: "", // Add video URL when available
-    status: "Completed",
+    status: "In Progress",
     date: "2022"
   }
 ];
