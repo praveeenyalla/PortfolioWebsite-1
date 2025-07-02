@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageSquare, Clock, CheckCircle, AlertCircle } from 'lucide-react';
-import { apiService, ContactFormData } from '../utils/api';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
@@ -25,22 +24,54 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    try {
-      const response = await apiService.submitContactForm(formData);
-      
-      if (response.success) {
-        setSubmitStatus('success');
-        setStatusMessage(response.message || 'Thank you for your message! I\'ll get back to you within 24-48 hours.');
-        
-        // Reset form
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        throw new Error(response.message || 'Failed to send message');
-      }
-    } catch (error) {
-      console.error('Error sending message:', error);
+    // Validate form data
+    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
       setSubmitStatus('error');
-      setStatusMessage('Sorry, there was an error sending your message. Please try again or contact me directly at nagapraveenyalla@gmail.com');
+      setStatusMessage('Please fill in all required fields.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus('error');
+      setStatusMessage('Please enter a valid email address.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Subject: ${formData.subject}\n\n` +
+        `Message:\n${formData.message}\n\n` +
+        `---\n` +
+        `Sent from yallanagapraveen.info portfolio website`
+      );
+      
+      const mailtoUrl = `mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoUrl;
+      
+      // Show success message
+      setSubmitStatus('success');
+      setStatusMessage('Your email client has been opened with the message. Please send the email to complete your inquiry.');
+      
+      // Reset form after a delay
+      setTimeout(() => {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setSubmitStatus('idle');
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Error opening email client:', error);
+      setSubmitStatus('error');
+      setStatusMessage('Unable to open email client. Please copy the details and send an email manually to nagapraveenyalla@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
@@ -272,7 +303,7 @@ const Contact: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      Sending...
+                      Opening Email...
                     </>
                   ) : (
                     <>
@@ -283,11 +314,18 @@ const Contact: React.FC = () => {
                 </button>
               </form>
               
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                <p className="text-blue-800 dark:text-blue-300 text-sm">
+                  <strong>How it works:</strong> When you click "Send Message", your default email client will open with a pre-filled email. 
+                  Simply send the email to complete your inquiry. I'll respond within 24-48 hours.
+                </p>
+              </div>
+              
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center transition-colors duration-300">
-                {submitStatus === 'success' 
-                  ? "Message sent successfully! I'll respond soon." 
-                  : "I'll respond within 24-48 hours. Thank you for reaching out!"
-                }
+                Alternative: Email me directly at{' '}
+                <a href="mailto:nagapraveenyalla@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  nagapraveenyalla@gmail.com
+                </a>
               </p>
             </div>
           </div>
