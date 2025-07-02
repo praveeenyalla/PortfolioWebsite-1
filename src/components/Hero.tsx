@@ -59,92 +59,92 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+    <section id="home" className="pt-20 pb-12 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Profile Image and Info */}
-          <div className="lg:w-1/3 text-center lg:text-left">
+          <div className="w-full lg:w-1/3 text-center lg:text-left order-1 lg:order-1">
             <div className="relative inline-block mb-6">
-              <div className="w-64 h-64 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto lg:mx-0 shadow-xl border-4 border-white dark:border-gray-700 transition-colors duration-300">
-                <div className="w-48 h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">YN</span>
+              <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto lg:mx-0 shadow-xl border-4 border-white dark:border-gray-700 transition-colors duration-300">
+                <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
+                  <span className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold">YN</span>
                 </div>
               </div>
-              <div className="absolute -bottom-2 -right-2 bg-green-500 w-8 h-8 rounded-full border-4 border-white dark:border-gray-700 transition-colors duration-300"></div>
+              <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 bg-green-500 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 border-white dark:border-gray-700 transition-colors duration-300"></div>
             </div>
             
             <div className="flex flex-col items-center lg:items-start space-y-2 mb-6">
-              <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <Globe className="w-4 h-4 mr-2" />
-                <span className="font-medium text-blue-600 dark:text-blue-400">yallanagapraveen.info</span>
+              <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                <Globe className="w-4 h-4 mr-2 flex-shrink-0" />
+                <span className="font-medium text-blue-600 dark:text-blue-400 break-all">yallanagapraveen.info</span>
               </div>
-              <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <Phone className="w-4 h-4 mr-2" />
+              <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
                 <span>+91 8328377820</span>
               </div>
-              <div className="flex items-center text-gray-600 dark:text-gray-400">
-                <MapPin className="w-4 h-4 mr-2" />
+              <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+                <MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
                 <span>Seeking opportunities</span>
               </div>
             </div>
           </div>
 
           {/* Main Content */}
-          <div className="lg:w-2/3 text-center lg:text-left">
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-colors duration-300">
+          <div className="w-full lg:w-2/3 text-center lg:text-left order-2 lg:order-2">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-colors duration-300">
               Hello, I'm{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 block sm:inline">
                 YALLA.NAGAPRAVEEN
               </span>
             </h1>
             
-            <h2 className="text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-medium transition-colors duration-300">
+            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-700 dark:text-gray-300 mb-4 lg:mb-6 font-medium transition-colors duration-300">
               Aspiring Data Analyst & Technology Enthusiast
             </h2>
             
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-2xl transition-colors duration-300">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 transition-colors duration-300">
               Fresh graduate with a passion for data analysis and insights. Equipped with strong analytical skills, 
               technical knowledge in data science, and hands-on project experience. Ready to contribute to 
               data-driven decision making and grow professionally in the field of analytics.
             </p>
 
             {/* Key Highlights */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border-l-4 border-green-600 transition-colors duration-300">
-                <h3 className="font-semibold text-gray-900 dark:text-white">Fresh Graduate</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Ready to Start Career</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 lg:mb-8">
+              <div className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md border-l-4 border-green-600 transition-colors duration-300">
+                <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Fresh Graduate</h3>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Ready to Start Career</p>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border-l-4 border-blue-600 transition-colors duration-300">
-                <h3 className="font-semibold text-gray-900 dark:text-white">Projects</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">6+ Completed</p>
+              <div className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md border-l-4 border-blue-600 transition-colors duration-300">
+                <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Projects</h3>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">6+ Completed</p>
               </div>
-              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md border-l-4 border-purple-600 transition-colors duration-300">
-                <h3 className="font-semibold text-gray-900 dark:text-white">Certified</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">ExcelR Data Science</p>
+              <div className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md border-l-4 border-purple-600 transition-colors duration-300">
+                <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">Certified</h3>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">ExcelR Data Science</p>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 lg:mb-8">
               <button
                 onClick={handleDownloadResume}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base"
               >
-                <Download className="w-5 h-5" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 Download Resume
               </button>
               <button
                 onClick={handleContactClick}
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105"
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-white px-6 sm:px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 text-sm sm:text-base"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 Hire Me
               </button>
               <button
                 onClick={handleVisitWebsite}
-                className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-white px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105"
+                className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-white px-6 sm:px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 text-sm sm:text-base"
               >
-                <Globe className="w-5 h-5" />
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
                 Visit Website
               </button>
             </div>
@@ -155,23 +155,23 @@ const Hero: React.FC = () => {
                 href="https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
               <a
                 href="https://github.com/praveeenyalla"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-gray-800 hover:bg-gray-900 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 hover:bg-gray-900 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
               <a
                 href="mailto:nagapraveenyalla@gmail.com"
-                className="w-12 h-12 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"
               >
-                <Mail className="w-6 h-6" />
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             </div>
           </div>
