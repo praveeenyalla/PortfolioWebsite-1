@@ -1,13 +1,18 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "yalla-nagapraveen-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Professional portfolio website for YALLA.NAGAPRAVEEN - yallanagapraveen.info",
+  "keywords": ["portfolio", "react", "typescript", "tailwind", "yallanagapraveen.info"],
+  "author": "YALLA.NAGAPRAVEEN <nagapraveenyalla@gmail.com>",
+  "homepage": "https://yallanagapraveen.info",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
@@ -29,5 +34,9 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }
