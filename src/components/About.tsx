@@ -41,7 +41,7 @@ const About: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">My Journey</h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300 text-sm sm:text-base">
               <p>
-                I'm YALLA.NAGAPRAVEEN, a fresh graduate with a passion for data analysis and 
+                I'm NAGA PRAVEEN YALLA, a fresh graduate with a passion for data analysis and 
                 technology. My journey began with curiosity about how data can drive business 
                 decisions and has evolved into a focused career path in data analytics.
               </p>

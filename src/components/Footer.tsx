@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
                 <Code2 className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">YALLA.NAGAPRAVEEN</h3>
+                <h3 className="text-xl font-bold">NAGA PRAVEEN YALLA</h3>
                 <p className="text-blue-400 text-sm flex items-center">
                   <Globe className="w-3 h-3 mr-1" />
                   yallanagapraveen.info
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>© {currentYear} YALLA.NAGAPRAVEEN. All rights reserved.</span>
+              <span>© {currentYear} NAGA PRAVEEN YALLA. All rights reserved.</span>
               <span>|</span>
               <span className="flex items-center">
                 <Globe className="w-4 h-4 mr-1" />

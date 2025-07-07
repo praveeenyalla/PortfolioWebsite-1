@@ -44,7 +44,7 @@ const Header: React.FC = () => {
               <Code2 className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
             </div>
             <div className="min-w-0 flex-1">
-              <h1 className="text-base sm:text-xl font-bold text-gray-900 dark:text-white tracking-tight truncate">YALLA.NAGAPRAVEEN</h1>
+              <h1 className="text-base sm:text-xl font-bold text-gray-900 dark:text-white tracking-tight truncate">NAGA PRAVEEN YALLA</h1>
               <p className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-medium truncate">yallanagapraveen.info</p>
             </div>
           </div>

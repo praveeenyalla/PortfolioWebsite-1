@@ -1,4 +1,4 @@
-# YALLA.NAGAPRAVEEN - Professional Portfolio Website
+# NAGA PRAVEEN YALLA - Professional Portfolio Website
 
 [![Website](https://img.shields.io/badge/Website-yallanagapraveen.info-blue)](https://yallanagapraveen.info)
 [![React](https://img.shields.io/badge/React-18.3.1-blue)](https://reactjs.org/)
@@ -7,7 +7,7 @@
 
 ## 🌟 Overview
 
-This is a modern, responsive portfolio website for **YALLA.NAGAPRAVEEN**, a professional software developer. The website showcases skills, experience, projects, and provides a comprehensive overview of professional capabilities. Built with cutting-edge web technologies, it serves as a digital resume and professional presence online.
+This is a modern, responsive portfolio website for **NAGA PRAVEEN YALLA**, a professional data analyst and technology enthusiast. The website showcases skills, experience, projects, and provides a comprehensive overview of professional capabilities. Built with cutting-edge web technologies, it serves as a digital resume and professional presence online.
 
 **Live Website:** [yallanagapraveen.info](https://yallanagapraveen.info)
 
@@ -231,8 +231,8 @@ The website is configured for the domain `yallanagapraveen.info`. To use a diffe
 
 ### Professional Contact
 - **Website**: [yallanagapraveen.info](https://yallanagapraveen.info)
-- **Email**: yalla.nagapraveen@gmail.com
-- **Phone**: +91 9876543210
+- **Email**: nagapraveenyalla@gmail.com
+- **Phone**: +91 8328377820
 - **Location**: Hyderabad, India
 
 ### Technical Support
@@ -255,6 +255,6 @@ This project is created for professional portfolio purposes. Feel free to use it
 
 ---
 
-**Built with ❤️ by YALLA.NAGAPRAVEEN**
+**Built with ❤️ by NAGA PRAVEEN YALLA**
 
 *Last Updated: January 2025*

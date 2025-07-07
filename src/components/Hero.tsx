@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
       );
       
       if (userConfirmed) {
-        const subject = encodeURIComponent('Resume Request - YALLA.NAGAPRAVEEN');
+        const subject = encodeURIComponent('Resume Request - NAGA PRAVEEN YALLA');
         const body = encodeURIComponent(
           'Hi Praveen,\n\n' +
           'I visited your portfolio website and would like to request your resume.\n\n' +
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
             <div className="relative inline-block mb-6">
               <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto lg:mx-0 shadow-xl border-4 border-white dark:border-gray-700 transition-colors duration-300">
                 <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-                  <span className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold">YN</span>
+                  <span className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold">NPY</span>
                 </div>
               </div>
               <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 bg-green-500 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 border-white dark:border-gray-700 transition-colors duration-300"></div>
@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-colors duration-300">
               Hello, I'm{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 block sm:inline">
-                YALLA.NAGAPRAVEEN
+                NAGA PRAVEEN YALLA
               </span>
             </h1>
             
