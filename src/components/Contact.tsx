@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageSquare, Clock, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageSquare, Clock, CheckCircle, AlertCircle, Paperclip, X } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
@@ -17,6 +18,51 @@ const Contact: React.FC = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    const maxSize = 10 * 1024 * 1024; // 10MB limit
+    const allowedTypes = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'image/jpeg',
+      'image/png',
+      'image/gif',
+      'text/plain'
+    ];
+
+    const validFiles = files.filter(file => {
+      if (file.size > maxSize) {
+        setSubmitStatus('error');
+        setStatusMessage(`File "${file.name}" is too large. Maximum size is 10MB.`);
+        return false;
+      }
+      if (!allowedTypes.includes(file.type)) {
+        setSubmitStatus('error');
+        setStatusMessage(`File type "${file.type}" is not supported.`);
+        return false;
+      }
+      return true;
+    });
+
+    if (validFiles.length > 0) {
+      setAttachedFiles(prev => [...prev, ...validFiles]);
+      setSubmitStatus('idle');
+    }
+  };
+
+  const removeFile = (index: number) => {
+    setAttachedFiles(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const formatFileSize = (bytes: number) => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -44,11 +90,18 @@ const Contact: React.FC = () => {
     try {
       // Create mailto link with form data
       const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
+      
+      let attachmentInfo = '';
+      if (attachedFiles.length > 0) {
+        attachmentInfo = `\n\nAttached Files:\n${attachedFiles.map(file => `- ${file.name} (${formatFileSize(file.size)})`).join('\n')}\n`;
+      }
+      
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
         `Email: ${formData.email}\n` +
         `Subject: ${formData.subject}\n\n` +
         `Message:\n${formData.message}\n\n` +
+        attachmentInfo +
         `---\n` +
         `Sent from yallanagapraveen.info portfolio website`
       );
@@ -60,11 +113,16 @@ const Contact: React.FC = () => {
       
       // Show success message
       setSubmitStatus('success');
-      setStatusMessage('Your email client has been opened with the message. Please send the email to complete your inquiry.');
+      setStatusMessage(
+        attachedFiles.length > 0 
+          ? 'Your email client has been opened with the message. Please manually attach the files and send the email to complete your inquiry.'
+          : 'Your email client has been opened with the message. Please send the email to complete your inquiry.'
+      );
       
       // Reset form after a delay
       setTimeout(() => {
         setFormData({ name: '', email: '', subject: '', message: '' });
+        setAttachedFiles([]);
         setSubmitStatus('idle');
       }, 3000);
       
@@ -262,6 +320,24 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    disabled={isSubmitting}
+                    rows={6}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="Tell me about your project, requirements, or any questions you have..."
+                  ></textarea>
+                </div>
+                
+                {/* File Attachment Section */}
+                <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
                     Subject *
                   </label>
@@ -279,45 +355,97 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
-                    Message *
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
+                    Attach Files (Optional)
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
-                    placeholder="Tell me about your project, requirements, or any questions you have..."
-                  ></textarea>
+                  
+                  <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 text-center hover:border-blue-500 dark:hover:border-blue-400 transition-colors duration-300">
+                    <input
+                      type="file"
+                      id="file-upload"
+                      multiple
+                      onChange={handleFileChange}
+                      disabled={isSubmitting}
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif"
+                    />
+                    <label
+                      htmlFor="file-upload"
+                      className="cursor-pointer flex flex-col items-center space-y-2"
+                    >
+                      <Paperclip className="w-8 h-8 text-gray-400 dark:text-gray-500" />
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        Click to attach files or drag and drop
+                      </span>
+                      <span className="text-xs text-gray-500 dark:text-gray-500">
+                        PDF, DOC, DOCX, TXT, JPG, PNG, GIF (Max 10MB each)
+                      </span>
+                    </label>
+                  </div>
+                  
+                  {/* Display attached files */}
+                  {attachedFiles.length > 0 && (
+                    <div className="mt-4 space-y-2">
+                      <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">Attached Files:</h4>
+                      {attachedFiles.map((file, index) => (
+                        <div key={index} className="flex items-center justify-between bg-gray-50 dark:bg-gray-700 p-3 rounded-lg">
+                          <div className="flex items-center space-x-3">
+                            <Paperclip className="w-4 h-4 text-gray-500" />
+                            <div>
+                              <p className="text-sm font-medium text-gray-900 dark:text-white truncate max-w-xs">
+                                {file.name}
+                              </p>
+                              <p className="text-xs text-gray-500 dark:text-gray-400">
+                                {formatFileSize(file.size)}
+                              </p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(index)}
+                            disabled={isSubmitting}
+                            className="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 p-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            <X className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                
+                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <p className="text-blue-800 dark:text-blue-300 text-sm">
+                    <strong>File Attachment Note:</strong> When you click "Send Message", your email client will open with the message content. 
+                    You'll need to manually attach the files you selected above before sending the email.
+                  </p>
                 </div>
                 
                 <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      Opening Email...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      Send Message
-                    </>
-                  )}
-                </button>
+                    disabled={isSubmitting}
+                    className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Opening Email...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        Send Message {attachedFiles.length > 0 && `(${attachedFiles.length} file${attachedFiles.length > 1 ? 's' : ''})`}
+                      </>
+                    )}
+                  </button>
               </form>
               
-              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
                 <p className="text-blue-800 dark:text-blue-300 text-sm">
                   <strong>How it works:</strong> When you click "Send Message", your default email client will open with a pre-filled email. 
-                  Simply send the email to complete your inquiry. I'll respond within 24-48 hours.
+                  {attachedFiles.length > 0 
+                    ? 'Attach your selected files manually and send the email to complete your inquiry.'
+                    : 'Simply send the email to complete your inquiry.'
+                  } I'll respond within 24-48 hours.
                 </p>
               </div>
               
