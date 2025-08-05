@@ -9,15 +9,15 @@ const Experience: React.FC = () => {
       location: "Remote/Hyderabad, India",
       period: "2024 - Present",
       type: "Job Seeking",
-      description: "Fresh graduate with strong foundation in data science, machine learning, and statistical modeling. Completed comprehensive Data Science certification and built multiple projects demonstrating data science skills.",
+      description: "Fresh graduate with strong foundation in data science, data analysis, machine learning, and statistical modeling. Completed comprehensive Data Science certification and built multiple projects demonstrating both data science and analytical skills.",
       achievements: [
         "Completed ExcelR Data Science certification with hands-on projects",
-        "Built 6+ data science and web development projects",
-        "Proficient in Python, SQL, machine learning frameworks",
+        "Built 6+ data science, data analysis, and web development projects",
+        "Proficient in Python, SQL, Excel, machine learning frameworks, and BI tools",
         "Strong foundation in statistical analysis and advanced machine learning",
-        "Experienced in creating interactive dashboards and reports"
+        "Experienced in creating interactive dashboards, reports, and business intelligence solutions"
       ],
-      technologies: ["Python", "SQL", "Scikit-learn", "TensorFlow", "PyTorch", "Machine Learning", "Deep Learning"]
+      technologies: ["Python", "SQL", "Excel", "Power BI", "Tableau", "Scikit-learn", "TensorFlow", "PyTorch", "Machine Learning", "Deep Learning"]
     },
     {
       title: "Project-Based Learning & Development",
@@ -28,12 +28,13 @@ const Experience: React.FC = () => {
       description: "Intensive self-directed learning focused on data science, machine learning, and practical project implementation. Built comprehensive portfolio demonstrating advanced technical skills.",
       achievements: [
         "Developed full-stack web applications with modern frameworks",
-        "Created machine learning models and data science solutions",
+        "Created machine learning models, data analysis solutions, and business intelligence dashboards",
         "Implemented machine learning models for real-world problems",
+        "Built data analysis pipelines and automated reporting systems",
         "Built responsive web applications serving thousands of users",
         "Gained expertise in both frontend and backend technologies"
       ],
-      technologies: ["React", "Node.js", "Python", "MongoDB", "Machine Learning", "Data Science"]
+      technologies: ["React", "Node.js", "Python", "MongoDB", "Excel", "Power BI", "Machine Learning", "Data Science", "Data Analysis"]
     },
     {
       title: "Academic Projects & Internships",
@@ -69,8 +70,10 @@ const Experience: React.FC = () => {
     description: "Seeking an entry-level Data Scientist position where I can apply my analytical skills, technical knowledge, and passion for machine learning to contribute to organizational success. Eager to work with experienced professionals and grow in the field of data science.",
     skills: [
       "Data Science & Machine Learning",
+      "Data Analysis & Business Intelligence",
       "Statistical Modeling & Analysis",
       "Python & SQL Programming",
+      "Excel & BI Tools (Power BI, Tableau)",
       "Model Development & Deployment",
       "Problem Solving",
       "Quick Learning Ability"
@@ -84,7 +87,7 @@ const Experience: React.FC = () => {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Professional Journey</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
             Fresh graduate with strong analytical skills and hands-on project experience, 
-            actively seeking opportunities to begin my career as a Data Scientist.
+            actively seeking opportunities to begin my career as a Data Scientist or Data Analyst.
           </p>
         </div>
 
@@ -215,8 +218,8 @@ const Experience: React.FC = () => {
             <h3 className="text-2xl font-semibold text-green-900 dark:text-green-300 transition-colors duration-300">Currently Available</h3>
           </div>
           <p className="text-green-800 dark:text-green-400 text-lg leading-relaxed mb-4 transition-colors duration-300">
-            I am actively seeking entry-level Data Scientist positions where I can apply my analytical skills, 
-            technical knowledge, and passion for machine learning and data-driven insights. Ready to contribute to your team and 
+            I am actively seeking entry-level Data Scientist and Data Analyst positions where I can apply my analytical skills, 
+            technical knowledge, and passion for machine learning, data analysis, and data-driven insights. Ready to contribute to your team and 
             grow professionally in a collaborative environment.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

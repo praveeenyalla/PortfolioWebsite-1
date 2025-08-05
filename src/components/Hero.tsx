@@ -103,9 +103,9 @@ const Hero: React.FC = () => {
             </h2>
             
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-6 lg:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 transition-colors duration-300">
-              Fresh graduate with a passion for data science and machine learning. Equipped with strong analytical skills, 
-              technical knowledge in data science, and hands-on project experience. Ready to contribute to 
-              data-driven decision making and grow professionally in the field of data science.
+              Fresh graduate with a passion for data science, data analysis, and machine learning. Equipped with strong analytical skills, 
+              technical knowledge in data science and data analysis, and hands-on project experience. Ready to contribute to 
+              data-driven decision making and grow professionally in the fields of data science and analytics.
             </p>
 
             {/* Key Highlights */}

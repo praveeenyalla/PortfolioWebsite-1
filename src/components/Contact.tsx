@@ -205,7 +205,7 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 transition-colors duration-300">Let's Connect</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 transition-colors duration-300">
                 I'm currently available for new projects and opportunities. Whether you're 
-                looking for a dedicated data scientist, need technical consultation, or want to 
+                looking for a dedicated data scientist or data analyst, need technical consultation, or want to 
                 discuss a potential collaboration, I'd love to hear from you.
               </p>
             </div>
