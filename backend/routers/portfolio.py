@@ -91,14 +91,16 @@ async def get_about_info():
         "website": "https://yallanagapraveen.info",
         "linkedin": "https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351",
         "github": "https://github.com/praveeenyalla",
-        "bio": "Fresh graduate with a passion for data science and machine learning. Equipped with strong analytical skills, technical knowledge in data science, and hands-on project experience. Ready to contribute to data-driven decision making and grow professionally in the field of data science.",
-        "objective": "Seeking an entry-level Data Scientist position where I can apply my analytical skills, technical knowledge, and passion for machine learning to contribute to organizational success.",
+        "bio": "Fresh graduate with a passion for data science, data analysis, and machine learning. Equipped with strong analytical skills, technical knowledge in data science and analytics, and hands-on project experience. Ready to contribute to data-driven decision making and grow professionally in the fields of data science and analytics.",
+        "objective": "Seeking an entry-level Data Scientist or Data Analyst position where I can apply my analytical skills, technical knowledge, and passion for machine learning and data analysis to contribute to organizational success.",
         "availability": "Available for immediate joining",
         "work_preference": "Remote/Hybrid/On-site",
         "key_skills": [
             "Data Science & Machine Learning",
+            "Data Analysis & Business Intelligence",
             "Statistical Modeling & Analysis", 
             "Python & SQL Programming",
+            "Excel & BI Tools (Power BI, Tableau)",
             "Model Development & Deployment",
             "Problem Solving",
             "Quick Learning Ability"
@@ -106,7 +108,7 @@ async def get_about_info():
         "achievements": [
             "ExcelR Data Science certification",
             "6+ completed projects",
-            "Strong foundation in data science",
+            "Strong foundation in data science and analytics",
             "Professional portfolio website"
         ]
     }
