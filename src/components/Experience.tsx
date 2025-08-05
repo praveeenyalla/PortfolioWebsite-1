@@ -4,20 +4,20 @@ import { Calendar, MapPin, Briefcase, ChevronRight, BookOpen, Target, Award } fr
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: "Data Analyst",
+      title: "Data Scientist",
       company: "Seeking Opportunities",
       location: "Remote/Hyderabad, India",
       period: "2024 - Present",
       type: "Job Seeking",
-      description: "Fresh graduate with strong foundation in data analysis, visualization, and statistical modeling. Completed comprehensive Data Science certification and built multiple projects demonstrating analytical skills.",
+      description: "Fresh graduate with strong foundation in data science, machine learning, and statistical modeling. Completed comprehensive Data Science certification and built multiple projects demonstrating data science skills.",
       achievements: [
         "Completed ExcelR Data Science certification with hands-on projects",
-        "Built 6+ data analysis and web development projects",
-        "Proficient in Python, SQL, data visualization tools",
-        "Strong foundation in statistical analysis and machine learning",
+        "Built 6+ data science and web development projects",
+        "Proficient in Python, SQL, machine learning frameworks",
+        "Strong foundation in statistical analysis and advanced machine learning",
         "Experienced in creating interactive dashboards and reports"
       ],
-      technologies: ["Python", "SQL", "Excel", "Power BI", "Tableau", "Machine Learning", "Statistics"]
+      technologies: ["Python", "SQL", "Scikit-learn", "TensorFlow", "PyTorch", "Machine Learning", "Deep Learning"]
     },
     {
       title: "Project-Based Learning & Development",
@@ -25,15 +25,15 @@ const Experience: React.FC = () => {
       location: "Hyderabad, India",
       period: "2023 - 2024",
       type: "Learning & Projects",
-      description: "Intensive self-directed learning focused on data science, web development, and practical project implementation. Built comprehensive portfolio demonstrating technical skills.",
+      description: "Intensive self-directed learning focused on data science, machine learning, and practical project implementation. Built comprehensive portfolio demonstrating advanced technical skills.",
       achievements: [
         "Developed full-stack web applications with modern frameworks",
-        "Created data visualization dashboards and analytics tools",
+        "Created machine learning models and data science solutions",
         "Implemented machine learning models for real-world problems",
         "Built responsive web applications serving thousands of users",
         "Gained expertise in both frontend and backend technologies"
       ],
-      technologies: ["React", "Node.js", "Python", "MongoDB", "Data Analysis", "Web Development"]
+      technologies: ["React", "Node.js", "Python", "MongoDB", "Machine Learning", "Data Science"]
     },
     {
       title: "Academic Projects & Internships",
@@ -41,7 +41,7 @@ const Experience: React.FC = () => {
       location: "India",
       period: "2020 - 2023",
       type: "Academic",
-      description: "Completed various academic projects and training programs focusing on software development, data analysis, and emerging technologies during university studies.",
+      description: "Completed various academic projects and training programs focusing on software development, data science, and emerging technologies during university studies.",
       achievements: [
         "Completed multiple academic projects in data structures and algorithms",
         "Participated in coding competitions and hackathons",
@@ -66,12 +66,12 @@ const Experience: React.FC = () => {
 
   const careerObjective = {
     title: "Career Objective",
-    description: "Seeking an entry-level Data Analyst position where I can apply my analytical skills, technical knowledge, and passion for data-driven insights to contribute to organizational success. Eager to work with experienced professionals and grow in the field of data analytics.",
+    description: "Seeking an entry-level Data Scientist position where I can apply my analytical skills, technical knowledge, and passion for machine learning to contribute to organizational success. Eager to work with experienced professionals and grow in the field of data science.",
     skills: [
-      "Data Analysis & Visualization",
-      "Statistical Modeling",
+      "Data Science & Machine Learning",
+      "Statistical Modeling & Analysis",
       "Python & SQL Programming",
-      "Dashboard Creation",
+      "Model Development & Deployment",
       "Problem Solving",
       "Quick Learning Ability"
     ]
@@ -84,7 +84,7 @@ const Experience: React.FC = () => {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Professional Journey</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
             Fresh graduate with strong analytical skills and hands-on project experience, 
-            actively seeking opportunities to begin my career as a Data Analyst.
+            actively seeking opportunities to begin my career as a Data Scientist.
           </p>
         </div>
 
@@ -215,8 +215,8 @@ const Experience: React.FC = () => {
             <h3 className="text-2xl font-semibold text-green-900 dark:text-green-300 transition-colors duration-300">Currently Available</h3>
           </div>
           <p className="text-green-800 dark:text-green-400 text-lg leading-relaxed mb-4 transition-colors duration-300">
-            I am actively seeking entry-level Data Analyst positions where I can apply my analytical skills, 
-            technical knowledge, and passion for data-driven insights. Ready to contribute to your team and 
+            I am actively seeking entry-level Data Scientist positions where I can apply my analytical skills, 
+            technical knowledge, and passion for machine learning and data-driven insights. Ready to contribute to your team and 
             grow professionally in a collaborative environment.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -1,6 +1,6 @@
-# YALLA.NAGAPRAVEEN Portfolio - Python Backend API
+# YALLA.NAGAPRAVEEN Data Scientist Portfolio - Python Backend API
 
-A comprehensive FastAPI backend for the professional portfolio website with authentication, database management, and RESTful APIs.
+A comprehensive FastAPI backend for the professional data scientist portfolio website with authentication, database management, and RESTful APIs.
 
 ## 🚀 Features
 

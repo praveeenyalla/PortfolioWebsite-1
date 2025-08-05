@@ -6,7 +6,7 @@ const About: React.FC = () => {
     {
       icon: <Target className="w-5 h-5 sm:w-6 sm:h-6" />,
       title: "Career Objective",
-      description: "Seeking entry-level Data Analyst position to apply analytical skills and grow professionally."
+      description: "Seeking entry-level Data Scientist position to apply analytical skills and grow professionally."
     },
     {
       icon: <Award className="w-5 h-5 sm:w-6 sm:h-6" />,
@@ -31,8 +31,8 @@ const About: React.FC = () => {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">About Me</h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
-            Fresh graduate with a strong foundation in data analysis and modern technologies, 
-            ready to begin my career and contribute to data-driven decision making.
+            Fresh graduate with a strong foundation in data science and modern technologies, 
+            ready to begin my career and contribute to data-driven insights and machine learning solutions.
           </p>
         </div>
 
@@ -41,12 +41,12 @@ const About: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">My Journey</h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300 text-sm sm:text-base">
               <p>
-                I'm NAGA PRAVEEN YALLA, a fresh graduate with a passion for data analysis and 
+                I'm NAGA PRAVEEN YALLA, a fresh graduate with a passion for data science and 
                 technology. My journey began with curiosity about how data can drive business 
-                decisions and has evolved into a focused career path in data analytics.
+                decisions and has evolved into a focused career path in data science.
               </p>
               <p>
-                As a recent graduate with a strong foundation in computer science and data analysis, 
+                As a recent graduate with a strong foundation in computer science and data science, 
                 I specialize in Python, SQL, data visualization, and statistical modeling. 
                 I believe in turning raw data into actionable insights that drive business growth.
               </p>
@@ -73,7 +73,7 @@ const About: React.FC = () => {
             <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-600 transition-colors duration-300">
               <h4 className="font-semibold text-green-900 dark:text-green-300 mb-2 transition-colors duration-300 text-sm sm:text-base">Current Status</h4>
               <p className="text-green-700 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
-                Actively seeking entry-level Data Analyst opportunities where I can apply my 
+                Actively seeking entry-level Data Scientist opportunities where I can apply my 
                 analytical skills, contribute to data-driven insights, and grow professionally 
                 in a collaborative environment. Available for immediate joining.
               </p>
@@ -110,7 +110,7 @@ const About: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">Professional Summary</h3>
             <p className="text-blue-100 dark:text-blue-200 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto mb-4 transition-colors duration-300">
               A motivated fresh graduate with strong analytical skills and hands-on experience in data science, 
-              statistical analysis, and visualization. Eager to begin my career as a Data Analyst and contribute 
+              statistical analysis, and machine learning. Eager to begin my career as a Data Scientist and contribute 
               to data-driven decision making while continuously learning and growing in the field.
             </p>
             <p className="text-blue-200 dark:text-blue-300 text-xs sm:text-sm mb-4 sm:mb-6 transition-colors duration-300">
@@ -122,10 +122,10 @@ const About: React.FC = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Data Analysis
+                Data Science
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Statistical Modeling
+                Machine Learning
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
                 Data Visualization

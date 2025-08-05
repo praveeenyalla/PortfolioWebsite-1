@@ -43,16 +43,16 @@ const Skills: React.FC = () => {
       ]
     },
     {
-      title: "Data Science & Analytics",
+      title: "Data Science & Machine Learning",
       icon: <Award className="w-6 h-6" />,
       color: "bg-indigo-500",
       skills: [
         { name: "Python for Data Science", level: 85 },
         { name: "Machine Learning", level: 80 },
-        { name: "Data Analysis", level: 85 },
+        { name: "Deep Learning", level: 75 },
         { name: "Statistical Analysis", level: 75 },
         { name: "Data Visualization", level: 80 },
-        { name: "Pandas & NumPy", level: 85 }
+        { name: "TensorFlow & PyTorch", level: 80 }
       ]
     },
     {

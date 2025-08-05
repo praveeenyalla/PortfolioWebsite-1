@@ -7,7 +7,7 @@
 
 ## 🌟 Overview
 
-This is a modern, responsive portfolio website for **NAGA PRAVEEN YALLA**, a professional data analyst and technology enthusiast. The website showcases skills, experience, projects, and provides a comprehensive overview of professional capabilities. Built with cutting-edge web technologies, it serves as a digital resume and professional presence online.
+This is a modern, responsive portfolio website for **NAGA PRAVEEN YALLA**, a professional data scientist and technology enthusiast. The website showcases skills, experience, projects, and provides a comprehensive overview of professional capabilities. Built with cutting-edge web technologies, it serves as a digital resume and professional presence online.
 
 **Live Website:** [yallanagapraveen.info](https://yallanagapraveen.info)
 
