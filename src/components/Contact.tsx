@@ -422,58 +422,65 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <button
-                    disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        Opening Email...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5" />
-                        Send Message {attachedFiles.length > 0 && `(${attachedFiles.length} file${attachedFiles.length > 1 ? 's' : ''})`}
-                      </>
-                    )}
-                  </button>
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Opening Email...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Send Message {attachedFiles.length > 0 && `(${attachedFiles.length} file${attachedFiles.length > 1 ? 's' : ''})`}
+                    </>
+                  )}
+                </button>
               </form>
               
               <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
                 <p className="text-blue-800 dark:text-blue-300 text-sm">
                   <strong>How it works:</strong> When you click "Send Message", your default email client will open with a pre-filled email. 
-                  {attachedFiles.length > 0 
-            <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
-              <p className="text-yellow-800 dark:text-yellow-300 text-sm">
-                <strong>⚠️ File Attachment Limitation:</strong><br/>
-                Due to browser security restrictions, files cannot be automatically attached to emails. When your email client opens:
-                <br/>1. The message content will be pre-filled
-                <br/>2. You'll see a list of files you selected in the message body
-                <br/>3. You must manually attach these files before sending
-                <br/>4. Send the email to complete your inquiry
-                <br/><br/>
-                <strong>Alternative:</strong> You can also send your files directly to{' '}
-                <a href="mailto:nagapraveenyalla@gmail.com" className="text-yellow-900 dark:text-yellow-200 underline font-medium">
-                  nagapraveenyalla@gmail.com
-                </a>
+                  {attachedFiles.length > 0 && (
+                    <span> Don't forget to manually attach your selected files before sending!</span>
+                  )}
+                </p>
+              </div>
+            
+              <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                <p className="text-yellow-800 dark:text-yellow-300 text-sm">
+                  <strong>⚠️ File Attachment Limitation:</strong><br/>
+                  Due to browser security restrictions, files cannot be automatically attached to emails. When your email client opens:
+                  <br/>1. The message content will be pre-filled
+                  <br/>2. You'll see a list of files you selected in the message body
+                  <br/>3. You must manually attach these files before sending
+                  <br/>4. Send the email to complete your inquiry
+                  <br/><br/>
+                  <strong>Alternative:</strong> You can also send your files directly to{' '}
+                  <a href="mailto:nagapraveenyalla@gmail.com" className="text-yellow-900 dark:text-yellow-200 underline font-medium">
+                    nagapraveenyalla@gmail.com
+                  </a>
+                </p>
               </div>
               
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center transition-colors duration-300">
-                Alternative: Email me directly at{' '}
-              Direct contact: Email me at{' '}
+                Direct contact: Email me at{' '}
+                <a href="mailto:nagapraveenyalla@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
                   nagapraveenyalla@gmail.com
                 </a>
+                {' '}or call{' '}
+                <a href="tel:+918328377820" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  +91 8328377820
+                </a>
               </p>
-              {' '}or call{' '}
-              <a href="tel:+918328377820" className="text-blue-600 dark:text-blue-400 hover:underline">
-                +91 8328377820
-              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-                      Send Message {attachedFiles.length > 0 && `(${attachedFiles.length} file${attachedFiles.length > 1 ? 's' : ''} to attach manually)`}
+};
 
 export default Contact;
