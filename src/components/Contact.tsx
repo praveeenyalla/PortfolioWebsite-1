@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageSquare, Clock, CheckCircle, AlertCircle, Paperclip, X } from 'lucide-react';
+import { apiService } from '../utils/api';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -69,6 +71,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setUploadProgress(0);
 
     // Validate form data
     if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
@@ -88,48 +91,50 @@ const Contact: React.FC = () => {
     }
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
+      // Create FormData for file upload
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
       
-      let attachmentInfo = '';
-      if (attachedFiles.length > 0) {
-        attachmentInfo = `\n\nFiles to Attach (Please attach these files manually before sending):\n${attachedFiles.map(file => `- ${file.name} (${formatFileSize(file.size)})`).join('\n')}\n\nIMPORTANT: The above files are NOT automatically attached. Please manually attach them to this email before sending.\n`;
-      }
+      // Add files to FormData
+      attachedFiles.forEach((file, index) => {
+        formDataToSend.append(`files`, file);
+      });
       
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Subject: ${formData.subject}\n\n` +
-        `Message:\n${formData.message}\n\n` +
-        attachmentInfo +
-        `---\n` +
-        `Sent from yallanagapraveen.info portfolio website`
-      );
+      // Send email via API
+      setUploadProgress(25);
+      const response = await apiService.submitContactFormWithFiles(formDataToSend, (progress) => {
+        setUploadProgress(progress);
+      });
       
-      const mailtoUrl = `mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`;
-      
-      // Open email client
-      window.location.href = mailtoUrl;
-      
-      // Show success message
-      setSubmitStatus('success');
-      setStatusMessage(
-        attachedFiles.length > 0 
-          ? `Your email client has been opened with the message. IMPORTANT: Please manually attach the ${attachedFiles.length} selected file${attachedFiles.length > 1 ? 's' : ''} (${attachedFiles.map(f => f.name).join(', ')}) to the email before sending it.`
-          : 'Your email client has been opened with the message. Please send the email to complete your inquiry.'
-      );
-      
-      // Reset form after a delay
-      setTimeout(() => {
+      if (response.success) {
+        setSubmitStatus('success');
+        setStatusMessage('Your message has been sent successfully! I will get back to you within 24-48 hours.');
+        
+        // Reset form
         setFormData({ name: '', email: '', subject: '', message: '' });
         setAttachedFiles([]);
-        setSubmitStatus('idle');
-      }, 8000); // Longer delay to give user time to read the instructions
+        setUploadProgress(0);
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } else {
+        throw new Error(response.message || 'Failed to send message');
+      }
       
-    } catch (error) {
-      console.error('Error opening email client:', error);
+    } catch (error: any) {
+      console.error('Error sending message:', error);
+      setSubmitStatus('success');
       setSubmitStatus('error');
-      setStatusMessage('Unable to open email client. Please copy the message details and send an email manually to nagapraveenyalla@gmail.com. Don\'t forget to attach your files if you selected any.');
+      setStatusMessage(
+        error.message || 
+        'Failed to send message. Please try again or contact me directly at nagapraveenyalla@gmail.com'
+      );
+      setUploadProgress(0);
     } finally {
       setIsSubmitting(false);
     }
@@ -272,7 +277,10 @@ const Contact: React.FC = () => {
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <p className="text-green-800 dark:text-green-300 text-sm">{statusMessage}</p>
+                  <div>
+                    <p className="text-green-800 dark:text-green-300 text-sm font-medium">Message Sent Successfully!</p>
+                    <p className="text-green-700 dark:text-green-400 text-sm mt-1">{statusMessage}</p>
+                  </div>
                 </div>
               )}
 
@@ -414,12 +422,23 @@ const Contact: React.FC = () => {
                   )}
                 </div>
                 
-                <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <p className="text-blue-800 dark:text-blue-300 text-sm">
-                    <strong>File Attachment Note:</strong> When you click "Send Message", your email client will open with the message content. 
-                    You'll need to manually attach the files you selected above before sending the email.
-                  </p>
-                </div>
+                {/* Upload Progress */}
+                {isSubmitting && uploadProgress > 0 && (
+                  <div className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                        {uploadProgress < 100 ? 'Sending message...' : 'Processing...'}
+                      </span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">{uploadProgress}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                      <div
+                        className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${uploadProgress}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                )}
                 
                 <button
                   type="submit"
@@ -429,7 +448,7 @@ const Contact: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      Opening Email...
+                      Sending Message...
                     </>
                   ) : (
                     <>
@@ -441,27 +460,9 @@ const Contact: React.FC = () => {
               </form>
               
               <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
-                <p className="text-blue-800 dark:text-blue-300 text-sm">
-                  <strong>How it works:</strong> When you click "Send Message", your default email client will open with a pre-filled email. 
-                  {attachedFiles.length > 0 && (
-                    <span> Don't forget to manually attach your selected files before sending!</span>
-                  )}
-                </p>
-              </div>
-            
-              <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                <p className="text-yellow-800 dark:text-yellow-300 text-sm">
-                  <strong>⚠️ File Attachment Limitation:</strong><br/>
-                  Due to browser security restrictions, files cannot be automatically attached to emails. When your email client opens:
-                  <br/>1. The message content will be pre-filled
-                  <br/>2. You'll see a list of files you selected in the message body
-                  <br/>3. You must manually attach these files before sending
-                  <br/>4. Send the email to complete your inquiry
-                  <br/><br/>
-                  <strong>Alternative:</strong> You can also send your files directly to{' '}
-                  <a href="mailto:nagapraveenyalla@gmail.com" className="text-yellow-900 dark:text-yellow-200 underline font-medium">
-                    nagapraveenyalla@gmail.com
-                  </a>
+                <p className="text-green-800 dark:text-green-300 text-sm">
+                  <strong>✅ Direct Email Delivery:</strong> Your message will be sent directly to my inbox with all attachments included. 
+                  No need to use your email client - everything is handled automatically!
                 </p>
               </div>
               

@@ -17,6 +17,10 @@ export interface ApiResponse<T = any> {
   data?: T;
 }
 
+export interface UploadProgressCallback {
+  (progress: number): void;
+}
+
 class ApiService {
   private async request<T>(
     endpoint: string, 
@@ -51,6 +55,57 @@ class ApiService {
     return this.request('/api/contact', {
       method: 'POST',
       body: JSON.stringify(formData),
+    });
+  }
+
+  async submitContactFormWithFiles(
+    formData: FormData, 
+    onProgress?: UploadProgressCallback
+  ): Promise<ApiResponse> {
+    const url = `${API_BASE_URL}/api/contact/with-files`;
+    
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      
+      // Track upload progress
+      if (onProgress) {
+        xhr.upload.addEventListener('progress', (e) => {
+          if (e.lengthComputable) {
+            const progress = Math.round((e.loaded / e.total) * 100);
+            onProgress(progress);
+          }
+        });
+      }
+      
+      xhr.addEventListener('load', () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          try {
+            const response = JSON.parse(xhr.responseText);
+            resolve(response);
+          } catch (error) {
+            reject(new Error('Invalid response format'));
+          }
+        } else {
+          try {
+            const errorResponse = JSON.parse(xhr.responseText);
+            reject(new Error(errorResponse.message || `HTTP error! status: ${xhr.status}`));
+          } catch (error) {
+            reject(new Error(`HTTP error! status: ${xhr.status}`));
+          }
+        }
+      });
+      
+      xhr.addEventListener('error', () => {
+        reject(new Error('Network error occurred'));
+      });
+      
+      xhr.addEventListener('timeout', () => {
+        reject(new Error('Request timeout'));
+      });
+      
+      xhr.open('POST', url);
+      xhr.timeout = 30000; // 30 second timeout
+      xhr.send(formData);
     });
   }
 
