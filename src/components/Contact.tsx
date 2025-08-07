@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
       
       let attachmentInfo = '';
       if (attachedFiles.length > 0) {
-        attachmentInfo = `\n\nAttached Files:\n${attachedFiles.map(file => `- ${file.name} (${formatFileSize(file.size)})`).join('\n')}\n`;
+        attachmentInfo = `\n\nFiles to Attach (Please attach these files manually before sending):\n${attachedFiles.map(file => `- ${file.name} (${formatFileSize(file.size)})`).join('\n')}\n\nIMPORTANT: The above files are NOT automatically attached. Please manually attach them to this email before sending.\n`;
       }
       
       const body = encodeURIComponent(
@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
       setSubmitStatus('success');
       setStatusMessage(
         attachedFiles.length > 0 
-          ? 'Your email client has been opened with the message. Please manually attach the files and send the email to complete your inquiry.'
+          ? `Your email client has been opened with the message. IMPORTANT: Please manually attach the ${attachedFiles.length} selected file${attachedFiles.length > 1 ? 's' : ''} (${attachedFiles.map(f => f.name).join(', ')}) to the email before sending it.`
           : 'Your email client has been opened with the message. Please send the email to complete your inquiry.'
       );
       
@@ -124,12 +124,12 @@ const Contact: React.FC = () => {
         setFormData({ name: '', email: '', subject: '', message: '' });
         setAttachedFiles([]);
         setSubmitStatus('idle');
-      }, 3000);
+      }, 8000); // Longer delay to give user time to read the instructions
       
     } catch (error) {
       console.error('Error opening email client:', error);
       setSubmitStatus('error');
-      setStatusMessage('Unable to open email client. Please copy the details and send an email manually to nagapraveenyalla@gmail.com');
+      setStatusMessage('Unable to open email client. Please copy the message details and send an email manually to nagapraveenyalla@gmail.com. Don\'t forget to attach your files if you selected any.');
     } finally {
       setIsSubmitting(false);
     }
@@ -443,24 +443,37 @@ const Contact: React.FC = () => {
                 <p className="text-blue-800 dark:text-blue-300 text-sm">
                   <strong>How it works:</strong> When you click "Send Message", your default email client will open with a pre-filled email. 
                   {attachedFiles.length > 0 
-                    ? 'Attach your selected files manually and send the email to complete your inquiry.'
-                    : 'Simply send the email to complete your inquiry.'
-                  } I'll respond within 24-48 hours.
-                </p>
+            <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+              <p className="text-yellow-800 dark:text-yellow-300 text-sm">
+                <strong>⚠️ File Attachment Limitation:</strong><br/>
+                Due to browser security restrictions, files cannot be automatically attached to emails. When your email client opens:
+                <br/>1. The message content will be pre-filled
+                <br/>2. You'll see a list of files you selected in the message body
+                <br/>3. You must manually attach these files before sending
+                <br/>4. Send the email to complete your inquiry
+                <br/><br/>
+                <strong>Alternative:</strong> You can also send your files directly to{' '}
+                <a href="mailto:nagapraveenyalla@gmail.com" className="text-yellow-900 dark:text-yellow-200 underline font-medium">
+                  nagapraveenyalla@gmail.com
+                </a>
               </div>
               
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center transition-colors duration-300">
                 Alternative: Email me directly at{' '}
-                <a href="mailto:nagapraveenyalla@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
+              Direct contact: Email me at{' '}
                   nagapraveenyalla@gmail.com
                 </a>
               </p>
+              {' '}or call{' '}
+              <a href="tel:+918328377820" className="text-blue-600 dark:text-blue-400 hover:underline">
+                +91 8328377820
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
+                      Send Message {attachedFiles.length > 0 && `(${attachedFiles.length} file${attachedFiles.length > 1 ? 's' : ''} to attach manually)`}
 
 export default Contact;
