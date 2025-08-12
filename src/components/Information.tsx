@@ -1,7 +1,37 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Brain, BarChart3, TrendingUp, Database, Cpu, Zap, BookOpen, Target, Users, Lightbulb } from 'lucide-react';
 
 const Information: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const informationSection = document.getElementById('information');
+      
+      if (informationSection) {
+        const rect = informationSection.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isInViewport) {
+          // Show when scrolling up, hide when scrolling down
+          if (currentScrollY < lastScrollY) {
+            setIsVisible(true);
+          } else if (currentScrollY > lastScrollY) {
+            setIsVisible(false);
+          }
+        }
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   const dataFields = [
     {
       title: "Data Science",
@@ -123,7 +153,12 @@ const Information: React.FC = () => {
   ];
 
   return (
-    <section id="information" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section 
+      id="information" 
+      className={`py-20 bg-gray-50 dark:bg-gray-900 transition-all duration-500 transform ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
