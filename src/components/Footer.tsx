@@ -12,6 +12,7 @@ const Footer: React.FC = () => {
     { href: '#about', label: 'About' },
     { href: '#experience', label: 'Experience' },
     { href: '#information', label: 'Information' },
+    { href: '#data-science-news', label: 'Job Market' },
     { href: '#skills', label: 'Skills' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' }
