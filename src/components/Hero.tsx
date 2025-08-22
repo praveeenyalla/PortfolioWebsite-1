@@ -1,5 +1,6 @@
 import React from 'react';
 import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe } from 'lucide-react';
+import LiveVisitorCounter from './LiveVisitorCounter';
 
 const Hero: React.FC = () => {
   const handleDownloadResume = () => {
@@ -61,6 +62,16 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="pt-20 pb-12 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Live Visitor Counter - Top Right */}
+        <div className="fixed top-24 right-4 z-40 hidden lg:block">
+          <LiveVisitorCounter />
+        </div>
+        
+        {/* Mobile Live Counter - Bottom */}
+        <div className="fixed bottom-4 left-4 right-4 z-40 lg:hidden">
+          <LiveVisitorCounter />
+        </div>
+        
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Profile Image and Info */}
           <div className="w-full lg:w-1/3 text-center lg:text-left order-1 lg:order-1">

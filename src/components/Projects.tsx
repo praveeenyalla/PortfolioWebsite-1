@@ -4,7 +4,7 @@ import { projectsConfig, getFeaturedProjects, getRecentProjects, getProjectsByCa
 import LiveVisitorCounter from './LiveVisitorCounter';
 
 const Projects: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<'all' | 'featured' | 'recent' | 'ai' | 'web' | 'data'>('featured');
+  const [activeFilter, setActiveFilter] = useState<'all' | 'featured' | 'recent' | 'ai' | 'web' | 'data'>('all');
 
   const getFilteredProjects = () => {
     switch (activeFilter) {
@@ -41,12 +41,12 @@ const Projects: React.FC = () => {
   };
 
   const filterOptions = [
+    { id: 'all', label: 'All Projects', icon: <Filter className="w-4 h-4" /> },
     { id: 'featured', label: 'Featured Projects', icon: <Star className="w-4 h-4" /> },
     { id: 'recent', label: 'Recent Work', icon: <TrendingUp className="w-4 h-4" /> },
     { id: 'ai', label: 'AI Projects', icon: <GitBranch className="w-4 h-4" /> },
     { id: 'web', label: 'Web Apps', icon: <ExternalLink className="w-4 h-4" /> },
-    { id: 'data', label: 'Data Science', icon: <Users className="w-4 h-4" /> },
-    { id: 'all', label: 'All Projects', icon: <Filter className="w-4 h-4" /> }
+    { id: 'data', label: 'Data Science', icon: <Users className="w-4 h-4" /> }
   ];
 
   return (
@@ -61,20 +61,15 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Live Analytics and Filter Section */}
-        <div className="flex flex-col lg:flex-row gap-8 mb-12">
-          {/* Live Visitor Counter */}
-          <div className="lg:w-1/3">
-            <LiveVisitorCounter />
-          </div>
-
+        <div className="mb-12">
           {/* Project Filters */}
-          <div className="lg:w-2/3">
+          <div className="w-full">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-100 dark:border-gray-700 transition-colors duration-300">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                 <Filter className="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400" />
                 Project Categories
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
                 {filterOptions.map((option) => (
                   <button
                     key={option.id}
