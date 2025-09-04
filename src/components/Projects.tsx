@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Calendar, Tag, ArrowRight, Play, Users, Star, GitBranch, Filter, Eye, TrendingUp } from 'lucide-react';
 import { projectsConfig, getFeaturedProjects, getRecentProjects, getProjectsByCategory } from '../data/projectsConfig';
-import LiveVisitorCounter from './LiveVisitorCounter';
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'all' | 'featured' | 'recent' | 'ai' | 'web' | 'data'>('all');
@@ -60,9 +59,8 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        {/* Live Analytics and Filter Section */}
+        {/* Filter Section */}
         <div className="mb-12">
-          {/* Project Filters */}
           <div className="w-full">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-100 dark:border-gray-700 transition-colors duration-300">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
