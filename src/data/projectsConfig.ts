@@ -24,7 +24,7 @@ export const projectsConfig: ProjectConfig[] = [
     id: 'avomind-ai',
     title: "AvoMind AI Platform",
     description: "An intelligent AI-powered platform that leverages advanced machine learning algorithms to provide smart solutions and insights. Built with cutting-edge AI technologies for enhanced user experience and intelligent automation.",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "/image copy.png",
     technologies: ["AI/ML", "Python", "Machine Learning", "Neural Networks", "Cloud Computing", "API Integration"],
     features: [
       "Advanced AI algorithms",
