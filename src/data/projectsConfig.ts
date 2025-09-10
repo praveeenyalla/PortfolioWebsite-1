@@ -21,6 +21,29 @@ export interface ProjectConfig {
 export const projectsConfig: ProjectConfig[] = [
   // Featured Recent Projects
   {
+    id: 'avomind-ai',
+    title: "AvoMind AI Platform",
+    description: "An intelligent AI-powered platform that leverages advanced machine learning algorithms to provide smart solutions and insights. Built with cutting-edge AI technologies for enhanced user experience and intelligent automation.",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+    technologies: ["AI/ML", "Python", "Machine Learning", "Neural Networks", "Cloud Computing", "API Integration"],
+    features: [
+      "Advanced AI algorithms",
+      "Intelligent data processing",
+      "Real-time insights generation",
+      "User-friendly interface",
+      "Scalable cloud architecture",
+      "API-driven functionality"
+    ],
+    demoUrl: "https://avomind-1094738376370.us-west1.run.app/",
+    codeUrl: "https://github.com/praveeenyalla/avomind-ai",
+    videoUrl: "",
+    status: "Completed",
+    date: "January 2025",
+    category: "ai",
+    isFeatured: true,
+    isRecent: true
+  },
+  {
     id: 'webdevelop-ai',
     title: "WebDevelop AI Platform",
     description: "An advanced AI-powered web development platform that assists developers in creating modern, responsive websites with intelligent code generation and design suggestions.",
