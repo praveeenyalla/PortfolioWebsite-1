@@ -1,12 +1,12 @@
 import React from 'react';
-import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe } from 'lucide-react';
+import { Download, Mail, Linkedin, Github, MapPin, Phone, Globe, Eye } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const handleDownloadResume = () => {
     try {
-      // Create a direct download link with properly encoded filename
+      // Create a direct download link for the resume
       const link = document.createElement('a');
-      link.href = '/Praveen%20_Resume.pdf'; // URL encoded space
+      link.href = '/Praveen_Resume.pdf';
       link.download = 'Praveen_Resume.pdf';
       link.style.display = 'none';
       
@@ -47,6 +47,31 @@ const Hero: React.FC = () => {
     }
   };
 
+  const handleViewResume = () => {
+    try {
+      // Open resume in new tab for viewing
+      window.open('/Praveen_Resume.pdf', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Resume viewing failed:', error);
+      
+      const userConfirmed = confirm(
+        'Resume viewing encountered an issue. Would you like to request it via email instead?'
+      );
+      
+      if (userConfirmed) {
+        const subject = encodeURIComponent('Resume Request - NAGA PRAVEEN YALLA');
+        const body = encodeURIComponent(
+          'Hi Praveen,\n\n' +
+          'I visited your portfolio website and would like to request your resume.\n\n' +
+          'Please send me your latest resume at your earliest convenience.\n\n' +
+          'Thank you!\n\n' +
+          'Best regards'
+        );
+        
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      }
+    }
+  };
   const handleContactClick = () => {
     const element = document.querySelector('#contact');
     if (element) {
@@ -126,6 +151,13 @@ const Hero: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 lg:mb-8">
+              <button
+                onClick={handleViewResume}
+                className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base"
+              >
+                <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
+                View Resume
+              </button>
               <button
                 onClick={handleDownloadResume}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base"

@@ -1,7 +1,31 @@
 import React from 'react';
-import { Calendar, MapPin, Briefcase, ChevronRight, BookOpen, Target, Award } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, ChevronRight, BookOpen, Target, Award, Download, Eye } from 'lucide-react';
 
 const Experience: React.FC = () => {
+  const handleViewResume = () => {
+    try {
+      window.open('/Praveen_Resume.pdf', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Resume viewing failed:', error);
+      alert('Resume viewing encountered an issue. Please try downloading instead or contact me directly.');
+    }
+  };
+
+  const handleDownloadResume = () => {
+    try {
+      const link = document.createElement('a');
+      link.href = '/Praveen_Resume.pdf';
+      link.download = 'Praveen_Resume.pdf';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Resume download failed:', error);
+      alert('Resume download encountered an issue. Please contact me directly at nagapraveenyalla@gmail.com');
+    }
+  };
+
   const experiences = [
     {
       title: "Data Scientist",
@@ -235,6 +259,22 @@ const Experience: React.FC = () => {
               <h4 className="font-semibold text-green-900 dark:text-green-300 mb-1">Location</h4>
               <p className="text-green-700 dark:text-green-400 text-sm">Hyderabad, India</p>
             </div>
+          </div>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <button
+              onClick={handleViewResume}
+              className="bg-white text-green-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
+            >
+              <Eye className="w-5 h-5" />
+              View My Resume
+            </button>
+            <button
+              onClick={handleDownloadResume}
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center gap-2 shadow-md"
+            >
+              <Download className="w-5 h-5" />
+              Download Resume
+            </button>
           </div>
         </div>
 

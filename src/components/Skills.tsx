@@ -177,7 +177,7 @@ const Skills: React.FC = () => {
   ];
 
   const handleViewCertification = (url: string, certName: string) => {
-    if (!url) {
+    if (!url || url === '#') {
       const userConfirmed = confirm(
         `${certName} is not available for viewing. Would you like to request it via email?`
       );
@@ -198,6 +198,7 @@ const Skills: React.FC = () => {
     }
 
     try {
+      // Open certificate in new tab for viewing
       window.open(url, '_blank', 'noopener,noreferrer');
     } catch (error) {
       console.error('Certificate viewing failed:', error);
@@ -378,7 +379,7 @@ const Skills: React.FC = () => {
                   className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center gap-2"
                 >
                   <Eye className="w-4 h-4" />
-                  {cert.viewUrl ? 'View Certificate' : 'Request Certificate'}
+                  {cert.viewUrl && cert.viewUrl !== '#' ? 'View Certificate' : 'Request Certificate'}
                 </button>
               </div>
             ))}

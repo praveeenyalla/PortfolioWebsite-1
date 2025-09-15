@@ -1,7 +1,31 @@
 import React from 'react';
-import { Award, BookOpen, Target, Briefcase, Globe, Phone } from 'lucide-react';
+import { Award, BookOpen, Target, Briefcase, Globe, Phone, Download, Eye } from 'lucide-react';
 
 const About: React.FC = () => {
+  const handleViewResume = () => {
+    try {
+      window.open('/Praveen_Resume.pdf', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Resume viewing failed:', error);
+      alert('Resume viewing encountered an issue. Please try downloading instead or contact me directly.');
+    }
+  };
+
+  const handleDownloadResume = () => {
+    try {
+      const link = document.createElement('a');
+      link.href = '/Praveen_Resume.pdf';
+      link.download = 'Praveen_Resume.pdf';
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Resume download failed:', error);
+      alert('Resume download encountered an issue. Please contact me directly at nagapraveenyalla@gmail.com');
+    }
+  };
+
   const achievements = [
     {
       icon: <Target className="w-5 h-5 sm:w-6 sm:h-6" />,
@@ -80,6 +104,22 @@ const About: React.FC = () => {
               <div className="mt-3 sm:mt-4 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
                 <span>Contact: +91 8328377820</span>
+              </div>
+              <div className="mt-4 flex flex-col sm:flex-row gap-2">
+                <button
+                  onClick={handleViewResume}
+                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors duration-200"
+                >
+                  <Eye className="w-4 h-4" />
+                  View Resume
+                </button>
+                <button
+                  onClick={handleDownloadResume}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 transition-colors duration-200"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Resume
+                </button>
               </div>
             </div>
           </div>
