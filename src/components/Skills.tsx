@@ -158,21 +158,21 @@ const Skills: React.FC = () => {
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      value: "10+",
-      label: "AI/ML Projects",
-      description: "Including NLP and Computer Vision"
+      value: "AvaMind",
+      label: "Custom AI Assistant",
+      description: "Voice interaction & sketch generation"
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
-      value: "90%",
-      label: "Project Success Rate",
-      description: "Completed projects meeting requirements"
+      value: "Google Cloud",
+      label: "Cloud Deployment",
+      description: "Scalable AI applications"
     },
     {
       icon: <Award className="w-6 h-6" />,
-      value: "4",
-      label: "Professional Certifications",
-      description: "Industry-recognized credentials"
+      value: "n8n",
+      label: "AI Workflows",
+      description: "Automation & API integration"
     }
   ];
 

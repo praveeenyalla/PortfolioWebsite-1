@@ -497,8 +497,8 @@ const DataScienceNews: React.FC = () => {
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 rounded-xl p-8 text-white transition-colors duration-300">
             <h3 className="text-2xl font-bold mb-4">Ready to Start Your Data Science Career?</h3>
             <p className="text-lg text-blue-100 dark:text-blue-200 mb-6 max-w-2xl mx-auto">
-              As a fresh graduate with hands-on experience in data science and machine learning, 
-              I'm actively seeking opportunities to contribute to data-driven organizations.
+              As an AI Engineer and Software Developer with expertise in custom AI solutions and machine learning, 
+              I'm actively seeking opportunities to contribute innovative AI technologies to forward-thinking organizations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button

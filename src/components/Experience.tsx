@@ -33,15 +33,16 @@ const Experience: React.FC = () => {
       location: "Remote/Hyderabad, India",
       period: "2024 - Present",
       type: "Job Seeking",
-      description: "Fresh graduate with strong foundation in data science, data analysis, machine learning, and statistical modeling. Completed comprehensive Data Science certification and built multiple projects demonstrating both data science and analytical skills.",
+      description: "AI Engineer and Software Developer with expertise in Artificial Intelligence, Machine Learning, and Cloud Computing. Specialized in creating intelligent solutions, custom AI assistants, and scalable applications with proven track record of innovation.",
       achievements: [
-        "Completed ExcelR Data Science certification with hands-on projects",
-        "Built 6+ data science, data analysis, and web development projects",
-        "Proficient in Python, SQL, Excel, machine learning frameworks, and BI tools",
-        "Strong foundation in statistical analysis and advanced machine learning",
-        "Experienced in creating interactive dashboards, reports, and business intelligence solutions"
+        "Created 'AvaMind' AI - custom AI assistant with voice interaction, sketch generation, and real-time responses",
+        "Developed AI workflows using n8n for automation, research, and API integration across multiple platforms",
+        "Built and deployed scalable cloud-based applications on Google Cloud Platform",
+        "Designed custom software solutions for automation, research support, and productivity enhancement",
+        "Proven expertise in multi-domain development including AI, web design, cloud management, and software engineering",
+        "Recognized for problem-solving, innovative thinking, and client-focused solutions with measurable value"
       ],
-      technologies: ["Python", "SQL", "Excel", "Power BI", "Tableau", "Scikit-learn", "TensorFlow", "PyTorch", "Machine Learning", "Deep Learning"]
+      technologies: ["Python", "AI/ML", "Google Cloud", "n8n Automation", "API Integration", "TensorFlow", "PyTorch", "Voice AI", "Computer Vision", "Cloud Computing"]
     },
     {
       title: "Project-Based Learning & Development",
@@ -91,16 +92,16 @@ const Experience: React.FC = () => {
 
   const careerObjective = {
     title: "Career Objective",
-    description: "Seeking an entry-level Data Scientist position where I can apply my analytical skills, technical knowledge, and passion for machine learning to contribute to organizational success. Eager to work with experienced professionals and grow in the field of data science.",
+    description: "Seeking AI Engineer, Machine Learning Engineer, Data Scientist, and AI Researcher positions where I can apply my expertise in artificial intelligence, custom application development, and innovative problem-solving to drive technological advancement and organizational success.",
     skills: [
-      "Data Science & Machine Learning",
-      "Data Analysis & Business Intelligence",
-      "Statistical Modeling & Analysis",
-      "Python & SQL Programming",
-      "Excel & BI Tools (Power BI, Tableau)",
-      "Model Development & Deployment",
-      "Problem Solving",
-      "Quick Learning Ability"
+      "AI Engineering & Development",
+      "Machine Learning & Deep Learning",
+      "Custom AI Assistant Development",
+      "Cloud Computing (Google Cloud, AWS)",
+      "Automation Workflows & API Integration",
+      "Research & Innovation",
+      "Scalable Application Development",
+      "Multi-domain Problem Solving"
     ]
   };
 
@@ -242,9 +243,9 @@ const Experience: React.FC = () => {
             <h3 className="text-2xl font-semibold text-green-900 dark:text-green-300 transition-colors duration-300">Currently Available</h3>
           </div>
           <p className="text-green-800 dark:text-green-400 text-lg leading-relaxed mb-4 transition-colors duration-300">
-            I am actively seeking entry-level Data Scientist and Data Analyst positions where I can apply my analytical skills, 
-            technical knowledge, and passion for machine learning, data analysis, and data-driven insights. Ready to contribute to your team and 
-            grow professionally in a collaborative environment.
+            I am actively seeking AI Engineer, Machine Learning Engineer, Data Scientist, and AI Researcher positions where I can apply my 
+            expertise in artificial intelligence, custom AI development, automation workflows, and innovative problem-solving. Ready to contribute 
+            cutting-edge solutions and drive technological advancement in a collaborative environment.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white dark:bg-green-900/30 p-4 rounded-lg transition-colors duration-300">

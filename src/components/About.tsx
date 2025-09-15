@@ -30,22 +30,22 @@ const About: React.FC = () => {
     {
       icon: <Target className="w-5 h-5 sm:w-6 sm:h-6" />,
       title: "Career Objective",
-      description: "Seeking entry-level Data Scientist position to apply analytical skills and grow professionally."
+      description: "Seeking AI Engineer and Machine Learning Engineer positions to develop cutting-edge AI solutions."
     },
     {
       icon: <Award className="w-5 h-5 sm:w-6 sm:h-6" />,
-      title: "Certified Professional",
-      description: "ExcelR Data Science certification and multiple technology certifications."
+      title: "AI Innovation",
+      description: "Created AvaMind AI assistant and multiple intelligent automation solutions."
     },
     {
       icon: <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />,
-      title: "Continuous Learning",
-      description: "Always staying updated with the latest technology trends and best practices."
+      title: "Research & Development",
+      description: "Passionate about AI research, innovation, and emerging technology exploration."
     },
     {
       icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6" />,
-      title: "Online Presence",
-      description: "Maintaining a professional portfolio at yallanagapraveen.info showcasing my work."
+      title: "Cloud & Scalability",
+      description: "Expert in Google Cloud Platform and building scalable AI-powered applications."
     }
   ];
 
@@ -55,8 +55,8 @@ const About: React.FC = () => {
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">About Me</h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
-            Fresh graduate with a strong foundation in data science, data analysis, and modern technologies, 
-            ready to begin my career and contribute to data-driven insights, analytics, and machine learning solutions.
+            AI Engineer and Software Developer with expertise in Artificial Intelligence, Machine Learning, Cloud Computing, 
+            and Custom Application Development. Passionate about creating intelligent solutions and innovative technologies.
           </p>
         </div>
 
@@ -65,23 +65,26 @@ const About: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">My Journey</h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300 text-sm sm:text-base">
               <p>
-                I'm NAGA PRAVEEN YALLA, a fresh graduate with a passion for data science, data analysis, and 
-                technology. My journey began with curiosity about how data can drive business 
-                decisions and has evolved into a focused career path in data science and analytics.
+                I am Nagapraveen Yalla, an AI Engineer and Software Developer with expertise in Artificial Intelligence, 
+                Cloud Computing, and Custom Application Development. I specialize in designing and building intelligent 
+                solutions such as AI-powered assistants, automation workflows, and scalable cloud-based applications. 
+                I am passionate about research, innovation, and leveraging cutting-edge technologies to solve real-world challenges.
               </p>
               <p>
-                As a recent graduate with a strong foundation in computer science, data science, and data analysis, 
-                I specialize in Python, SQL, data visualization, statistical modeling, and business intelligence. 
-                I believe in turning raw data into actionable insights that drive business growth.
+                My expertise spans across multiple domains including AI development, machine learning engineering, 
+                data science, and cloud computing. I have successfully created custom AI solutions like "AvaMind" AI 
+                assistant with advanced features including voice interaction, sketch generation, and real-time responses 
+                designed to provide human-like conversational experiences.
               </p>
               <p>
-                Recently, I completed my Data Science certification from ExcelR, where I gained 
-                hands-on experience with machine learning, data analysis, statistical analysis, and data visualization 
-                tools. This comprehensive training has equipped me with both theoretical knowledge 
-                and practical skills needed in today's data-driven world, covering both advanced analytics and business intelligence.
+                I have developed sophisticated AI workflows using n8n to automate research, integrate APIs, and connect 
+                multiple platforms including Telegram, Google AI Studio, and various cloud services. My experience includes 
+                building and deploying scalable cloud-based applications on Google Cloud Platform, ensuring high availability 
+                and reliability for enterprise-level solutions.
               </p>
               <p>
-                You can explore my complete portfolio and latest projects at{' '}
+                I am recognized for my problem-solving abilities, innovative thinking, and client-focused solutions that 
+                add measurable value to organizations. You can explore my complete portfolio and latest AI projects at{' '}
                 <a 
                   href="https://yallanagapraveen.info" 
                   className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium underline transition-colors duration-300"
@@ -90,16 +93,16 @@ const About: React.FC = () => {
                 >
                   yallanagapraveen.info
                 </a>
-                , where I regularly showcase my analytical projects and share insights about data science.
+                , where I regularly showcase my AI innovations, machine learning projects, and share insights about emerging technologies.
               </p>
             </div>
             
             <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-600 transition-colors duration-300">
               <h4 className="font-semibold text-green-900 dark:text-green-300 mb-2 transition-colors duration-300 text-sm sm:text-base">Current Status</h4>
               <p className="text-green-700 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
-                Actively seeking entry-level Data Scientist and Data Analyst opportunities where I can apply my 
-                analytical skills, contribute to data-driven insights and business intelligence, and grow professionally 
-                in a collaborative environment. Available for immediate joining.
+                Available for AI Engineer, Machine Learning Engineer, Data Scientist, and AI Researcher positions where I can apply my 
+                expertise in artificial intelligence, custom application development, and innovative problem-solving to drive 
+                technological advancement and business growth. Ready for immediate opportunities.
               </p>
               <div className="mt-3 sm:mt-4 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
@@ -149,12 +152,12 @@ const About: React.FC = () => {
           <div className="text-center">
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">Professional Summary</h3>
             <p className="text-blue-100 dark:text-blue-200 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto mb-4 transition-colors duration-300">
-              A motivated fresh graduate with strong analytical skills and hands-on experience in data science, 
-              data analysis, statistical analysis, and machine learning. Eager to begin my career as a Data Scientist or Data Analyst and contribute 
-              to data-driven decision making and business intelligence while continuously learning and growing in the field.
+              An innovative AI Engineer and Software Developer with proven expertise in Artificial Intelligence, Machine Learning, 
+              and Cloud Computing. Specialized in creating intelligent solutions, custom AI assistants, and scalable applications. 
+              Passionate about research, automation, and leveraging cutting-edge technologies to solve complex real-world challenges.
             </p>
             <p className="text-blue-200 dark:text-blue-300 text-xs sm:text-sm mb-4 sm:mb-6 transition-colors duration-300">
-              Learn more about my work and connect with me at{' '}
+              Explore my AI innovations and connect with me at{' '}
               <span className="text-white font-medium">yallanagapraveen.info</span> | 
               LinkedIn: <a href="https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:underline">Yalla Nagapraveen Chowdhury</a> | 
               GitHub: <span className="text-white font-medium">@praveeenyalla</span> | 
@@ -162,25 +165,25 @@ const About: React.FC = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Data Science
-              </span>
-              <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Data Analysis
+                AI Engineering
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
                 Machine Learning
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Data Visualization
+                AI Research
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Business Intelligence
+                Cloud Computing
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Problem Solving
+                Custom AI Solutions
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Quick Learning
+                Automation Workflows
+              </span>
+              <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
+                Innovation & Research
               </span>
             </div>
           </div>
