@@ -232,6 +232,7 @@ The website is configured for the domain `yallanagapraveen.info`. To use a diffe
 ### Professional Contact
 - **Website**: [yallanagapraveen.info](https://yallanagapraveen.info)
 - **Email**: nagapraveenyalla@gmail.com
+- **Email**: praveen.yalla2@gmail.com
 - **Phone**: +91 8328377820
 - **Location**: Hyderabad, India
 
@@ -241,7 +242,7 @@ For technical questions about this portfolio website:
 2. Review the code comments
 3. Contact via the website's contact form
 
-## 📄 License
+Contact: praveen.yalla2@gmail.com
 
 This project is created for professional portfolio purposes. Feel free to use it as inspiration for your own portfolio, but please don't copy the personal content directly.
 

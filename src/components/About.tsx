@@ -108,6 +108,10 @@ const About: React.FC = () => {
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
                 <span>Contact: +91 8328377820</span>
               </div>
+              <div className="mt-2 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
+                <span>Email: praveen.yalla2@gmail.com</span>
+              </div>
               <div className="mt-4 flex flex-col sm:flex-row gap-2">
                 <button
                   onClick={handleViewResume}
@@ -161,7 +165,7 @@ const About: React.FC = () => {
               <span className="text-white font-medium">yallanagapraveen.info</span> | 
               LinkedIn: <a href="https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:underline">Yalla Nagapraveen Chowdhury</a> | 
               GitHub: <span className="text-white font-medium">@praveeenyalla</span> | 
-              Email: <span className="text-white font-medium">nagapraveenyalla@gmail.com</span>
+              Email: <span className="text-white font-medium">praveen.yalla2@gmail.com</span>
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">

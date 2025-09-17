@@ -308,7 +308,7 @@ Use the interactive API documentation at `/api/docs` to test all endpoints with 
 
 ### Technical Support
 - **Developer**: YALLA.NAGAPRAVEEN
-- **Email**: nagapraveenyalla@gmail.com
+- **Email**: praveen.yalla2@gmail.com
 - **Website**: https://yallanagapraveen.info
 - **GitHub**: https://github.com/praveeenyalla
 

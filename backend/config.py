@@ -22,7 +22,7 @@ class Settings(BaseSettings):
     # Email Configuration
     SMTP_SERVER: str = "smtp.gmail.com"
     SMTP_PORT: int = 587
-    EMAIL_USERNAME: str = "nagapraveenyalla@gmail.com"
+    EMAIL_USERNAME: str = "praveen.yalla2@gmail.com"
     EMAIL_PASSWORD: str = "your-app-password"
     
     # File Upload

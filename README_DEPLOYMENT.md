@@ -112,4 +112,4 @@ For deployment issues:
 - Backend: Check platform-specific logs
 - Database: Verify connection strings and credentials
 
-Contact: nagapraveenyalla@gmail.com
+Contact: praveen.yalla2@gmail.com

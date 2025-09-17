@@ -124,15 +124,14 @@ const Contact: React.FC = () => {
         }, 5000);
       } else {
         throw new Error(response.message || 'Failed to send message');
-      }
+        window.open(`mailto:praveen.yalla2@gmail.com?subject=${subject}&body=${body}`, '_blank');
       
     } catch (error: any) {
       console.error('Error sending message:', error);
-      setSubmitStatus('success');
       setSubmitStatus('error');
       setStatusMessage(
         error.message || 
-        'Failed to send message. Please try again or contact me directly at nagapraveenyalla@gmail.com'
+        'Failed to send message. Please try again or contact me directly at praveen.yalla2@gmail.com'
       );
       setUploadProgress(0);
     } finally {
@@ -144,29 +143,29 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "nagapraveenyalla@gmail.com",
+      value: "praveen.yalla2@gmail.com",
       description: "Send me an email anytime",
-      action: "mailto:nagapraveenyalla@gmail.com"
+      action: "mailto:praveen.yalla2@gmail.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
       value: "+91 8328377820",
-      description: "Available Mon-Fri, 9AM-6PM",
+      description: "Available 24/7 for urgent inquiries",
       action: "tel:+918328377820"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
       value: "Hyderabad, India",
-      description: "Available for remote work",
+      description: "Open to remote/hybrid/on-site opportunities",
       action: "#"
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
       title: "Response Time",
-      value: "24-48 hours",
-      description: "Quick response guaranteed",
+      value: "Within 12 hours",
+      description: "Fast response guaranteed",
       action: "#"
     }
   ];
@@ -187,7 +186,7 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       name: "Email",
-      url: "mailto:nagapraveenyalla@gmail.com",
+      url: "mailto:praveen.yalla2@gmail.com",
       color: "bg-red-600 hover:bg-red-700"
     }
   ];
@@ -461,15 +460,15 @@ const Contact: React.FC = () => {
               
               <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
                 <p className="text-green-800 dark:text-green-300 text-sm">
-                  <strong>✅ Direct Email Delivery:</strong> Your message will be sent directly to my inbox with all attachments included. 
-                  No need to use your email client - everything is handled automatically!
+                  <strong>✅ Enhanced Contact Experience:</strong> Your message will be delivered directly to my inbox with all attachments. 
+                  I personally review every message and respond within 12 hours. For urgent matters, feel free to call directly!
                 </p>
               </div>
               
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center transition-colors duration-300">
                 Direct contact: Email me at{' '}
-                <a href="mailto:nagapraveenyalla@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
-                  nagapraveenyalla@gmail.com
+                <a href="mailto:praveen.yalla2@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  praveen.yalla2@gmail.com
                 </a>
                 {' '}or call{' '}
                 <a href="tel:+918328377820" className="text-blue-600 dark:text-blue-400 hover:underline">
