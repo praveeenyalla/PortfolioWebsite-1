@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
           'Best regards'
         );
         
-        window.open(`mailto:praveen.yalla2@gmail.com?subject=${subject}&body=${body}`, '_blank');
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
       }
     }
   };
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           'Best regards'
         );
         
-        window.open(`mailto:praveen.yalla2@gmail.com?subject=${subject}&body=${body}`, '_blank');
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
       }
     }
   };
@@ -200,7 +200,7 @@ const Hero: React.FC = () => {
                 <Github className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
               <a
-                href="mailto:praveen.yalla2@gmail.com"
+                href="mailto:nagapraveenyalla@gmail.com"
                 className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"
               >
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6" />

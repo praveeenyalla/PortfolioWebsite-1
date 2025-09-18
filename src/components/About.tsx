@@ -109,8 +109,7 @@ const About: React.FC = () => {
                 <span>Contact: +91 8328377820</span>
               </div>
               <div className="mt-2 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
-                <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
-                <span>Email: praveen.yalla2@gmail.com</span>
+                <span>Email: nagapraveenyalla@gmail.com</span>
               </div>
               <div className="mt-4 flex flex-col sm:flex-row gap-2">
                 <button

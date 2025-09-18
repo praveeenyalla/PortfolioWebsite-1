@@ -85,7 +85,7 @@ async def get_about_info():
     about_data = {
         "name": "YALLA.NAGAPRAVEEN",
         "title": "Aspiring Data Scientist & Technology Enthusiast",
-        "email": "praveen.yalla2@gmail.com",
+        "email": "nagapraveenyalla@gmail.com",
         "phone": "+91 8328377820",
         "location": "Hyderabad, India",
         "website": "https://yallanagapraveen.info",

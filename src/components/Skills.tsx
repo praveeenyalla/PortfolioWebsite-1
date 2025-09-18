@@ -192,7 +192,7 @@ const Skills: React.FC = () => {
           `Best regards`
         );
         
-        window.open(`mailto:praveen.yalla2@gmail.com?subject=${subject}&body=${body}`, '_blank');
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
       }
       return;
     }
@@ -217,7 +217,7 @@ const Skills: React.FC = () => {
           `Best regards`
         );
         
-        window.open(`mailto:praveen.yalla2@gmail.com?subject=${subject}&body=${body}`, '_blank');
+        window.open(`mailto:nagapraveenyalla@gmail.com?subject=${subject}&body=${body}`, '_blank');
       }
     }
   };

@@ -23,7 +23,6 @@ const Experience: React.FC = () => {
     } catch (error) {
       console.error('Resume download failed:', error);
       alert('Resume download encountered an issue. Please contact me directly at nagapraveenyalla@gmail.com');
-      alert('Resume download encountered an issue. Please contact me directly at praveen.yalla2@gmail.com');
     }
   };
 
