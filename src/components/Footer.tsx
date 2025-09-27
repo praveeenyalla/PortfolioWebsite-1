@@ -81,8 +81,8 @@ const Footer: React.FC = () => {
               </p>
               <p>
                 <span className="text-white font-medium">Email:</span><br />
-                <a href="mailto:nagapraveenyalla@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-                  nagapraveenyalla@gmail.com
+                <a href="mailto:praveen.yalla2@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  praveen.yalla2@gmail.com
                 </a>
               </p>
               <p>

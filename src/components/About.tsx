@@ -23,6 +23,7 @@ const About: React.FC = () => {
     } catch (error) {
       console.error('Resume download failed:', error);
       alert('Resume download encountered an issue. Please contact me directly at nagapraveenyalla@gmail.com');
+      alert('Resume download encountered an issue. Please contact me directly at praveen.yalla2@gmail.com');
     }
   };
 
@@ -109,7 +110,7 @@ const About: React.FC = () => {
                 <span>Contact: +91 8328377820</span>
               </div>
               <div className="mt-2 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
-                <span>Email: nagapraveenyalla@gmail.com</span>
+                <span>Email: praveen.yalla2@gmail.com</span>
               </div>
               <div className="mt-4 flex flex-col sm:flex-row gap-2">
                 <button
