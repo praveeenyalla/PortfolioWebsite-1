@@ -53,8 +53,8 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "nagapraveenyalla@gmail.com",
-      link: "mailto:nagapraveenyalla@gmail.com",
+      value: "praveen.yalla2@gmail.com",
+      link: "mailto:praveen.yalla2@gmail.com",
       description: "Best way to reach me"
     },
     {
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
     {
       name: "Email",
       icon: <Mail className="w-5 h-5" />,
-      url: "mailto:nagapraveenyalla@gmail.com",
+      url: "mailto:praveen.yalla2@gmail.com",
       color: "bg-red-600 hover:bg-red-700"
     }
   ];
@@ -328,10 +328,10 @@ const Contact: React.FC = () => {
                 <p className="text-sm text-gray-600 dark:text-gray-400 text-center transition-colors duration-300">
                   Prefer email? Reach me directly at{' '}
                   <a
-                    href="mailto:nagapraveenyalla@gmail.com"
+                    href="mailto:praveen.yalla2@gmail.com"
                     className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200"
                   >
-                    nagapraveenyalla@gmail.com
+                    praveen.yalla2@gmail.com
                   </a>
                 </p>
               </div>
@@ -349,7 +349,7 @@ const Contact: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:nagapraveenyalla@gmail.com?subject=Job Opportunity - AI Engineer Position"
+                href="mailto:praveen.yalla2@gmail.com?subject=Job Opportunity - AI Engineer Position"
                 className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center"
               >
                 <Mail className="w-5 h-5 mr-2" />
