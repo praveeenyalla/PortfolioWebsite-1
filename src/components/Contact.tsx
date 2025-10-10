@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, User, MessageSquare, Clock, CheckCircle, AlertCircle, Linkedin, Github, Globe, Calendar } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, User, MessageSquare, Clock, CheckCircle, AlertCircle, Linkedin, Github, Globe, Calendar, Paperclip, X } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +8,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [files, setFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [submitMessage, setSubmitMessage] = useState('');
@@ -20,30 +21,67 @@ const Contact: React.FC = () => {
     }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const newFiles = Array.from(e.target.files);
+      const totalSize = [...files, ...newFiles].reduce((acc, file) => acc + file.size, 0);
+
+      if (totalSize > 10 * 1024 * 1024) {
+        setSubmitStatus('error');
+        setSubmitMessage('Total file size exceeds 10MB limit. Please reduce file sizes.');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+        return;
+      }
+
+      setFiles(prev => [...prev, ...newFiles]);
+    }
+  };
+
+  const removeFile = (index: number) => {
+    setFiles(prev => prev.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
-      // Simulate form submission (replace with actual API call)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // For now, we'll just show success message
-      // In a real implementation, you would send this to your backend API
-      setSubmitStatus('success');
-      setSubmitMessage('Thank you for your message! I will get back to you within 24-48 hours.');
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+
+      files.forEach((file) => {
+        formDataToSend.append('files', file);
       });
+
+      const response = await fetch('http://localhost:8000/api/contact/with-files', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitStatus('success');
+        setSubmitMessage(result.message || 'Thank you for your message! I will get back to you within 24-48 hours.');
+
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setFiles([]);
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
     } catch (error) {
       setSubmitStatus('error');
       setSubmitMessage('Sorry, there was an error sending your message. Please try again or contact me directly via email.');
+      console.error('Error submitting form:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -302,6 +340,61 @@ const Contact: React.FC = () => {
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none transition-colors duration-300"
                       placeholder="Tell me about your project, opportunity, or just say hello..."
                     />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="files" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors duration-300">
+                    Attachments (Optional)
+                  </label>
+                  <div className="space-y-3">
+                    <div className="relative">
+                      <input
+                        type="file"
+                        id="files"
+                        multiple
+                        onChange={handleFileChange}
+                        className="hidden"
+                        accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg,.gif"
+                      />
+                      <label
+                        htmlFor="files"
+                        className="flex items-center justify-center w-full px-4 py-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-blue-500 dark:hover:border-blue-400 transition-colors duration-300 bg-white dark:bg-gray-700"
+                      >
+                        <Paperclip className="w-5 h-5 text-gray-400 dark:text-gray-500 mr-2" />
+                        <span className="text-gray-600 dark:text-gray-400">
+                          Click to attach files (max 10MB total)
+                        </span>
+                      </label>
+                    </div>
+
+                    {files.length > 0 && (
+                      <div className="space-y-2">
+                        {files.map((file, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800 transition-colors duration-300"
+                          >
+                            <div className="flex items-center space-x-2 flex-1 min-w-0">
+                              <Paperclip className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                              <span className="text-sm text-gray-700 dark:text-gray-300 truncate">
+                                {file.name}
+                              </span>
+                              <span className="text-xs text-gray-500 dark:text-gray-400 flex-shrink-0">
+                                ({(file.size / 1024).toFixed(1)} KB)
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => removeFile(index)}
+                              className="ml-2 p-1 hover:bg-red-100 dark:hover:bg-red-900/30 rounded transition-colors duration-200 flex-shrink-0"
+                            >
+                              <X className="w-4 h-4 text-red-600 dark:text-red-400" />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
