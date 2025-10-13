@@ -41,9 +41,12 @@ const Header: React.FC = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled
-        ? 'bg-white/70 dark:bg-gray-900/70 shadow-lg border-b border-white/20 dark:border-gray-700/30'
-        : 'bg-white/50 dark:bg-gray-900/50 border-b border-transparent'
-    } backdrop-blur-xl backdrop-saturate-150`}>
+        ? 'bg-white/30 dark:bg-gray-900/30 shadow-2xl border-b border-white/30 dark:border-gray-700/40'
+        : 'bg-white/20 dark:bg-gray-900/20 border-b border-white/20 dark:border-gray-700/20'
+    } backdrop-blur-2xl backdrop-saturate-200`} style={{
+      WebkitBackdropFilter: 'blur(40px) saturate(200%)',
+      backdropFilter: 'blur(40px) saturate(200%)'
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 sm:py-4">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
@@ -51,8 +54,8 @@ const Header: React.FC = () => {
               <Code2 className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
             </div>
             <div className="min-w-0 flex-1">
-              <h1 className="text-base sm:text-xl font-bold text-gray-900 dark:text-white tracking-tight truncate">NAGA PRAVEEN YALLA</h1>
-              <p className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-medium truncate">yallanagapraveen.info</p>
+              <h1 className="text-base sm:text-xl font-bold text-gray-900 dark:text-white tracking-tight truncate drop-shadow-sm">NAGA PRAVEEN YALLA</h1>
+              <p className="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-medium truncate drop-shadow-sm">yallanagapraveen.info</p>
             </div>
           </div>
 
@@ -62,7 +65,7 @@ const Header: React.FC = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium hover:scale-105 transform text-sm xl:text-base"
+                className="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-semibold hover:scale-105 transform text-sm xl:text-base drop-shadow-sm"
               >
                 {item.label}
               </button>
@@ -93,7 +96,7 @@ const Header: React.FC = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-left text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium py-2 text-base"
+                  className="text-left text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-semibold py-2 text-base drop-shadow-sm"
                 >
                   {item.label}
                 </button>
