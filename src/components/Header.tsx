@@ -11,17 +11,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       setIsScrolled(currentScrollY > 50);
-
-      if (currentScrollY < 50) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        setIsVisible(true);
-      }
-
       setLastScrollY(currentScrollY);
     };
 
@@ -49,13 +39,11 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-      isVisible ? 'top-0' : '-top-24'
-    } ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled
-        ? 'bg-white/95 dark:bg-gray-900/95 shadow-lg border-b border-gray-200 dark:border-gray-700 backdrop-blur-sm'
-        : 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm'
-    }`}>
+        ? 'bg-white/70 dark:bg-gray-900/70 shadow-lg border-b border-white/20 dark:border-gray-700/30'
+        : 'bg-white/50 dark:bg-gray-900/50 border-b border-transparent'
+    } backdrop-blur-xl backdrop-saturate-150`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 sm:py-4">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
@@ -99,7 +87,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden pb-4 border-t border-gray-200 dark:border-gray-700 mt-4 pt-4 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
+          <nav className="lg:hidden pb-4 border-t border-white/20 dark:border-gray-700/30 mt-4 pt-4">
             <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <button
