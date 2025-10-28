@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Social Media Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        #cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+        }
+
+        .card {
+            width: 320px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card_content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .card_content i.fa-brands {
+            font-size: 80px;
+            margin-bottom: 30px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+        }
+
+        .card:hover .card_content i.fa-brands {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .card:nth-child(1) .card_content i {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card:nth-child(2) .card_content i {
+            color: #fff;
+        }
+
+        .card:nth-child(3) .card_content i {
+            color: #0077b5;
+        }
+
+        .card_content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover .card_content h2 {
+            transform: translateY(-5px);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card_content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover .card_content p {
+            transform: translateY(-5px);
+        }
+
+        .card_content p span {
+            font-weight: 700;
+            font-size: 24px;
+            color: #ffd700;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .card_content a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card_content a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: left 0.5s ease;
+        }
+
+        .card:hover .card_content a {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card_content a:hover::before {
+            left: 100%;
+        }
+
+        .card_content a i {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .card_content a:hover i {
+            transform: rotate(45deg);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .card {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @media (max-width: 768px) {
+            #cards {
+                gap: 30px;
+            }
+
+            .card {
+                width: 280px;
+                height: 360px;
+            }
+
+            .card_content i.fa-brands {
+                font-size: 60px;
+            }
+
+            .card_content h2 {
+                font-size: 26px;
+            }
+
+            .card_content p {
+                font-size: 16px;
+            }
+
+            .card_content p span {
+                font-size: 20px;
+            }
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-effect 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-effect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cards">
+        <div class="card" data-tilt>
+            <div class="card_content">
+                <i class="fa-brands fa-instagram"></i>
+                <h2>Instagram</h2>
+                <p>Followers : <span class="counter" data-target="625000">0</span></p>
+                <a href="#" class="card-link">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Follow me</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="card" data-tilt>
+            <div class="card_content">
+                <i class="fa-brands fa-github"></i>
+                <h2>Github</h2>
+                <p>Followers : <span class="counter" data-target="150000">0</span></p>
+                <a href="#" class="card-link">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Follow me</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="card" data-tilt>
+            <div class="card_content">
+                <i class="fa-brands fa-linkedin"></i>
+                <h2>Linkedin</h2>
+                <p>Connection : <span class="counter" data-target="100000">0</span></p>
+                <a href="#" class="card-link">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Connect</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const counters = document.querySelectorAll('.counter');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-20px) scale(1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+            });
+
+            card.addEventListener('click', (e) => {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+
+                const rect = card.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+
+                card.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(0) + 'k';
+            }
+            return num;
+        }
+
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = formatNumber(Math.floor(current));
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = formatNumber(target);
+                }
+            };
+
+            updateCounter();
+        };
+
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const countersInView = entry.target.querySelectorAll('.counter');
+                    countersInView.forEach(counter => {
+                        if (counter.textContent === '0') {
+                            animateCounter(counter);
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => observer.observe(card));
+
+        document.querySelectorAll('.card-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const card = link.closest('.card');
+                card.style.animation = 'none';
+                card.style.transform = 'scale(0.95)';
+
+                setTimeout(() => {
+                    card.style.animation = '';
+                    card.style.transform = '';
+                    alert('Redirecting to social media profile...');
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
