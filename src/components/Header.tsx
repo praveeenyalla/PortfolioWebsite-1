@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import DynamicIsland from './DynamicIsland';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,14 +40,16 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled
-        ? 'bg-white/30 dark:bg-gray-900/30 shadow-2xl border-b border-white/30 dark:border-gray-700/40'
-        : 'bg-white/20 dark:bg-gray-900/20 border-b border-white/20 dark:border-gray-700/20'
-    } backdrop-blur-2xl backdrop-saturate-200`} style={{
-      WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-      backdropFilter: 'blur(40px) saturate(200%)'
-    }}>
+    <>
+      <DynamicIsland />
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-white/30 dark:bg-gray-900/30 shadow-2xl border-b border-white/30 dark:border-gray-700/40'
+          : 'bg-white/20 dark:bg-gray-900/20 border-b border-white/20 dark:border-gray-700/20'
+      } backdrop-blur-2xl backdrop-saturate-200`} style={{
+        WebkitBackdropFilter: 'blur(40px) saturate(200%)',
+        backdropFilter: 'blur(40px) saturate(200%)'
+      }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 sm:py-4">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
@@ -106,6 +109,7 @@ const Header: React.FC = () => {
         )}
       </div>
     </header>
+    </>
   );
 };
 
