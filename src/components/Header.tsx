@@ -1,22 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2, ChevronDown } from 'lucide-react';
+import { Menu, X, Code2 } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isIslandMode, setIsIslandMode] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsIslandMode(currentScrollY > 150);
       setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY > 150) {
+        if (currentScrollY > lastScrollY) {
+          setShowHeader(false);
+        } else {
+          setShowHeader(true);
+        }
+      } else {
+        setShowHeader(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const navItems = [
     { href: '#home', label: 'Home' },
@@ -45,7 +57,7 @@ const Header: React.FC = () => {
     <>
       {/* Full Header - Expands at top */}
       <header className={`fixed top-0 left-0 right-0 transition-all duration-500 z-50 ${
-        isIslandMode ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        showHeader ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
       } ${
         isScrolled
           ? 'bg-white/30 dark:bg-gray-900/30 shadow-2xl border-b border-white/30 dark:border-gray-700/40'
@@ -111,24 +123,6 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Dynamic Island - Collapses when scrolling */}
-      {isIslandMode && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 animate-in fade-in duration-300">
-          <div
-            onClick={() => {
-              setIsIslandMode(false);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:to-blue-900 rounded-full shadow-2xl border border-blue-500/50 backdrop-blur-xl cursor-pointer hover:shadow-3xl hover:scale-105 transition-all duration-300 flex items-center gap-3 group"
-          >
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-white text-sm font-bold tracking-wide">Menu</span>
-            </div>
-            <ChevronDown className="w-4 h-4 text-white/70 group-hover:rotate-180 transition-transform" />
-          </div>
-        </div>
-      )}
     </>
   );
 };
