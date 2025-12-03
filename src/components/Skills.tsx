@@ -21,6 +21,23 @@ const Skills: React.FC = () => {
       ]
     },
     {
+      title: "AI Architecture & System Design",
+      icon: <Sparkles className="w-6 h-6" />,
+      color: "from-pink-500 to-rose-700",
+      borderColor: "border-pink-500",
+      bgColor: "bg-pink-50 dark:bg-pink-900/20",
+      skills: [
+        "AI System Architecture",
+        "Large Language Models",
+        "RAG Systems",
+        "AI Agent Design",
+        "Prompt Engineering",
+        "Multi-agent Systems",
+        "Knowledge Graphs",
+        "AI Infrastructure"
+      ]
+    },
+    {
       title: "Data Science & Analytics",
       icon: <BarChart3 className="w-6 h-6" />,
       color: "from-blue-500 to-blue-700",
@@ -234,7 +251,7 @@ const Skills: React.FC = () => {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillsMetrics.map((metric, index) => (
-              <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-600">
+              <div key={index} className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-600 neon-border">
                 <div className={`w-12 h-12 ${metric.bgColor} rounded-lg flex items-center justify-center ${metric.color} mx-auto mb-4 transition-colors duration-300`}>
                   {metric.icon}
                 </div>
@@ -251,7 +268,7 @@ const Skills: React.FC = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 neon-border"
             >
               <div className="flex items-center mb-6">
                 <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center text-white mr-4 shadow-md`}>
@@ -281,7 +298,7 @@ const Skills: React.FC = () => {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 neon-border"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">

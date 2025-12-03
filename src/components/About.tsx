@@ -135,7 +135,7 @@ const About: React.FC = () => {
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg border border-gray-100 dark:border-gray-600 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg border border-gray-100 dark:border-gray-600 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 neon-border"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 mb-3 sm:mb-4 transition-colors duration-300">
                   {achievement.icon}
@@ -152,9 +152,9 @@ const About: React.FC = () => {
         </div>
 
         {/* Professional Summary */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-700 dark:to-blue-900 rounded-2xl p-6 sm:p-8 text-white transition-colors duration-300">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-700 dark:to-blue-900 rounded-2xl p-6 sm:p-8 text-white transition-colors duration-300 neon-border">
           <div className="text-center">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4">Professional Summary</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 animate-neon-glow">Professional Summary</h3>
             <p className="text-blue-100 dark:text-blue-200 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto mb-4 transition-colors duration-300">
               An innovative AI Engineer and Software Developer with proven expertise in Artificial Intelligence, Machine Learning, 
               and Cloud Computing. Specialized in creating intelligent solutions, custom AI assistants, and scalable applications. 

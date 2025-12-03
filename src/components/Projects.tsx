@@ -97,7 +97,7 @@ const Projects: React.FC = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700 neon-border"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -206,7 +206,7 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Project Stats */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 transition-colors duration-300 mb-16">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 transition-colors duration-300 mb-16 neon-border">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center transition-colors duration-300">Project Statistics</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
@@ -229,9 +229,9 @@ const Projects: React.FC = () => {
         </div>
 
         {/* Development Approach */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-700 dark:to-blue-900 rounded-2xl p-8 text-white transition-colors duration-300">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-700 dark:to-blue-900 rounded-2xl p-8 text-white transition-colors duration-300 neon-border">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold mb-4">My Development Philosophy</h3>
+            <h3 className="text-2xl font-semibold mb-4 animate-neon-glow">My Development Philosophy</h3>
             <p className="text-blue-100 dark:text-blue-200 text-lg leading-relaxed max-w-3xl mx-auto transition-colors duration-300">
               Every project is crafted with attention to detail, modern best practices, and user-centric design. 
               I believe in creating solutions that are not just functional, but also scalable, maintainable, and impactful.
