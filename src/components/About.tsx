@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, BookOpen, Target, Briefcase, Globe, Phone, Download, Eye } from 'lucide-react';
+import { Award, BookOpen, Target, Globe, Phone, Download, Eye } from 'lucide-react';
 
 const About: React.FC = () => {
   const handleViewResume = () => {
@@ -22,7 +22,6 @@ const About: React.FC = () => {
       document.body.removeChild(link);
     } catch (error) {
       console.error('Resume download failed:', error);
-      alert('Resume download encountered an issue. Please contact me directly at nagapraveenyalla@gmail.com');
       alert('Resume download encountered an issue. Please contact me directly at praveen.yalla2@gmail.com');
     }
   };
@@ -51,13 +50,13 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <section id="about" className="py-16 sm:py-20 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">About Me</h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
-            AI Engineer and Software Developer with expertise in Artificial Intelligence, Machine Learning, Cloud Computing, 
-            and Custom Application Development. Passionate about creating intelligent solutions and innovative technologies.
+            Data Science & Machine Learning Engineer with hands-on experience in building and deploying data-driven applications. 
+            Skilled in Python, machine learning, and backend development using FastAPI.
           </p>
         </div>
 
@@ -66,48 +65,38 @@ const About: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">My Journey</h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300 text-sm sm:text-base">
               <p>
-                I am Nagapraveen Yalla, an AI Engineer and Software Developer with expertise in Artificial Intelligence, 
-                Cloud Computing, and Custom Application Development. I specialize in designing and building intelligent 
-                solutions such as AI-powered assistants, automation workflows, and scalable cloud-based applications. 
-                I am passionate about research, innovation, and leveraging cutting-edge technologies to solve real-world challenges.
+                I am Yalla Nagapraveen, a results-driven Data Science & Machine Learning Engineer with hands-on experience in building and deploying data-driven applications in client-based environments. I hold a Bachelor of Technology in Computer Science Engineering from NRI Institute of Technology, Visadala.
               </p>
               <p>
-                My expertise spans across multiple domains including AI development, machine learning engineering, 
-                data science, and cloud computing. I have successfully created custom AI solutions like "AvaMind" AI 
-                assistant with advanced features including voice interaction, sketch generation, and real-time responses 
-                designed to provide human-like conversational experiences.
+                My professional experience includes working as a Machine Learning Engineer Intern at Sun-It Solutions, where I designed and deployed end-to-end machine learning solutions for predictive analytics, performed large-scale data preprocessing and feature engineering, and utilized libraries like Pandas, NumPy, Scikit-learn, and TensorFlow/PyTorch.
               </p>
               <p>
-                I have developed sophisticated AI workflows using n8n to automate research, integrate APIs, and connect 
-                multiple platforms including Telegram, Google AI Studio, and various cloud services. My experience includes 
-                building and deploying scalable cloud-based applications on Google Cloud Platform, ensuring high availability 
-                and reliability for enterprise-level solutions.
+                Prior to that, as a Data Science & Machine Learning Engineer Intern at Social Prachar, I designed predictive ML systems, built REST APIs using FastAPI, and developed NLP chatbots handling real-time queries.
               </p>
               <p>
-                I am recognized for my problem-solving abilities, innovative thinking, and client-focused solutions that 
-                add measurable value to organizations. You can explore my complete portfolio and latest AI projects at{' '}
-                <a 
-                  href="https://yallanagapraveen.info" 
-                  className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium underline transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  yallanagapraveen.info
-                </a>
-                , where I regularly showcase my AI innovations, machine learning projects, and share insights about emerging technologies.
+                I have a strong foundation in programming languages like Python, SQL, and JavaScript, and frameworks like FastAPI and Flask. I am passionate about data analysis, machine learning, and leveraging these technologies to solve real-world problems.
+                I am Yalla Nagapraveen, a dedicated Data Science and Machine Learning Engineer. I graduated with a B.Tech in Computer Science Engineering from NRI Institute of Technology, where I developed a strong academic foundation in software engineering and data algorithms.
+              </p>
+              <p>
+                During my tenure at Sun-It Solutions, I focused on designing end-to-end machine learning workflows, handling massive datasets, and optimizing model performance using industry-standard libraries like TensorFlow and Scikit-learn.
+              </p>
+              <p>
+                At Social Prachar, I enhanced my skills in full-stack integration by building scalable REST APIs via FastAPI and deploying AI-driven NLP solutions that address real-world business challenges.
+              </p>
+              <p>
+                With a deep proficiency in Python, SQL, and cloud-native architecture, I aim to create impactful, data-centric products that solve complex computational problems.
               </p>
             </div>
             
             <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-600 transition-colors duration-300">
               <h4 className="font-semibold text-green-900 dark:text-green-300 mb-2 transition-colors duration-300 text-sm sm:text-base">Current Status</h4>
               <p className="text-green-700 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
-                Available for AI Engineer, Machine Learning Engineer, Data Scientist, and AI Researcher positions where I can apply my 
-                expertise in artificial intelligence, custom application development, and innovative problem-solving to drive 
-                technological advancement and business growth. Ready for immediate opportunities.
+                Available for Data Science, Machine Learning Engineer, and Backend Developer positions where I can apply my 
+                expertise in predictive systems, machine learning pipelines, and FastAPI development to drive business growth.
               </p>
               <div className="mt-3 sm:mt-4 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-2 flex-shrink-0" />
-                <span>Contact: +91 8328377820</span>
+                <span>Contact: +91-8328377820</span>
               </div>
               <div className="mt-2 flex items-center text-green-600 dark:text-green-400 transition-colors duration-300 text-sm sm:text-base">
                 <span>Email: praveen.yalla2@gmail.com</span>
@@ -156,38 +145,33 @@ const About: React.FC = () => {
           <div className="text-center">
             <h3 className="text-xl sm:text-2xl font-semibold mb-4 animate-neon-glow">Professional Summary</h3>
             <p className="text-blue-100 dark:text-blue-200 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto mb-4 transition-colors duration-300">
-              An innovative AI Engineer and Software Developer with proven expertise in Artificial Intelligence, Machine Learning, 
-              and Cloud Computing. Specialized in creating intelligent solutions, custom AI assistants, and scalable applications. 
-              Passionate about research, automation, and leveraging cutting-edge technologies to solve complex real-world challenges.
+              Results-driven Data Science & Machine Learning Engineer with hands-on experience in building and deploying
+              data-driven applications in a full-time, client-based environment. Skilled in Python, machine learning, and backend
+              development using FastAPI. Strong problem-solving abilities and passion for AI.
             </p>
             <p className="text-blue-200 dark:text-blue-300 text-xs sm:text-sm mb-4 sm:mb-6 transition-colors duration-300">
-              Explore my AI innovations and connect with me at{' '}
-              <span className="text-white font-medium">yallanagapraveen.info</span> | 
-              LinkedIn: <a href="https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:underline">Yalla Nagapraveen Chowdhury</a> | 
-              GitHub: <span className="text-white font-medium">@praveeenyalla</span> | 
+              LinkedIn: <a href="https://linkedin.com/in/praveenyalla73" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:underline">YALLA NAGAPRAVEEN</a> | 
+              GitHub: <a href="https://github.com/praveeenyalla" target="_blank" rel="noopener noreferrer" className="text-white font-medium hover:underline">@praveeenyalla</a> | 
               Email: <span className="text-white font-medium">praveen.yalla2@gmail.com</span>
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                AI Engineering
+                Data Science
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
                 Machine Learning
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                AI Research
+                FastAPI Development
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Cloud Computing
+                Data Analysis
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Custom AI Solutions
+                Exploratory Data Analysis
               </span>
               <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Automation Workflows
-              </span>
-              <span className="bg-blue-500 dark:bg-blue-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300">
-                Innovation & Research
+                Feature Engineering
               </span>
             </div>
           </div>

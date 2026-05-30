@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
@@ -69,11 +69,11 @@ const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
-                <Code2 className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shadow-lg flex-shrink-0 border-2 border-blue-600 dark:border-blue-400 bg-white">
+                <img src="/praveen.png" alt="YALLA NAGAPRAVEEN" className="w-full h-full object-cover" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight drop-shadow-sm">NAGA PRAVEEN YALLA</h1>
+                <h1 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight drop-shadow-sm">YALLA NAGAPRAVEEN</h1>
                 <p className="text-sm text-blue-600 dark:text-blue-400 font-medium drop-shadow-sm">yallanagapraveen.info</p>
               </div>
             </div>

@@ -22,98 +22,98 @@ const Experience: React.FC = () => {
       document.body.removeChild(link);
     } catch (error) {
       console.error('Resume download failed:', error);
-      alert('Resume download encountered an issue. Please contact me directly at nagapraveenyalla@gmail.com');
       alert('Resume download encountered an issue. Please contact me directly at praveen.yalla2@gmail.com');
     }
   };
 
   const experiences = [
     {
-      title: "Data Scientist",
-      company: "Seeking Opportunities",
-      location: "Remote/Hyderabad, India",
-      period: "2024 - Present",
-      type: "Job Seeking",
-      description: "AI Engineer and Software Developer with expertise in Artificial Intelligence, Machine Learning, and Cloud Computing. Specialized in creating intelligent solutions, custom AI assistants, and scalable applications with proven track record of innovation.",
-      achievements: [
-        "Created 'AvaMind' AI - custom AI assistant with voice interaction, sketch generation, and real-time responses",
-        "Developed AI workflows using n8n for automation, research, and API integration across multiple platforms",
-        "Built and deployed scalable cloud-based applications on Google Cloud Platform",
-        "Designed custom software solutions for automation, research support, and productivity enhancement",
-        "Proven expertise in multi-domain development including AI, web design, cloud management, and software engineering",
-        "Recognized for problem-solving, innovative thinking, and client-focused solutions with measurable value"
-      ],
-      technologies: ["Python", "AI/ML", "Google Cloud", "n8n Automation", "API Integration", "TensorFlow", "PyTorch", "Voice AI", "Computer Vision", "Cloud Computing"]
-    },
-    {
-      title: "Project-Based Learning & Development",
-      company: "Self-Directed Learning",
+      title: "Machine Learning Engineer Intern (Client-Based)",
+      company: "Sun-It Solutions",
       location: "Hyderabad, India",
-      period: "2023 - 2024",
-      type: "Learning & Projects",
-      description: "Intensive self-directed learning focused on data science, machine learning, and practical project implementation. Built comprehensive portfolio demonstrating advanced technical skills.",
+      period: "November 2025 - March 2026",
+      type: "Internship",
+      description: "Designed, developed, and deployed end-to-end machine learning solutions for predictive analytics and decision-making.",
       achievements: [
-        "Developed full-stack web applications with modern frameworks",
-        "Created machine learning models, data analysis solutions, and business intelligence dashboards",
-        "Implemented machine learning models for real-world problems",
-        "Built data analysis pipelines and automated reporting systems",
-        "Built responsive web applications serving thousands of users",
-        "Gained expertise in both frontend and backend technologies"
+        "Designed, developed, and deployed end-to-end machine learning solutions for predictive analytics and decision-making.",
+        "Performed large-scale data preprocessing, feature engineering, and data cleaning to enhance model performance and reliability.",
+        "Conducted Exploratory Data Analysis (EDA) to uncover patterns, trends, and actionable insights from complex datasets.",
+        "Built and optimized machine learning models, achieving up to 72% improvement in prediction accuracy.",
+        "Utilized Python libraries such as Pandas, NumPy, Scikit-learn, and TensorFlow/PyTorch for model development.",
+        "Ensured API security, data integrity, and efficient request handling in production environments."
       ],
-      technologies: ["React", "Node.js", "Python", "MongoDB", "Excel", "Power BI", "Machine Learning", "Data Science", "Data Analysis"]
+      technologies: ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "PyTorch", "EDA", "Feature Engineering", "API Security"]
     },
     {
-      title: "Academic Projects & Internships",
-      company: "NRI Institute of Technology",
-      location: "India",
-      period: "2020 - 2023",
-      type: "Academic",
-      description: "Completed various academic projects and training programs focusing on software development, data science, and emerging technologies during university studies.",
+      title: "Data Science & Machine Learning Engineer Intern (Client-Based)",
+      company: "Social Prachar",
+      location: "Hyderabad, India",
+      period: "June 2025 - November 2025",
+      type: "Internship",
+      description: "Designed and deployed predictive ML systems and built scalable REST APIs using FastAPI for ML integration.",
       achievements: [
-        "Completed multiple academic projects in data structures and algorithms",
-        "Participated in coding competitions and hackathons",
-        "Gained foundational knowledge in database management systems",
-        "Developed problem-solving skills through practical assignments",
-        "Built strong foundation in programming and analytical thinking"
+        "Designed and deployed predictive ML systems.",
+        "Performed data preprocessing on large datasets, improving model efficiency.",
+        "Conducted EDA to extract insights from datasets.",
+        "Built REST APIs using FastAPI for ML integration.",
+        "Developed and deployed ML models improving prediction accuracy by 72%.",
+        "Built scalable FastAPI-based ML APIs.",
+        "Developed NLP chatbot handling real-time queries."
       ],
-      technologies: ["Java", "C++", "Python", "MySQL", "Data Structures", "Algorithms"]
+      technologies: ["Python", "Machine Learning", "FastAPI", "REST APIs", "NLP", "Chatbots", "EDA", "Data Preprocessing", "Model Evaluation"]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Technology in Computer Science",
-      institution: "NRI Institute of Technology",
-      location: "India",
-      period: "2020 - 2024",
-      grade: "8.5 CGPA",
-      description: "Specialized in software engineering, data structures, algorithms, and database management systems. Strong foundation in computer science fundamentals with focus on practical application and problem-solving."
+      degree: "Bachelor of Technology in Computer Science Engineering",
+      institution: "NRI Institute of Technology, Visadala",
+      location: "Guntur, Andhra Pradesh, India",
+      period: "June 2021 – April 2025",
+      grade: "8.09 CGPA (74%)",
+      description: "Specialized in Computer Science Engineering with a strong focus on core programming, algorithms, database management, and hands-on projects."
+    },
+    {
+      degree: "Sri Chaitanya Junior College",
+      institution: "Board of Intermediate, Vijayawada",
+      location: "Vijayawada, Andhra Pradesh, India",
+      period: "June 2019 – April 2021",
+      grade: "8.5/10 CGPA (85%)",
+      description: "Completed higher secondary education with major focus on Mathematics, Physics, and Chemistry."
+    },
+    {
+      degree: "Sri Chaitanya School",
+      institution: "Sattenapalle",
+      location: "Sattenapalle, Andhra Pradesh, India",
+      period: "June 2018 – April 2019",
+      grade: "9/10 CGPA (90%)",
+      description: "Completed secondary education with high academic standing."
     }
   ];
 
   const careerObjective = {
     title: "Career Objective",
-    description: "Seeking AI Engineer, Machine Learning Engineer, Data Scientist, and AI Researcher positions where I can apply my expertise in artificial intelligence, custom application development, and innovative problem-solving to drive technological advancement and organizational success.",
+    description: "Seeking Data Science, Machine Learning Engineer, or Backend Developer positions where I can apply my expertise in Python, predictive modeling, and building scalable APIs using FastAPI/Flask to solve complex client problems and drive innovation.",
     skills: [
-      "AI Engineering & Development",
-      "Machine Learning & Deep Learning",
-      "Custom AI Assistant Development",
-      "Cloud Computing (Google Cloud, AWS)",
-      "Automation Workflows & API Integration",
-      "Research & Innovation",
-      "Scalable Application Development",
-      "Multi-domain Problem Solving"
+      "Data Science & Analytics",
+      "Machine Learning Engineering",
+      "Backend Development (FastAPI/Flask)",
+      "Natural Language Processing (NLP)",
+      "Deep Learning (TensorFlow/PyTorch)",
+      "API Design & Integration",
+      "Cloud Computing (GCP/AWS)",
+      "Exploratory Data Analysis (EDA)"
     ]
   };
 
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section id="experience" className="py-20 bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Professional Journey</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300">
-            Fresh graduate with strong analytical skills and hands-on project experience, 
-            actively seeking opportunities to begin my career as a Data Scientist or Data Analyst.
+            Results-driven Data Science & Machine Learning Engineer with hands-on intern experience 
+            in client-based environments, seeking roles where I can deploy predictive systems and scalable APIs.
           </p>
         </div>
 
@@ -244,9 +244,9 @@ const Experience: React.FC = () => {
             <h3 className="text-2xl font-semibold text-green-900 dark:text-green-300 transition-colors duration-300">Currently Available</h3>
           </div>
           <p className="text-green-800 dark:text-green-400 text-lg leading-relaxed mb-4 transition-colors duration-300">
-            I am actively seeking AI Engineer, Machine Learning Engineer, Data Scientist, and AI Researcher positions where I can apply my 
-            expertise in artificial intelligence, custom AI development, automation workflows, and innovative problem-solving. Ready to contribute 
-            cutting-edge solutions and drive technological advancement in a collaborative environment.
+            I am actively seeking Data Science, Machine Learning Engineer, and Backend Developer positions where I can apply my 
+            expertise in predictive modeling, FastAPI/Flask development, NLP, and data preprocessing. Ready to contribute 
+            impactful solutions in a client-based environment.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white dark:bg-green-900/30 p-4 rounded-lg transition-colors duration-300">

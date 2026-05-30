@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
       );
       
       if (userConfirmed) {
-        const subject = encodeURIComponent('Resume Request - NAGA PRAVEEN YALLA');
+        const subject = encodeURIComponent('Resume Request - YALLA NAGAPRAVEEN');
         const body = encodeURIComponent(
           'Hi Praveen,\n\n' +
           'I visited your portfolio website and would like to request your resume.\n\n' +
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
       );
       
       if (userConfirmed) {
-        const subject = encodeURIComponent('Resume Request - NAGA PRAVEEN YALLA');
+        const subject = encodeURIComponent('Resume Request - YALLA NAGAPRAVEEN');
         const body = encodeURIComponent(
           'Hi Praveen,\n\n' +
           'I visited your portfolio website and would like to request your resume.\n\n' +
@@ -84,16 +84,14 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="pt-20 pb-12 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 min-h-screen flex items-center">
+    <section id="home" className="pt-20 pb-12 bg-gradient-to-br from-blue-50/70 via-white/70 to-blue-50/70 dark:from-gray-900/70 dark:via-gray-800/70 dark:to-gray-900/70 backdrop-blur-md transition-colors duration-300 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Profile Image and Info */}
           <div className="w-full lg:w-1/3 text-center lg:text-left order-1 lg:order-1">
             <div className="relative inline-block mb-6">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-full flex items-center justify-center mx-auto lg:mx-0 shadow-xl border-4 border-white dark:border-gray-700 transition-colors duration-300 animate-pulse-glow">
-                <div className="w-36 h-36 sm:w-40 sm:h-40 lg:w-48 lg:h-48 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-                  <span className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold">NPY</span>
-                </div>
+              <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden mx-auto lg:mx-0 shadow-xl border-4 border-white dark:border-gray-700 transition-colors duration-300 animate-pulse-glow bg-white flex items-center justify-center">
+                <img src="/praveen.png" alt="YALLA NAGAPRAVEEN" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 bg-green-500 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-4 border-white dark:border-gray-700 transition-colors duration-300"></div>
             </div>
@@ -119,7 +117,7 @@ const Hero: React.FC = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight transition-colors duration-300">
               Hello, I'm{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800 block sm:inline animate-neon-glow">
-                NAGA PRAVEEN YALLA
+                YALLA NAGAPRAVEEN
               </span>
             </h1>
             
@@ -184,7 +182,7 @@ const Hero: React.FC = () => {
             {/* Social Links */}
             <div className="flex justify-center lg:justify-start space-x-4">
               <a
-                href="https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351"
+                href="https://linkedin.com/in/praveenyalla73"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center transition-all duration-200 transform hover:scale-110 shadow-lg"

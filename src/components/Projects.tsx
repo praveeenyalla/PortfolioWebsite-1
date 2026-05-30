@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Calendar, Tag, ArrowRight, Play, Users, Star, GitBranch, Filter, Eye, TrendingUp } from 'lucide-react';
+import { ExternalLink, Github, Calendar, Tag, ArrowRight, Play, Users, Star, GitBranch, Filter, TrendingUp } from 'lucide-react';
 import { projectsConfig, getFeaturedProjects, getRecentProjects, getProjectsByCategory } from '../data/projectsConfig';
 
 const Projects: React.FC = () => {
@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section id="projects" className="py-20 bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">My Projects Portfolio</h2>
@@ -94,11 +94,14 @@ const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700 neon-border"
-            >
+          {filteredProjects.map((project, index) => {
+            const animations = ['animate-card-fade-up', 'animate-card-slide-left', 'animate-card-scale-in'];
+            const animationClass = animations[index % animations.length];
+            return (
+              <div
+                key={project.id}
+                className={`bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700 neon-border ${animationClass}`}
+              >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
@@ -202,7 +205,32 @@ const Projects: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
+          );})}
+        </div>
+
+        {/* GitHub Highlight Banner */}
+        <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-indigo-950 rounded-2xl p-8 text-white transition-colors duration-300 mb-16 border-2 border-blue-500/50 shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+          <div className="flex flex-col lg:flex-row items-center gap-6 justify-between">
+            <div className="flex-1 space-y-4 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold border border-blue-500/30">
+                <Star className="w-4 h-4 fill-blue-300" />
+                Featured GitHub Repositories
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">Explore 60+ Projects on GitHub</h3>
+              <p className="text-slate-300 leading-relaxed text-sm sm:text-base max-w-3xl">
+                I have built over 60 repositories on my GitHub, showcasing end-to-end development in **Artificial Intelligence, Machine Learning, Deep Learning, NLP, web automation, API construction (FastAPI & Flask)**, and scalable applications. Visit my full repository tab to browse all projects, codes, and contributions.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <button
+                onClick={() => window.open('https://github.com/praveeenyalla?tab=repositories', '_blank', 'noopener,noreferrer')}
+                className="bg-white hover:bg-slate-100 text-slate-950 font-bold px-6 py-3 rounded-lg flex items-center justify-center gap-2.5 transition-all duration-200 transform hover:scale-105 shadow-xl text-sm sm:text-base"
+              >
+                <Github className="w-5 h-5 text-slate-950" />
+                View GitHub Repositories
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Project Stats */}
@@ -210,7 +238,7 @@ const Projects: React.FC = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center transition-colors duration-300">Project Statistics</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2 transition-colors duration-300">{projectsConfig.length}+</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2 transition-colors duration-300">60+</div>
               <div className="text-gray-700 dark:text-gray-300 transition-colors duration-300">Total Projects</div>
             </div>
             <div>

@@ -82,3 +82,50 @@
   border-color: rgba(59, 130, 246, 1);
   box-shadow: 0 0 25px rgba(59, 130, 246, 0.6), inset 0 0 25px rgba(59, 130, 246, 0.2);
 }
+
+/* Custom Card Entrance Animations */
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cardScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-card-fade-up {
+  animation: cardFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-card-slide-left {
+  animation: cardSlideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-card-scale-in {
+  animation: cardScaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

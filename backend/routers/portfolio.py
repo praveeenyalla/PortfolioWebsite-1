@@ -83,13 +83,13 @@ async def get_portfolio_stats(db: Session = Depends(get_db)):
 @router.get("/about", response_model=APIResponse)
 async def get_about_info():
     about_data = {
-        "name": "YALLA.NAGAPRAVEEN",
+        "name": "YALLA NAGAPRAVEEN",
         "title": "Aspiring Data Scientist & Technology Enthusiast",
-        "email": "nagapraveenyalla@gmail.com",
+        "email": "praveen.yalla2@gmail.com",
         "phone": "+91 8328377820",
         "location": "Hyderabad, India",
         "website": "https://yallanagapraveen.info",
-        "linkedin": "https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351",
+        "linkedin": "https://linkedin.com/in/praveenyalla73",
         "github": "https://github.com/praveeenyalla",
         "bio": "Fresh graduate with a passion for data science, data analysis, and machine learning. Equipped with strong analytical skills, technical knowledge in data science and analytics, and hands-on project experience. Ready to contribute to data-driven decision making and grow professionally in the fields of data science and analytics.",
         "objective": "Seeking an entry-level Data Scientist or Data Analyst position where I can apply my analytical skills, technical knowledge, and passion for machine learning and data analysis to contribute to organizational success.",
@@ -107,7 +107,7 @@ async def get_about_info():
         ],
         "achievements": [
             "ExcelR Data Science certification",
-            "6+ completed projects",
+            "60+ completed projects on GitHub & Local",
             "Strong foundation in data science and analytics",
             "Professional portfolio website"
         ]

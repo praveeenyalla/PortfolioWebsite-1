@@ -85,7 +85,7 @@ class EmailService:
         return self.send_email([self.username], subject, body)
     
     def send_welcome_email(self, user_email: str, user_name: str) -> bool:
-        subject = "Welcome to YALLA.NAGAPRAVEEN Portfolio"
+        subject = "Welcome to YALLA NAGAPRAVEEN Portfolio"
         body = f"""
         Dear {user_name},
         
@@ -94,10 +94,10 @@ class EmailService:
         You can now access exclusive content and stay updated with my latest projects and achievements.
         
         Best regards,
-        YALLA.NAGAPRAVEEN
+        YALLA NAGAPRAVEEN
         
         Website: https://yallanagapraveen.info
-        Email: nagapraveenyalla@gmail.com
+        Email: praveen.yalla2@gmail.com
         """
         
         return self.send_email([user_email], subject, body)

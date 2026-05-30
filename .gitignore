@@ -125,3 +125,8 @@ temp/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Virtual environment at root
+.venv/
+venv/
+env/

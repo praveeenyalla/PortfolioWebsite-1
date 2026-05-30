@@ -1,162 +1,108 @@
 import React from 'react';
-import { Code, Database, Cloud, Wrench, Award, Eye, Brain, BarChart3, Activity, Sparkles, Zap, Target } from 'lucide-react';
+import { Code, Cloud, Wrench, Award, Eye, Brain, BarChart3, Activity, Sparkles, Zap, Target } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const skillCategories = [
     {
-      title: "AI & Machine Learning",
+      title: "Programming Languages",
+      icon: <Code className="w-6 h-6" />,
+      color: "from-blue-500 to-blue-700",
+      borderColor: "border-blue-500",
+      bgColor: "bg-blue-50 dark:bg-blue-900/20",
+      skills: ["Python", "SQL", "JavaScript"]
+    },
+    {
+      title: "Frameworks",
+      icon: <Sparkles className="w-6 h-6" />,
+      color: "from-pink-500 to-rose-700",
+      borderColor: "border-pink-500",
+      bgColor: "bg-pink-50 dark:bg-pink-900/20",
+      skills: ["FastAPI", "Flask", "REST APIs"]
+    },
+    {
+      title: "ML & AI",
       icon: <Brain className="w-6 h-6" />,
       color: "from-purple-500 to-purple-700",
       borderColor: "border-purple-500",
       bgColor: "bg-purple-50 dark:bg-purple-900/20",
       skills: [
-        "Python for AI/ML",
-        "TensorFlow & PyTorch",
-        "Natural Language Processing",
-        "Computer Vision",
-        "OpenAI API Integration",
+        "Supervised Learning",
+        "Model Evaluation",
+        "Feature Engineering",
+        "Natural Language Processing (NLP)",
         "Deep Learning",
-        "Scikit-learn",
-        "Model Deployment"
+        "TensorFlow",
+        "Keras"
       ]
     },
     {
-      title: "AI Architecture & System Design",
-      icon: <Sparkles className="w-6 h-6" />,
-      color: "from-pink-500 to-rose-700",
-      borderColor: "border-pink-500",
-      bgColor: "bg-pink-50 dark:bg-pink-900/20",
-      skills: [
-        "AI System Architecture",
-        "Large Language Models",
-        "RAG Systems",
-        "AI Agent Design",
-        "Prompt Engineering",
-        "Multi-agent Systems",
-        "Knowledge Graphs",
-        "AI Infrastructure"
-      ]
-    },
-    {
-      title: "Data Science & Analytics",
+      title: "Data Analysis",
       icon: <BarChart3 className="w-6 h-6" />,
-      color: "from-blue-500 to-blue-700",
-      borderColor: "border-blue-500",
-      bgColor: "bg-blue-50 dark:bg-blue-900/20",
-      skills: [
-        "Data Analysis & EDA",
-        "Statistical Analysis",
-        "Python (Pandas, NumPy)",
-        "Data Visualization",
-        "Excel & Advanced Analytics",
-        "SQL & Database Queries",
-        "Power BI & Tableau",
-        "Business Intelligence"
-      ]
-    },
-    {
-      title: "Frontend Development",
-      icon: <Code className="w-6 h-6" />,
       color: "from-cyan-500 to-cyan-700",
       borderColor: "border-cyan-500",
       bgColor: "bg-cyan-50 dark:bg-cyan-900/20",
-      skills: [
-        "React & Next.js",
-        "TypeScript",
-        "JavaScript (ES6+)",
-        "HTML5/CSS3",
-        "Tailwind CSS",
-        "Responsive Design",
-        "Framer Motion",
-        "Material-UI"
-      ]
+      skills: ["Pandas", "NumPy", "Matplotlib"]
     },
     {
-      title: "Backend Development",
-      icon: <Database className="w-6 h-6" />,
-      color: "from-green-500 to-green-700",
-      borderColor: "border-green-500",
-      bgColor: "bg-green-50 dark:bg-green-900/20",
-      skills: [
-        "Node.js & Express.js",
-        "Python (Flask, FastAPI)",
-        "REST APIs",
-        "MongoDB",
-        "PostgreSQL",
-        "Firebase",
-        "JWT Authentication",
-        "Socket.io"
-      ]
-    },
-    {
-      title: "Cloud & DevOps",
-      icon: <Cloud className="w-6 h-6" />,
-      color: "from-orange-500 to-orange-700",
-      borderColor: "border-orange-500",
-      bgColor: "bg-orange-50 dark:bg-orange-900/20",
-      skills: [
-        "AWS Services",
-        "Docker",
-        "Netlify Deployment",
-        "Git/GitHub",
-        "CI/CD Pipelines",
-        "AWS S3"
-      ]
-    },
-    {
-      title: "Tools & Technologies",
+      title: "Tools & Core Concepts",
       icon: <Wrench className="w-6 h-6" />,
       color: "from-red-500 to-red-700",
       borderColor: "border-red-500",
       bgColor: "bg-red-50 dark:bg-red-900/20",
-      skills: [
-        "VS Code",
-        "Jupyter Notebooks",
-        "Postman API Testing",
-        "Figma/Design Tools",
-        "Stripe Integration",
-        "OpenCV",
-        "NLTK & spaCy",
-        "Chart.js & Plotly"
-      ]
+      skills: ["Git", "GitHub", "DSA", "OOPs", "DBMS"]
+    },
+    {
+      title: "Cloud & Deployment",
+      icon: <Cloud className="w-6 h-6" />,
+      color: "from-orange-500 to-orange-700",
+      borderColor: "border-orange-500",
+      bgColor: "bg-orange-50 dark:bg-orange-900/20",
+      skills: ["Docker", "CI/CD", "AWS", "Google Cloud", "Google Cloud Platform"]
     }
   ];
 
   const certifications = [
     {
-      name: "Data Science Certification",
+      name: "Data Science Certified Professional",
       issuer: "ExcelR",
       year: "2024",
-      description: "Comprehensive data science program covering machine learning, statistics, and data analysis with hands-on projects",
+      description: "Comprehensive training in statistical modeling, machine learning algorithms, and data science methodologies.",
       viewUrl: "/EXCELR-75413-Yalla Naga Praveen.pdf"
     },
     {
-      name: "AWS Certified Developer",
-      issuer: "Amazon Web Services",
-      year: "2023",
-      description: "Cloud development and deployment expertise with AWS services and best practices",
-      viewUrl: "/aws.pdf"
+      name: "Deep Learning for Developers",
+      issuer: "Infosys Springboard",
+      year: "2024",
+      description: "Deep learning fundamentals, model training, and neural networks implementation.",
+      viewUrl: "#"
     },
     {
-      name: "Deloitte Advanced Participation Certificate",
+      name: "Data Analytics Job Simulation",
       issuer: "Deloitte",
-      year: "2023",
-      description: "Advanced participation in Deloitte's professional development program, demonstrating expertise in consulting methodologies, business analysis, and strategic thinking",
+      year: "2025",
+      description: "Deloitte virtual data analytics job simulation covering analysis and visualization.",
       viewUrl: "/DELOITTE.pdf"
     },
     {
-      name: "FORAGE Tata Data Visualization Certificate",
-      issuer: "FORAGE - Tata Group",
-      year: "2023",
-      description: "Completed Tata Group's virtual experience program focusing on data visualization, business intelligence, and strategic data analysis using advanced analytics tools",
+      name: "GenAI Powered Data Analytics Job Simulation",
+      issuer: "Forage",
+      year: "2025",
+      description: "GenAI Powered Data Analytics virtual job simulation.",
       viewUrl: "/forage_certificate.pdf"
+    },
+    {
+      name: "Solutions Architecture Job Simulation",
+      issuer: "Forage",
+      year: "2025",
+      description: "Solutions Architecture virtual job simulation.",
+      viewUrl: "/aws.pdf"
     }
   ];
 
   const skillsMetrics = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      value: "10+",
+      value: "60+",
       label: "Projects Delivered",
       description: "AI, Web Apps & Data Science",
       color: "text-purple-600 dark:text-purple-400",
@@ -234,7 +180,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <section id="skills" className="py-20 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Skills & Expertise</h2>

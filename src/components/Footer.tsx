@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Heart, ArrowUp, Globe } from 'lucide-react';
+import { Heart, ArrowUp, Globe } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -33,11 +33,11 @@ const Footer: React.FC = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center">
-                <Code2 className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center border border-blue-600 dark:border-blue-400 bg-white">
+                <img src="/praveen.png" alt="YALLA NAGAPRAVEEN" className="w-full h-full object-cover" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">NAGA PRAVEEN YALLA</h3>
+                <h3 className="text-xl font-bold">YALLA NAGAPRAVEEN</h3>
                 <p className="text-blue-400 text-sm flex items-center">
                   <Globe className="w-3 h-3 mr-1" />
                   yallanagapraveen.info
@@ -93,8 +93,8 @@ const Footer: React.FC = () => {
               </p>
               <p>
                 <span className="text-white font-medium">LinkedIn:</span><br />
-                <a href="https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">
-                  Yalla Nagapraveen Chowdhury
+                <a href="https://linkedin.com/in/praveenyalla73" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  YALLA NAGAPRAVEEN
                 </a>
               </p>
               <p>
@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>© {currentYear} NAGA PRAVEEN YALLA. All rights reserved.</span>
+              <span>© {currentYear} YALLA NAGAPRAVEEN. All rights reserved.</span>
               <span>|</span>
               <span className="flex items-center">
                 <Globe className="w-4 h-4 mr-1" />

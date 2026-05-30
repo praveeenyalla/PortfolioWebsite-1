@@ -1,7 +1,55 @@
-import React from 'react';
-import { Brain, BarChart3, TrendingUp, Database, Cpu, Zap, BookOpen, Target, Users, Lightbulb } from 'lucide-react';
+import React, { useState } from 'react';
+import { Brain, BarChart3, TrendingUp, Database, Cpu, Zap, BookOpen, Target, Users, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Information: React.FC = () => {
+  const [expandedCards, setExpandedCards] = useState<Record<number, boolean>>({});
+
+  const toggleCard = (index: number) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const domainPreferences = [
+    {
+      title: "Data Science",
+      subtitle: "Inspecting, cleaning, and transforming data to extract strategic insights.",
+      icon: <Brain className="w-6 h-6 text-blue-600 dark:text-blue-400" />,
+      image: "/data_science_pref.png",
+      color: "border-blue-500 hover:border-blue-600",
+      accentBg: "bg-blue-50 dark:bg-blue-900/20",
+      accentText: "text-blue-600 dark:text-blue-400",
+      btnColor: "bg-blue-600 hover:bg-blue-700 text-white",
+      whyPreferred: "I preferred Data Science because it represents the foundation of quantitative decision-making. Inspecting raw, messy datasets and transforming them into structured insights that reveal consumer behavior patterns or market trends is both challenging and incredibly rewarding. It bridges the gap between software engineering and computational math.",
+      details: "My academic background in Computer Science combined with hands-on practice (such as my ExcelR Data Science certification and 60+ GitHub projects) solidified my capability in Pandas, NumPy, Matplotlib, and SQL. I prefer this domain because it rewards curiosity, statistics-driven hypotheses, and analytical storytelling, transforming numbers into actionable strategies."
+    },
+    {
+      title: "AI Engineering",
+      subtitle: "Building intelligent software, agentic workflows, and cognitive assistants.",
+      icon: <Cpu className="w-6 h-6 text-purple-600 dark:text-purple-400" />,
+      image: "/ai_engineering_pref.png",
+      color: "border-purple-500 hover:border-purple-600",
+      accentBg: "bg-purple-50 dark:bg-purple-900/20",
+      accentText: "text-purple-600 dark:text-purple-400",
+      btnColor: "bg-purple-600 hover:bg-purple-700 text-white",
+      whyPreferred: "I preferred AI Engineering because it shifts the focus from static model training to active application integration and building cognitive assistants. Designing AvaMind AI taught me how to construct intelligent agentic workflows, automate complex computational tasks, and connect large language models (LLMs) with scalable backend services.",
+      details: "AI Engineering allows me to develop robust APIs using FastAPI and Flask and deploy them on cloud infrastructure like Google Cloud Platform (GCP) and AWS. I chose this field because it is the cutting-edge frontier of modern software, enabling the creation of systems that can reason, assist, and solve real-world problems in real-time."
+    },
+    {
+      title: "Machine Learning Engineering",
+      subtitle: "Designing, evaluating, and deploying high-performance model pipelines.",
+      icon: <Target className="w-6 h-6 text-orange-600 dark:text-orange-400" />,
+      image: "/ml_engineering_pref.png",
+      color: "border-orange-500 hover:border-orange-600",
+      accentBg: "bg-orange-50 dark:bg-orange-900/20",
+      accentText: "text-orange-600 dark:text-orange-400",
+      btnColor: "bg-orange-600 hover:bg-orange-700 text-white",
+      whyPreferred: "I preferred Machine Learning Engineering because it focuses on the engineering rigor behind AI. Throughout my internship at Sun-It Solutions, I designed and optimized end-to-end ML training pipelines, performed predictive analysis, and implemented model evaluation techniques. I prefer this domain because it deals with model efficiency, scalability, and performance in production environments.",
+      details: "ML Engineering combines mathematics with software engineering principles. Working with frameworks like TensorFlow, Keras, and Scikit-learn, and using tools like Docker for containerized deployment, allows me to build robust, reproducible systems. It is the perfect discipline for turning theoretical algorithms into high-performance, live production systems."
+    }
+  ];
+
   const dataFields = [
     {
       title: "Data Science",
@@ -123,7 +171,7 @@ const Information: React.FC = () => {
   ];
 
   return (
-    <section id="information" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section id="information" className="py-20 bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
@@ -133,6 +181,89 @@ const Information: React.FC = () => {
             Explore the fascinating world of data science, data analysis, and machine learning. 
             Understand the key concepts, applications, and career opportunities in these rapidly growing fields.
           </p>
+        </div>
+
+        {/* Domain Preferences Section */}
+        <div className="mb-24 animate-card-fade-up">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300 animate-neon-glow">
+              Why I Preferred These Domains
+            </h3>
+            <p className="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto transition-colors duration-300">
+              A personal look at why I chose to build my skills and career around Data Science, AI Engineering, and Machine Learning.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {domainPreferences.map((pref, index) => {
+              const isExpanded = !!expandedCards[index];
+              return (
+                <div
+                  key={index}
+                  className={`bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border-2 ${pref.color} transition-all duration-500 flex flex-col`}
+                >
+                  {/* Image Header with Hover Zoom */}
+                  <div className="relative h-48 overflow-hidden group">
+                    <img
+                      src={pref.image}
+                      alt={pref.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      {/* Title & Icon */}
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className={`p-2.5 rounded-lg ${pref.accentBg}`}>
+                          {pref.icon}
+                        </div>
+                        <h4 className="text-xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+                          {pref.title}
+                        </h4>
+                      </div>
+
+                      {/* Subtitle */}
+                      <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4 transition-colors duration-300">
+                        {pref.subtitle}
+                      </p>
+
+                      {/* Main Paragraph */}
+                      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 transition-colors duration-300">
+                        {pref.whyPreferred}
+                      </p>
+
+                      {/* Expandable Section */}
+                      <div
+                        className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                          isExpanded ? 'max-h-[500px] opacity-100 mb-4' : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-700 pt-4 mt-2 transition-colors duration-300">
+                          {pref.details}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Toggle Button */}
+                    <button
+                      onClick={() => toggleCard(index)}
+                      className={`w-full py-2.5 px-4 rounded-xl font-medium flex items-center justify-center space-x-2 transition-all duration-300 ${pref.btnColor}`}
+                    >
+                      <span>{isExpanded ? 'Show Less' : 'Read More'}</span>
+                      {isExpanded ? (
+                        <ChevronUp className="w-4 h-4" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Main Data Fields */}

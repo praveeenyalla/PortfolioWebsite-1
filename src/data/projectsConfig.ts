@@ -19,7 +19,67 @@ export interface ProjectConfig {
 }
 
 export const projectsConfig: ProjectConfig[] = [
-  // Featured Recent Projects
+  // Featured Recent Projects from Resume
+  {
+    id: 'ai-conversational-assistant',
+    title: "AI Conversational Assistant",
+    description: "An intelligent conversational chatbot capable of understanding user queries and generating contextual responses using NLP and LLM integration.",
+    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+    technologies: ["Python", "Java", "React", "TypeScript", "MongoDB", "NLP", "LLMs"],
+    features: [
+      "Built an intelligent conversational chatbot capable of understanding user queries and generating contextual responses using NLP and LLM integration.",
+      "Designed scalable APIs and handled real-time interactions with optimized response latency.",
+      "Processed 10K+ user queries."
+    ],
+    demoUrl: "#",
+    codeUrl: "https://github.com/praveeenyalla/ai-chatbot-assistant",
+    videoUrl: "",
+    status: "Completed",
+    date: "Sep 2025 – Oct 2025",
+    category: "ai",
+    isFeatured: true,
+    isRecent: true
+  },
+  {
+    id: 'human-action-recognition',
+    title: "Human Action Recognition",
+    description: "Developed a machine learning model to classify human activities from video/image data using deep learning techniques.",
+    image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800",
+    technologies: ["Python", "PyTorch", "OpenCV", "Scikit-learn", "Deep Learning"],
+    features: [
+      "Developed a machine learning model to classify human activities from video/image data using deep learning techniques.",
+      "Implemented preprocessing pipelines and optimized model accuracy through training and evaluation.",
+      "Achieved 85% accuracy in action recognition."
+    ],
+    demoUrl: "#",
+    codeUrl: "https://github.com/praveeenyalla/computer-vision-analyzer",
+    videoUrl: "",
+    status: "Completed",
+    date: "Nov 2025 - Dec 2025",
+    category: "data",
+    isFeatured: true,
+    isRecent: true
+  },
+  {
+    id: 'flask-chatbot',
+    title: "Flask Chatbot",
+    description: "Created a backend chatbot system using Flask to handle user interactions and API requests.",
+    image: "https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg?auto=compress&cs=tinysrgb&w=800",
+    technologies: ["Python", "Flask", "REST API", "Jinja2", "JSON"],
+    features: [
+      "Created a backend chatbot system using Flask to handle user interactions and API requests.",
+      "Designed lightweight architecture for quick deployment and integration with frontend applications.",
+      "Reduced chatbot response time by 30%."
+    ],
+    demoUrl: "#",
+    codeUrl: "https://github.com/praveeenyalla/flask-chatbot",
+    videoUrl: "",
+    status: "Completed",
+    date: "Dec 2025 – Jan 2026",
+    category: "web",
+    isFeatured: true,
+    isRecent: true
+  },
   {
     id: 'avomind-ai',
     title: "AvoMind AI Platform",
@@ -62,7 +122,7 @@ export const projectsConfig: ProjectConfig[] = [
     videoUrl: "",
     status: "Completed",
     date: "January 2025",
-    category: "featured",
+    category: "web",
     isFeatured: true,
     isRecent: true
   },
@@ -85,56 +145,8 @@ export const projectsConfig: ProjectConfig[] = [
     videoUrl: "",
     status: "Completed",
     date: "January 2025",
-    category: "featured",
+    category: "web",
     isFeatured: true,
-    isRecent: true
-  },
-
-  // AI Projects
-  {
-    id: 'ai-chatbot-assistant',
-    title: "Intelligent AI Chatbot Assistant",
-    description: "A sophisticated AI chatbot powered by natural language processing that provides intelligent responses, learns from conversations, and integrates with multiple platforms.",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
-    technologies: ["Python", "TensorFlow", "NLP", "OpenAI GPT", "Flask", "React"],
-    features: [
-      "Natural language understanding",
-      "Context-aware responses",
-      "Multi-platform integration",
-      "Learning from interactions",
-      "Sentiment analysis",
-      "Voice recognition support"
-    ],
-    demoUrl: "#",
-    codeUrl: "https://github.com/praveeenyalla/ai-chatbot-assistant",
-    videoUrl: "",
-    status: "Completed",
-    date: "December 2024",
-    category: "ai",
-    isFeatured: false,
-    isRecent: true
-  },
-  {
-    id: 'computer-vision-analyzer',
-    title: "Computer Vision Image Analyzer",
-    description: "An advanced computer vision system that analyzes images for object detection, facial recognition, and scene understanding using deep learning models.",
-    image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800",
-    technologies: ["Python", "OpenCV", "PyTorch", "YOLO", "CNN", "Flask API"],
-    features: [
-      "Real-time object detection",
-      "Facial recognition system",
-      "Scene classification",
-      "Image preprocessing",
-      "Batch processing capabilities",
-      "REST API integration"
-    ],
-    demoUrl: "#",
-    codeUrl: "https://github.com/praveeenyalla/computer-vision-analyzer",
-    videoUrl: "",
-    status: "Completed",
-    date: "November 2024",
-    category: "ai",
-    isFeatured: false,
     isRecent: true
   },
   {
@@ -183,8 +195,6 @@ export const projectsConfig: ProjectConfig[] = [
     isFeatured: false,
     isRecent: true
   },
-
-  // Previous Projects
   {
     id: 'ecommerce-platform',
     title: "E-Commerce Platform",

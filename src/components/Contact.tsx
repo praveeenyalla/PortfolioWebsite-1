@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-5 h-5" />,
-      url: "https://www.linkedin.com/in/yalla-nagapraveen-chowdhury-18a7b5351",
+      url: "https://linkedin.com/in/praveenyalla73",
       color: "bg-blue-600 hover:bg-blue-700"
     },
     {
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section id="contact" className="py-20 bg-gray-50/70 dark:bg-gray-900/70 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">

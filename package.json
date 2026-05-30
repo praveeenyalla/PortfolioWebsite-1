@@ -3,9 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Professional data scientist portfolio website for YALLA.NAGAPRAVEEN - yallanagapraveen.info",
+  "description": "Professional data scientist portfolio website for YALLA NAGAPRAVEEN - yallanagapraveen.info",
   "keywords": ["portfolio", "data-scientist", "react", "typescript", "tailwind", "yallanagapraveen.info"],
-  "author": "YALLA.NAGAPRAVEEN <nagapraveenyalla@gmail.com>",
+  "author": "YALLA NAGAPRAVEEN <praveen.yalla2@gmail.com>",
   "homepage": "https://yallanagapraveen.info",
   "scripts": {
     "dev": "vite",
