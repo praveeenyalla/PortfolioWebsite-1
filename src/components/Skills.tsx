@@ -70,11 +70,11 @@ const Skills: React.FC = () => {
       viewUrl: "/EXCELR-75413-Yalla Naga Praveen.pdf"
     },
     {
-      name: "Deep Learning for Developers",
-      issuer: "Infosys Springboard",
-      year: "2024",
-      description: "Deep learning fundamentals, model training, and neural networks implementation.",
-      viewUrl: "#"
+      name: "Claude Code in Action",
+      issuer: "Anthropic",
+      year: "2026",
+      description: "Credential demonstrating proficiency in using Claude Code for agentic software development, command-line AI tools, and code automation.",
+      viewUrl: "/praveen_anthropic_certificate.pdf"
     },
     {
       name: "Data Analytics Job Simulation",
@@ -118,9 +118,9 @@ const Skills: React.FC = () => {
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      value: "4",
+      value: "5",
       label: "Professional Certifications",
-      description: "AWS, Data Science & More",
+      description: "Anthropic, AWS, Data Science & More",
       color: "text-orange-600 dark:text-orange-400",
       bgColor: "bg-orange-100 dark:bg-orange-900/30"
     },

@@ -37,6 +37,7 @@ const Header: React.FC = () => {
     { href: '#information', label: 'Information' },
     { href: '#data-science-news', label: 'Job Market' },
     { href: '#skills', label: 'Skills' },
+    { href: '#visions', label: 'Visions' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
   ];

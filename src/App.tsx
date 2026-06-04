@@ -8,6 +8,7 @@ import Information from './components/Information';
 import DataScienceNews from './components/DataScienceNews';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import FuturisticVisions from './components/FuturisticVisions';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import NeuralNetworkBackground from './components/NeuralNetworkBackground';
@@ -31,6 +32,7 @@ function App() {
             <Information />
             <DataScienceNews />
             <Skills />
+            <FuturisticVisions />
             <Projects />
             <Contact />
           </main>

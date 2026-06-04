@@ -1,7 +1,9 @@
-import React from 'react';
-import { Award, BookOpen, Target, Globe, Phone, Download, Eye } from 'lucide-react';
+import React, { useState } from 'react';
+import { Award, BookOpen, Target, Globe, Phone, Download, Eye, User, Compass } from 'lucide-react';
 
 const About: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'whoAmI' | 'journey'>('whoAmI');
+
   const handleViewResume = () => {
     try {
       window.open('/Praveen_Resume.pdf', '_blank', 'noopener,noreferrer');
@@ -62,30 +64,68 @@ const About: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           <div className="order-2 lg:order-1">
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">My Journey</h3>
-            <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed transition-colors duration-300 text-sm sm:text-base">
-              <p>
-                I am Yalla Nagapraveen, a results-driven Data Science & Machine Learning Engineer with hands-on experience in building and deploying data-driven applications in client-based environments. I hold a Bachelor of Technology in Computer Science Engineering from NRI Institute of Technology, Visadala.
-              </p>
-              <p>
-                My professional experience includes working as a Machine Learning Engineer Intern at Sun-It Solutions, where I designed and deployed end-to-end machine learning solutions for predictive analytics, performed large-scale data preprocessing and feature engineering, and utilized libraries like Pandas, NumPy, Scikit-learn, and TensorFlow/PyTorch.
-              </p>
-              <p>
-                Prior to that, as a Data Science & Machine Learning Engineer Intern at Social Prachar, I designed predictive ML systems, built REST APIs using FastAPI, and developed NLP chatbots handling real-time queries.
-              </p>
-              <p>
-                I have a strong foundation in programming languages like Python, SQL, and JavaScript, and frameworks like FastAPI and Flask. I am passionate about data analysis, machine learning, and leveraging these technologies to solve real-world problems.
-                I am Yalla Nagapraveen, a dedicated Data Science and Machine Learning Engineer. I graduated with a B.Tech in Computer Science Engineering from NRI Institute of Technology, where I developed a strong academic foundation in software engineering and data algorithms.
-              </p>
-              <p>
-                During my tenure at Sun-It Solutions, I focused on designing end-to-end machine learning workflows, handling massive datasets, and optimizing model performance using industry-standard libraries like TensorFlow and Scikit-learn.
-              </p>
-              <p>
-                At Social Prachar, I enhanced my skills in full-stack integration by building scalable REST APIs via FastAPI and deploying AI-driven NLP solutions that address real-world business challenges.
-              </p>
-              <p>
-                With a deep proficiency in Python, SQL, and cloud-native architecture, I aim to create impactful, data-centric products that solve complex computational problems.
-              </p>
+            {/* Tab Switched Header */}
+            <div className="flex space-x-6 mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">
+              <button
+                onClick={() => setActiveTab('whoAmI')}
+                className={`pb-2 text-base sm:text-lg font-semibold border-b-2 transition-all duration-300 flex items-center gap-2 ${
+                  activeTab === 'whoAmI'
+                    ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'
+                }`}
+              >
+                <User className="w-4 h-4 sm:w-5 sm:h-5" />
+                Who Am I?
+              </button>
+              <button
+                onClick={() => setActiveTab('journey')}
+                className={`pb-2 text-base sm:text-lg font-semibold border-b-2 transition-all duration-300 flex items-center gap-2 ${
+                  activeTab === 'journey'
+                    ? 'border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300'
+                }`}
+              >
+                <Compass className="w-4 h-4 sm:w-5 sm:h-5" />
+                My Journey
+              </button>
+            </div>
+
+            {/* Tab Content with fade-in effect */}
+            <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed transition-all duration-300 text-sm sm:text-base min-h-[300px]">
+              {activeTab === 'whoAmI' ? (
+                <div className="space-y-4 animate-fade-in">
+                  <p className="text-lg font-semibold text-blue-600 dark:text-blue-400 border-l-4 border-blue-600 pl-4 italic">
+                    "I am a builder, a learner, and a big-picture thinker."
+                  </p>
+                  <p>
+                    I am naturally drawn toward ambitious ideas—whether it's creating AI assistants, designing intelligent systems, developing secure digital platforms, or exploring the future of technology. I enjoy understanding how complex systems work and imagining how they can be improved.
+                  </p>
+                  <p>
+                    My mindset combines curiosity with determination. When I discover a new technology, I don't just want to learn it—I want to understand how it works internally and how it can be used to create something meaningful.
+                  </p>
+                  <p>
+                    I am particularly interested in Artificial Intelligence, Machine Learning, Software Engineering, Cloud Technologies, and Cybersecurity. My long-term vision is to build innovative products that create real-world impact and push the boundaries of what technology can achieve.
+                  </p>
+                  <p>
+                    I believe that every ambitious project starts with a simple idea, and every great engineer is defined by their willingness to learn, adapt, and keep building.
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-4 animate-fade-in">
+                  <p>
+                    I hold a Bachelor of Technology in Computer Science Engineering from NRI Institute of Technology, Visadala, where I developed a strong academic foundation in software engineering and algorithms.
+                  </p>
+                  <p>
+                    During my tenure as a Machine Learning Engineer Intern at Sun-It Solutions, I focused on designing end-to-end machine learning workflows, handling massive datasets, and optimizing model performance using industry-standard libraries like TensorFlow, PyTorch, and Scikit-learn.
+                  </p>
+                  <p>
+                    Prior to that, as a Data Science & Machine Learning Engineer Intern at Social Prachar, I enhanced my skills in full-stack integration by building scalable REST APIs via FastAPI and deploying AI-driven NLP solutions that address real-world business challenges.
+                  </p>
+                  <p>
+                    With a deep proficiency in Python, SQL, and cloud-native architecture, I aim to create impactful, data-centric products that solve complex computational problems.
+                  </p>
+                </div>
+              )}
             </div>
             
             <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-600 transition-colors duration-300">
